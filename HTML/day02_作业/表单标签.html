@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- radio 单选 必须拥有同样的name属性值 否则提交时无法判断 同理CheckBox 也必须有同样的name值 checked 默认选中状态 -->
+    性别：男<input type="radio" name="sex" checked>&nbsp;&nbsp;
+          女<input type="radio" name="sex">&nbsp;&nbsp;
+          未知<input type="radio" name="sex"><br>
+    爱好： 打篮球<input type="checkbox" name="hobby">&nbsp;&nbsp;
+            吃饭<input type="checkbox" name="hobby">&nbsp;&nbsp;
+            睡觉<input type="checkbox" name="hobby">&nbsp;&nbsp;
+            写代码<input type="checkbox" name="hobby">&nbsp;&nbsp;
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- label 标签用来提高用户体验 更容易让输入框获得焦点 -->
+            <!-- 第一种方式 -->
+            <label>用户名: <input type="text"></label><br><br><br>
+            <!-- 第二种方式 for   id    -->
+            <label for="nc"></label>
+            <label>用户名: <input type="text" id="nc"></label>
+
+</body>
+</html>

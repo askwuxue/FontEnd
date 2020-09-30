@@ -6,16 +6,26 @@
     <title>Document</title>
     <style>
         table{
+            /* 表格的style */
             /* 合并表格的边框 */
-            border-collapse: collapse; 
-            /* colspan 合并列   rowspan 合并跨行单元格 */
+            /* border-collapse: collapse;  */
+            /* 文字的显示效果 */
+            /* text-align: center; */
+            
+           
 
         }
     </style>
 </head>
 <body>
-    <table width="800px" height="500px" border="1px" style="text-align: center; border-collapse: collapse;">
-        <th>人称代词</th>
+    <!-- table的属性 -->
+    <!--  cellspacing: 0; 控制住单元格与单元格之间的距离 cellpading 控制内容单元的边距 -->
+    <!-- colspan 合并列   rowspan 合并跨行单元格  -->
+    <!-- align 控制表格在显示的区域 -->
+    <table width="800px" height="500px" border="1px" cellspacing="0" cellpadding="10px" align="center">
+        <!-- 表格标题 -->
+        <caption>英语人称代词表</caption>
+        <th colspan="5z">人称代词</th>
         <tr>
             <td colspan="3"></td>
             <td>Subject</td>
