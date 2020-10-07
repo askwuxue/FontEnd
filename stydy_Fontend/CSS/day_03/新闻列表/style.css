@@ -1,0 +1,32 @@
+body,h3,ul,li {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    width: 360px;
+    height: 180px;
+    border: 1px solid pink;
+    margin: 100px auto;
+    padding: 20px;
+    background: url(./images/line.jpg);
+}
+.box h3 {
+    border-bottom: 1px solid green;
+}
+.box ul li {
+    height: 30px;
+    line-height: 30px;
+    list-style: none;
+    border-bottom: 1px dashed #000000;
+    background: url(./images/arr.jpg) no-repeat;
+    background-position: 5px center;
+}
+.box ul li a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #000000;
+    padding-left: 18px;
+}
+.box ul li a:hover {
+    text-decoration: underline;
+}
