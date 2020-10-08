@@ -3,25 +3,37 @@ package common.suppermarket;
 import common.person.CustomerPurchaseMerchandise;
 
 public class LitterSupperMarket {
-    public String supperMarketName;
-    public String address;
-    public int parkingCount;
-    public double incomingSum;
-    public int kindNumber;
-    // 尚品
+    private String supperMarketName;
+    private String address;
+    private int parkingCount;
+    private double incomingSum;
+    private int kindNumber;
+    // 商品
     public Merchandise[] merchandise;
     // 每件商品卖出的件数
     public int[] merchandiseSold;
 
     /**
-     *
+     * 构造函数的性质 1 要求构造函数名和类名必须一致
+     *             2 构造函数没有返回值
+     *             3 构造函数的调用不能使用 . 操作符 只能使用new的形式调用
+     *             4 如果只创建了有参数的构造函数 new时必须传递参数
+     *             5 构造函数间的重载 只能使用 this(参数) 的形式 且this()必须是代码块内的第一行代码 但可以不是最后一行
+     */
+    public LitterSupperMarket() {
+        //int i = 1;
+        this("家乐福超市", "上海市徐汇区漕河泾开发区", 200, 0, 0);
+    }
+
+    /**
+     * 初始化的构造函数
      * @param supperMarketName 超市名
      * @param address 超市地址
      * @param parkingCount 超市停车位
      * @param incomingSum 超市收入
      * @param kindNumber 商品种类
      */
-    public void init(String supperMarketName, String address,int parkingCount, double incomingSum, int kindNumber) {
+    public LitterSupperMarket(String supperMarketName, String address,int parkingCount, double incomingSum, int kindNumber) {
         this.supperMarketName = supperMarketName;
         this.address = address;
         this.parkingCount = parkingCount;
@@ -32,6 +44,12 @@ public class LitterSupperMarket {
         this.merchandise = new Merchandise[200];
         for (int i = 0; i < kindNumber; i++) {
             merchandise[i] = m.init("商品" + i, "ID" +i,200);
+        }
+    }
+
+    public void merchandiseDescribe(int inputMerchandiseIndex) {
+        for(int i = 0; i < this.kindNumber; i++) {
+            System.out.println(merchandise[i].name);
         }
     }
 }

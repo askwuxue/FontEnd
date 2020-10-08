@@ -1,28 +1,29 @@
 package common.person;
+import static app.LitterSupperMarketApp.*;
 
 import common.suppermarket.LitterSupperMarket;
 import common.suppermarket.Merchandise;
 import java.util.Scanner;
 
 public class Customer {
-    public String name;
-    public double money;
-    public CustomerPurchaseMerchandise[] customerPurchaseMerchandise;
-    public boolean isDrivingCar;
+    private String name;
+    private double money;
+    private CustomerPurchaseMerchandise[] customerPurchaseMerchandise;
+    private boolean isDrivingCar;
     // 判断用户状态 false: 非刚进入超市  true: 刚进入超市
-    public boolean customerFlag;
-    public Scanner in;
-    public int inputOption;
-    public int inputMerchandiseIndex;
-    public int kindNumber;
+    private boolean customerFlag;
+    private Scanner in;
+    private int inputOption;
+    private int inputMerchandiseIndex;
+    private int kindNumber;
     /**
-     *
+     * 初始化用户信息的构造函数
      * @param name 用户姓名
      * @param money 用户账户资金
      * @param isDrivingCar 用户是否开车
      * @param shopCarMerchandiseLimit 用户购物车商品限制
      */
-    public void init(String name, double money, boolean isDrivingCar, int shopCarMerchandiseLimit, int kindNumber) {
+    public Customer(String name, double money, boolean isDrivingCar, int shopCarMerchandiseLimit, int kindNumber) {
         this.name = name;
         this.money = money;
         this.isDrivingCar = isDrivingCar;
@@ -37,10 +38,10 @@ public class Customer {
      *
      * @return 用户是否首次进入
      */
-    public boolean getCustomerFlag() {
+    private boolean getCustomerFlag() {
         return this.customerFlag;
     }
-    public void setCustomerFlag() {
+    private void setCustomerFlag() {
         this.customerFlag = false;
     }
 
@@ -48,7 +49,7 @@ public class Customer {
      *
      * @param inputOption 用户输入设置
      */
-    public void setInputOption(int inputOption) {
+    private void setInputOption(int inputOption) {
         this.inputOption = inputOption;
     }
 
@@ -56,7 +57,7 @@ public class Customer {
      *
      * @return 用户输入获取
      */
-    public int getInputOption() {
+    private int getInputOption() {
         return this.inputOption;
     }
 
@@ -91,7 +92,7 @@ public class Customer {
         // 用户选择去购物
         switch(inputOptionTemp) {
             case 1: {
-                    shop();
+                    requestShop();
                 };
             break;
             case 2: {
@@ -109,19 +110,24 @@ public class Customer {
         return 0;
     }
 
-    public void shop() {
+    /**
+     * 用户购物
+     */
+    private void requestShop() {
         System.out.println("请输入要购买的商品编号");
-        inputMerchandiseIndex();
+        setInputMerchandiseIndex(inputMerchandiseIndex());
+        LitterSupperMarket supperMarket = new LitterSupperMarket();
+        supperMarket.merchandiseDescribe(getInputMerchandiseIndex());
 
     }
 
-    public void desribe() {
-
-    }
-
-    public int inputMerchandiseIndex() {
+    /**
+     * 对用户输入的商品index进行检查并返回合法值
+     * @return
+     */
+    private int inputMerchandiseIndex() {
         int inputMerchandiseIndex = this.in.nextInt();
-        while(!checkInputMerchandiseIndex(inputMerchandiseIndex)) {
+        while((inputMerchandiseIndex >= 0 && inputMerchandiseIndex < this.kindNumber) ? true :false) {
             System.out.println("请输入编号在" + 0 + "到" + (this.kindNumber - 1) + "之间的商品编号");
             inputMerchandiseIndex = this.in.nextInt();
         }
@@ -129,29 +135,28 @@ public class Customer {
     }
 
     /**
-     *
-     * @param inputMerchandiseIndex 商品index
-     * @return 用户输入商品index 合法返回 true    不合法返回false
-     */
-    public boolean checkInputMerchandiseIndex(int inputMerchandiseIndex) {
-        return (inputMerchandiseIndex >= 0 && inputMerchandiseIndex < this.kindNumber) ? true :false;
-    }
-
-    /**
      * 对用户首次进入check
      * @return 对用户input check结果 true: 正确    false：错误
      */
-    public boolean checkInputOption(int inputOption) {
+    private boolean checkInputOption(int inputOption) {
         return (inputOption == 1 || inputOption == 2) ? true : false;
     }
 
     /**
-     *
+     * 用户非首次进入
      * @param customerFlag 在此表示用户非首次进入  为了函数重载 没有实际意义
      * @param inputOption 用户输入
      * @return 对用户input check结果 true: 正确    false：错误
      */
-    public boolean checkInputOption(boolean customerFlag, int inputOption) {
+    private boolean checkInputOption(boolean customerFlag, int inputOption) {
         return (inputOption >= 1 && inputOption <= 4 ) ? true : false;
+    }
+
+    private void setInputMerchandiseIndex(int inputMerchandiseIndex) {
+        this.inputMerchandiseIndex = inputMerchandiseIndex;
+    }
+
+    public int getInputMerchandiseIndex() {
+        return this.inputMerchandiseIndex;
     }
 }

@@ -1,3 +1,5 @@
+package app;
+
 import common.person.Customer;
 import common.person.CustomerPurchaseMerchandise;
 import common.suppermarket.LitterSupperMarket;
@@ -6,23 +8,20 @@ import java.util.Scanner;
 
 public class LitterSupperMarketApp {
     Scanner in = new Scanner(System.in);
+    // VIP 折扣
+    public static double DISCOUNT_VIP_FOR = 0.9;
+    // 购物车商品种类限制
+    public static int SHOP_CAR_MERCHANDISE_LIMIT = 10;
+    // 控制退出购物
+    public static boolean RETURN_FLAG = true;
+    // 程序入口
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int shopCarMerchandiseLimit = 10;
-        // 用户选择商品ID
-        int inputGoodsNumber = 0;
-        // 用户购物车商品种类
+        // 购物车已有商品数量
         int shopCarCount = 0;
-        // 控制退出购物
-        boolean returnFlag = true;
-        LitterSupperMarketApp litterSupperMarketApp = new LitterSupperMarketApp();
-        // TODO 初始化超市信息
-        LitterSupperMarket supperMarket = new LitterSupperMarket();
-        supperMarket.init("家乐福超市", "上海市松江区梅家浜路1505弄150号", 200, 0, 200);
-        // TODO 始化用户信息
-        Customer customer = new Customer();
-        customer.init("张三", 100, true, shopCarMerchandiseLimit, 200);
-
+        // 初始化超市信息
+        LitterSupperMarket supperMarket = new LitterSupperMarket("家乐福超市", "上海市松江区梅家浜路1505弄150号", 200, 0, 200);
+        // 始化用户信息
+        Customer customer = new Customer("张三", 100, true, SHOP_CAR_MERCHANDISE_LIMIT, 200);
         // 用户的一级选择
         customer.inputOptionLevel_01();
         // 用户的二级选择
@@ -110,8 +109,18 @@ public class LitterSupperMarketApp {
 //            }
 //        }
     }
+
+    /**
+     * 对静态变量进行改变的静态方法 静态方法内不能使用this指针 但是可以new一个对象进行操作
+     * @param discountForVip
+     * @param shopCarMerchandiseLimit
+     */
+    private static void staticVariableChange(double discountForVip, int shopCarMerchandiseLimit) {
+        DISCOUNT_VIP_FOR = discountForVip;
+        SHOP_CAR_MERCHANDISE_LIMIT = shopCarMerchandiseLimit;
+    }
     // TODO 去购物
-    public int goShop(CustomerPurchaseMerchandise[] customerPurchaseMerchandises, Merchandise[] merchandise, int shopCarCount) {
+    private int goShop(CustomerPurchaseMerchandise[] customerPurchaseMerchandises, Merchandise[] merchandise, int shopCarCount) {
         Scanner in = new Scanner(System.in);
         int inputGoodsNumber = -1;
 
@@ -134,7 +143,7 @@ public class LitterSupperMarketApp {
         return inputGoodsNumber;
     }
     // TODO 用户首次进入的check
-    public boolean checkInputOption(boolean customerFlag, int inputSelect) {
+    private boolean checkInputOption(boolean customerFlag, int inputSelect) {
         if (inputSelect != 1 && inputSelect !=2) {
             System.out.println("您的选择有误，请重新选择：1、去购物 2、退出购物");
             return true;
@@ -142,7 +151,7 @@ public class LitterSupperMarketApp {
         return false;
     }
     // TODO 对用户输入的商品范围进行check
-    public boolean checkInputMerchandiseRange(int input) {
+    private boolean checkInputMerchandiseRange(int input) {
         if (input < 0 || input > 199) {
             return true;
         }
