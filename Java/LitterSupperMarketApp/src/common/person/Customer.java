@@ -115,9 +115,12 @@ public class Customer {
      */
     private void requestShop() {
         System.out.println("请输入要购买的商品编号");
+        // 用户输入商品index合法化检查 并设置
         setInputMerchandiseIndex(inputMerchandiseIndex());
         LitterSupperMarket supperMarket = new LitterSupperMarket();
-        supperMarket.merchandiseDescribe(getInputMerchandiseIndex());
+        // 获取商品库存 等信息
+        supperMarket.merchandiseMessage(1);
+        //System.out.println(supperMarket.merchandiseMessage(getInputMerchandiseIndex()));
 
     }
 
@@ -127,7 +130,7 @@ public class Customer {
      */
     private int inputMerchandiseIndex() {
         int inputMerchandiseIndex = this.in.nextInt();
-        while((inputMerchandiseIndex >= 0 && inputMerchandiseIndex < this.kindNumber) ? true :false) {
+        while((inputMerchandiseIndex >= 0 && inputMerchandiseIndex < this.kindNumber) ? false :true) {
             System.out.println("请输入编号在" + 0 + "到" + (this.kindNumber - 1) + "之间的商品编号");
             inputMerchandiseIndex = this.in.nextInt();
         }

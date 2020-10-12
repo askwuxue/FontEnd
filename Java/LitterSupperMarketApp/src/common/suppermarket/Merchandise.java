@@ -1,11 +1,11 @@
 package common.suppermarket;
 
 public class Merchandise {
-    public String name;
-    public String id;
-    public int inventory;
-    public double purchasePrice;
-    public double soldPrice;
+    private String name;
+    private String id;
+    private int inventory;
+    private double purchasePrice;
+    private double soldPrice;
     /**
      *
      * @param name 商品名称
@@ -21,5 +21,23 @@ public class Merchandise {
         m.purchasePrice = Math.random() * 200;
         m.soldPrice = Math.random() * 200 + 3;
         return m;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getId() {
+        return id;
+    }
+    public int getInventory() {
+        return inventory;
+    }
+    public double getPurchasePrice() {
+        return purchasePrice;
+    }
+    public double getSoldPrice() {
+        return soldPrice;
+    }
+    public void updateInventory(int num) {
+        this.inventory -= num;
     }
 }

@@ -9,7 +9,7 @@ public class LitterSupperMarket {
     private double incomingSum;
     private int kindNumber;
     // 商品
-    public Merchandise[] merchandise;
+    public Merchandise[] merchandise = new Merchandise[200];
     // 每件商品卖出的件数
     public int[] merchandiseSold;
 
@@ -22,7 +22,7 @@ public class LitterSupperMarket {
      */
     public LitterSupperMarket() {
         //int i = 1;
-        this("家乐福超市", "上海市徐汇区漕河泾开发区", 200, 0, 0);
+        this("家乐福超市", "上海市徐汇区漕河泾开发区", 200, 0, 200);
     }
 
     /**
@@ -41,15 +41,19 @@ public class LitterSupperMarket {
         this.kindNumber = kindNumber;
         // 初始化商品信息数组
         Merchandise m = new Merchandise();
-        this.merchandise = new Merchandise[200];
+        //System.out.println(merchandise[0]);
         for (int i = 0; i < kindNumber; i++) {
             merchandise[i] = m.init("商品" + i, "ID" +i,200);
         }
+        System.out.println(merchandise);
     }
 
-    public void merchandiseDescribe(int inputMerchandiseIndex) {
-        for(int i = 0; i < this.kindNumber; i++) {
-            System.out.println(merchandise[i].name);
-        }
+    public Merchandise merchandiseMessage(int inputMerchandiseIndex) {
+        System.out.println(merchandise);
+        //System.out.println(kindNumber);
+//        for (int i = 0; i < kindNumber; i++) {
+//            System.out.println(merchandise[i].getName());
+//        }
+         return merchandise[inputMerchandiseIndex];
     }
 }

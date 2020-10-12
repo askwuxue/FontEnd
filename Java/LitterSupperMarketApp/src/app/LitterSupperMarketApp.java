@@ -23,91 +23,9 @@ public class LitterSupperMarketApp {
         // 始化用户信息
         Customer customer = new Customer("张三", 100, true, SHOP_CAR_MERCHANDISE_LIMIT, 200);
         // 用户的一级选择
-        customer.inputOptionLevel_01();
+        //customer.inputOptionLevel_01();
         // 用户的二级选择
-        // 去购物
-        // TODO 用户进行购买
-//        while(!returnFlag) {
-//            double totlePrice = 0;
-//            int inputSelect = -1;
-//            // TODO 用户是首次进入
-//            if (customer.getCustomerFlag() && supperMarket.parkingCount > 0) {
-//                System.out.println("欢迎光临" + supperMarket.supperMarketName + "!\n" + "当前剩余停车位：" + supperMarket.parkingCount);
-//                System.out.println("请选择您的操作：1、去购物 2、退出购物");
-//                inputSelect = in.nextInt();
-//                // TODO 对用户的选择操作进行检证
-//                while(litterSupperMarketApp.checkInputOption(customer.getCustomerFlag(), inputSelect)) {
-//                    inputSelect = in.nextInt();
-//                }
-//                // TODO 用户去购物
-//                inputGoodsNumber = litterSupperMarketApp.goShop(customerPurchaseMerchandises, merchandise, shopCarCount);
-//                shopCarCount++;
-//                customer.getCustomerFlag() = false;
-//
-//                // TODO 用户不是首次进入
-//            } else {
-//                System.out.println("请选择您的操作：1、继续去购物 2、购买当前商品 3、查看购物车 4、退出购物");
-//                inputSelect = in.nextInt();
-//                while(litterSupperMarketApp.checkInputOption(inputSelect)) {
-//                    inputSelect = in.nextInt();
-//                }
-//                // 用户选择处理
-//                switch(inputSelect) {
-//                    // 用户去购物
-//                    case 1: {
-//                        inputGoodsNumber = litterSupperMarketApp.goShop(customerPurchaseMerchandises, merchandise, shopCarCount);
-//                        shopCarCount++;
-//                        // 购物车已满
-//                        returnFlag = shopCarCount >= customerPurchaseMerchandises.length ? false : true;
-//                        if (!returnFlag) {
-//                            System.out.println("购物车已满！请输入您的选择：1、去结算 2、返回购物车");
-//                            inputSelect = in.nextInt();
-//                            // TODO 对用户输入进行检证
-//                            // 选择去结算
-//                            if (inputSelect == 1) {
-//                                int returnSettleOption = litterSupperMarketApp.settleAccounts(customerPurchaseMerchandises, merchandise, shopCarCount, customer.money, inputGoodsNumber, false);
-//                                // 提交订单
-//                                if (returnSettleOption == 1) {
-//                                    System.out.println("提交订单中.......");
-//                                    returnFlag = false;
-//                                    break;
-//                                }
-//                                // 查看购物车
-//                                if (returnSettleOption == 2) {
-//                                    litterSupperMarketApp.viewShopCar(customerPurchaseMerchandises, shopCarCount);
-//                                }
-//                                // 查看购物车
-//                            } else {
-//                                litterSupperMarketApp.viewShopCar(customerPurchaseMerchandises, shopCarCount);
-//                            }
-//                        }
-//                    };
-//                    break;
-//                    // 用户去结算当前商品
-//                    case 2: {
-//                        // 表示用户结算的是单件还是多件 flag: true单件
-//                        boolean flag = true;
-//                        int returnSettleOption = litterSupperMarketApp.settleAccounts(customerPurchaseMerchandises, merchandise, shopCarCount, customer.money, inputGoodsNumber, flag);
-//                        // 提交订单
-//                        if (returnSettleOption == 1) {
-//                            System.out.println("提交订单中.......");
-//                            returnFlag = false;
-//                            break;
-//                        }
-//                        // 继续进行购物 且未结算的商品不加入购物车
-//                        if (returnSettleOption == 2) {
-//                            break;
-//                        }
-//                    };
-//                    break;
-//                    // 用户查看购物车
-//                    case 3: {
-//                        litterSupperMarketApp.viewShopCar(customerPurchaseMerchandises, shopCarCount);
-//                    };
-//                    break;
-//                }
-//            }
-//        }
+        customer.inputOptionLevel_02();
     }
 
     /**
@@ -132,9 +50,9 @@ public class LitterSupperMarketApp {
         }
         // TODO 更新用户购物车信息
         CustomerPurchaseMerchandise m = new CustomerPurchaseMerchandise();
-        m.name = merchandise[inputGoodsNumber].name;
-        m.id = merchandise[inputGoodsNumber].id;
-        m.soldPrice = merchandise[inputGoodsNumber].soldPrice;
+        m.name = merchandise[inputGoodsNumber].getName();
+        m.id = merchandise[inputGoodsNumber].getId();
+        m.soldPrice = merchandise[inputGoodsNumber].getSoldPrice();
         m.count = 1;
         customerPurchaseMerchandises[shopCarCount] = m;
         // TODO 更新商品库存信息
@@ -172,8 +90,9 @@ public class LitterSupperMarketApp {
         double totalCharge = 0;
         // 用户单间商品进行结算
         if (flag) {
-            totalCharge = merchandise[inputGoodsNumber].soldPrice * 1;
-            System.out.println(merchandise[inputGoodsNumber].name + ", " + merchandise[inputGoodsNumber].id + ", " + merchandise[inputGoodsNumber].soldPrice);
+            totalCharge = merchandise[inputGoodsNumber].getSoldPrice() * 1;
+            System.out.println(merchandise[inputGoodsNumber].getName() + ", " + merchandise[inputGoodsNumber].getId() + ", " + merchandise[inputGoodsNumber].getSoldPrice()
+            );
             System.out.println("请选择您的操作：1、提交订单 2、返回购物");
             // TODO 对用户的输入进行检证
             inputSettleOption = in.nextInt();

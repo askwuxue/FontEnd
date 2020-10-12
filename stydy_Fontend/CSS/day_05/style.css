@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+button {
+    border: none;
+}
+body {
+    background-color: #f3f5f7;
+}
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    height: 42px;
+    margin: 30px auto;
+    background-color: pink;
+}
+.logo {
+    float: left;
+    margin-right: 70px;
+}
+.nav {
+    float: left;
+}
+.nav ul li {
+    float: left;
+    margin-right: 20px;
+}
+.nav ul li a {
+    display: block;
+    height: 40px;
+    padding: 0 10px;
+    line-height: 40px;
+    text-decoration: none;
+    font-family: '微软雅黑', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    color: #050505;
+}
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+.search input {
+    float: left;
+    width: 340px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    margin-left: 65px;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    background: url(images/button_03.png) ;
+}
