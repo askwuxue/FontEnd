@@ -8,6 +8,9 @@ li {
 button {
     border: none;
 }
+a {
+    text-decoration: none;
+}
 body {
     background-color: #f3f5f7;
 }
@@ -18,7 +21,6 @@ body {
 .header {
     height: 42px;
     margin: 30px auto;
-    background-color: pink;
 }
 .logo {
     float: left;
@@ -59,4 +61,89 @@ body {
     width: 50px;
     height: 42px;
     background: url(images/button_03.png) ;
+}
+.user {
+    float: left;
+    height: 42px;
+    margin-left: 30px;
+    line-height: 42px;
+    
+}
+.banner {
+    height: 420px;
+    background: #1c036b url(images/banner2.jpg) no-repeat top center;
+}
+.subnav {
+    float: left;
+    width: 170px;
+    height: 420px;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, .3);
+}
+.subnav ul li {
+    height: 45px;
+    line-height: 45px;
+}
+.subnav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+.subnav ul li a:hover {
+    color: #00b4ff;
+}
+.subnav ul li span{
+    float: right;
+}
+.caurse {
+    float: right;
+    width: 230px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: #fff;
+}
+.caurse_header {
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background-color: #9bceea;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 700;
+    
+}
+.caurse_body {
+    width: 190px;
+    height: 252px;
+    padding: 0 20px;
+}
+.caurse_body ul {
+    padding-top: 10px;
+}
+.caurse_body ul li {
+    height: 50px;
+    padding-top: 12px;
+    border-bottom: 1px solid #efefef;
+}
+.caurse_body h4 {
+    font-size: 14px;
+    color: #4e4e4e;
+}
+.caurse_body p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.all {
+    display: block;
+    height: 38px;
+    margin: 5px auto 0px;
+    border: 1px solid #22b0ff;
+    text-align: center;
+    line-height: 38px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+.all:hover {
+    background-color: #00a4ff;
+    color: #fff;
 }
