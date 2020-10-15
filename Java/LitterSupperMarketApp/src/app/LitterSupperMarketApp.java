@@ -7,19 +7,21 @@ import common.suppermarket.Merchandise;
 import java.util.Scanner;
 
 public class LitterSupperMarketApp {
-    Scanner in = new Scanner(System.in);
+    //Scanner in = new Scanner(System.in);
     // VIP 折扣
     public static double DISCOUNT_VIP_FOR = 0.9;
     // 购物车商品种类限制
     public static int SHOP_CAR_MERCHANDISE_LIMIT = 10;
+    //
+    public static Scanner in = new Scanner(System.in);
     // 控制退出购物
     public static boolean RETURN_FLAG = true;
-    // 程序入口
+    // 程序入口 静态方法是没有this自引用的
     public static void main(String[] args) {
         // 购物车已有商品数量
         int shopCarCount = 0;
         // 初始化超市信息
-        LitterSupperMarket supperMarket = new LitterSupperMarket("家乐福超市", "上海市松江区梅家浜路1505弄150号", 200, 0, 200);
+        LitterSupperMarket supperMarket = new LitterSupperMarket();
         // 始化用户信息
         Customer customer = new Customer("张三", 100, true, SHOP_CAR_MERCHANDISE_LIMIT, 200);
         // 用户的一级选择
@@ -37,6 +39,29 @@ public class LitterSupperMarketApp {
         DISCOUNT_VIP_FOR = discountForVip;
         SHOP_CAR_MERCHANDISE_LIMIT = shopCarMerchandiseLimit;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // TODO 去购物
     private int goShop(CustomerPurchaseMerchandise[] customerPurchaseMerchandises, Merchandise[] merchandise, int shopCarCount) {
         Scanner in = new Scanner(System.in);
