@@ -1,13 +1,13 @@
-package common.suppermarket;
+package common;
 
 public class Merchandise {
-    private String name;
-    private String id;
-    private int inventory;
-    private double purchasePrice;
-    private double soldPrice;
+    public String name;
+    public String id;
+    public int inventory;
+    public double purchasePrice;
+    public double soldPrice;
     /**
-     *
+     * 初始化
      * @param name 商品名称
      * @param id 商品 ID
      * @param inventory 当前商品的库存
@@ -22,22 +22,20 @@ public class Merchandise {
         m.soldPrice = Math.random() * 200 + 3;
         return m;
     }
+
     public String getName() {
         return name;
     }
+
     public String getId() {
         return id;
     }
-    public int getInventory() {
-        return inventory;
-    }
+
     public double getPurchasePrice() {
         return purchasePrice;
     }
+
     public double getSoldPrice() {
         return soldPrice;
-    }
-    public void updateInventory(int num) {
-        this.inventory -= num;
     }
 }

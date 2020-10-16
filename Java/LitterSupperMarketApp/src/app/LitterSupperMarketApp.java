@@ -1,9 +1,9 @@
 package app;
+import common.LitterSupperMarket;
+import common.Customer;
+import common.CustomerPurchaseMerchandise;
+import common.Merchandise;
 
-import common.person.Customer;
-import common.person.CustomerPurchaseMerchandise;
-import common.suppermarket.LitterSupperMarket;
-import common.suppermarket.Merchandise;
 import java.util.Scanner;
 
 public class LitterSupperMarketApp {
@@ -23,11 +23,7 @@ public class LitterSupperMarketApp {
         // 初始化超市信息
         LitterSupperMarket supperMarket = new LitterSupperMarket();
         // 始化用户信息
-        Customer customer = new Customer("张三", 100, true, SHOP_CAR_MERCHANDISE_LIMIT, 200);
-        // 用户的一级选择
-        //customer.inputOptionLevel_01();
-        // 用户的二级选择
-        customer.inputOptionLevel_02();
+        Customer customer = new Customer("张三", 100, true);
     }
 
     /**
@@ -109,7 +105,7 @@ public class LitterSupperMarketApp {
         return false;
     }
     // TODO 结算  分一类商品单独结算和多类商品在购物车中一起结算
-    public int settleAccounts(CustomerPurchaseMerchandise[] customerPurchaseMerchandise, Merchandise[] merchandise,int shopCarCount, double money, int inputGoodsNumber, boolean flag) {
+    public int settleAccounts(CustomerPurchaseMerchandise[] customerPurchaseMerchandise, Merchandise[] merchandise, int shopCarCount, double money, int inputGoodsNumber, boolean flag) {
         int inputSettleOption = -1;
         // 商品总价
         double totalCharge = 0;

@@ -1,6 +1,4 @@
-package common.suppermarket;
-
-import common.person.CustomerPurchaseMerchandise;
+package common;
 
 public class LitterSupperMarket {
     private String supperMarketName;
@@ -21,7 +19,6 @@ public class LitterSupperMarket {
      *             5 构造函数间的重载 只能使用 this(参数) 的形式 且this()必须是代码块内的第一行代码 但可以不是最后一行
      */
     public LitterSupperMarket() {
-        //int i = 1;
         this("家乐福超市", "上海市徐汇区漕河泾开发区", 200, 0, 200);
     }
 
@@ -49,11 +46,15 @@ public class LitterSupperMarket {
     }
 
     public Merchandise merchandiseMessage(int inputMerchandiseIndex) {
-        System.out.println(merchandise);
+        //System.out.println(merchandise);
         //System.out.println(kindNumber);
 //        for (int i = 0; i < kindNumber; i++) {
 //            System.out.println(merchandise[i].getName());
 //        }
          return merchandise[inputMerchandiseIndex];
+    }
+
+    public int getKindNumber() {
+        return this.kindNumber;
     }
 }

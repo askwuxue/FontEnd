@@ -1,4 +1,4 @@
-package common.person;
+package common;
 
 public class CustomerPurchaseMerchandise {
     public String name;
