@@ -79,7 +79,9 @@ body {
     height: 42px;
     margin-left: 30px;
     line-height: 42px;
-    
+}
+.user img {
+    vertical-align: middle;
 }
 .banner {
     height: 420px;

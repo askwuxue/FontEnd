@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            border: 1px solid pink;
+        }
+        /* 默认img底部会有缝隙 因为图片默认是 基线对齐  即使div中没有内容 底部也会预留位置 解决办法 1、不要基线对齐 2、将img元素转换为block */
+        div img {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./img.jpg" alt="">
+    </div>
+</body>
+</html>

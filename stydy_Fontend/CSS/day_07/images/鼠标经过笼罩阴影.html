@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 448px;
+            height: 252px;
+            position: relative;
+            margin: 100px auto;
+        }
+        .box_shadow {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, .2) url(arr.png) no-repeat center center;
+        }
+        .box a:hover .box_shadow {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#">
+            <div class="box_shadow"></div>
+            <img src="./img.jpg" alt="">
+        </a>
+    </div>
+</body>
+</html>

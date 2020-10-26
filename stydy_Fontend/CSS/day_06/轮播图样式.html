@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+        .lunbo {
+            width: 520px;
+            height: 280px;
+            position: relative;
+            margin: 100px auto;
+        }
+        .lunbo_right,
+        .lunbo_left {
+            position: absolute;
+            width: 20px;
+            height: 32px;
+            background-color: rgba(0, 0, 0, .2);
+            line-height: 32px;
+        }
+        .lunbo_right a,
+        .lunbo_left a {
+            font-size: 16px;
+            color: #fff;
+            font-weight: 700;
+        }
+        .lunbo_left {
+            top: 50%;
+            left: 0;
+            margin-top: -16px;
+            text-align: left;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+        .lunbo_right {
+            top: 50%;
+            right: 0;
+            margin-top: -16px;
+            text-align: right;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+        .lunbo_left:hover {
+            background-color: rgba(0, 0, 0, .4);
+        }
+        .lunbo_right:hover {
+            background-color: rgba(0, 0, 0, .4);
+        }
+        .lunbo_bottom {
+            width: 70px;
+            height: 14px;
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -35px;
+            border-radius: 7px;
+            background-color:rgba(255, 255, 255, .3);
+        }
+        .lunbo_bottom li {
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin: 2px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .lunbo_bottom .item_calss {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+<body>
+    <div class="lunbo">
+        <img src="./images/bgc.jpg" alt="">
+        <div class="lunbo_right"><a href="#">></a></div>
+        <div class="lunbo_left"><a href="#"><</a></div>
+        <div class="lunbo_bottom">
+            <ul>
+                <li></li>
+                <li></li>
+                <li class="item_calss"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
