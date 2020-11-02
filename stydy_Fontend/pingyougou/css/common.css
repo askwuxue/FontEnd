@@ -1,0 +1,135 @@
+/*公共样式*/
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+/*版心*/
+.w {
+	width: 1200px;
+	margin: 0 auto;
+}
+.style-red {
+	color: #e33333;
+}
+/* shortcut start */
+.shortcut {
+	height: 31px;
+	line-height: 31px;
+	background-color: #f1f1f1;
+}
+.shortcut li {
+	float: left;
+}
+
+.shortcut .spacer {
+	width: 1px;
+	height: 12px;
+	margin: 9px 12px 0;
+	background-color: #666;
+}
+
+@font-face {
+	font-family: 'iconfont';
+	src: url('../fonts/iconfont.eot');
+	src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iconfont.woff2') format('woff2'),
+		url('../fonts/iconfont.woff') format('woff'),
+		url('../fonts/iconfont.ttf') format('truetype'),
+		url('../fonts/iconfont.svg#iconfont') format('svg');
+  }
+  .iconfont {
+	font-family: "iconfont" !important;
+	/* font-size: 16px; */
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  .shortcut .iconfont {
+	  font-size: 12px;
+  }
+/* shortcut end */
+/* header start */
+.header {
+	position: relative;
+	height: 106px;
+	/* background-color: pink; */
+}
+.header .logo a {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 172px;
+	height: 55px;
+	margin-top: -27px;
+	background: url(../img/logo_03.png);
+	/* logo h1标签中的a标签中需要写重要信息 但是让其不显示 下面两种方式 */
+	/* font-size: 0; */
+	text-indent: -999px;
+	overflow: hidden;
+}
+.serach {
+	position: absolute;
+	top: 26px;
+	left: 348px;
+}
+.serach .input {
+	width: 442px;
+	height: 32px;
+	padding-left: 10px;
+	border: 2px solid #b1191a;
+	font-size: 14px;
+	color: #666666;
+}
+.serach button {
+	width: 82px;
+	height: 36px;
+	border: 0;
+	background-color: #b1191a;
+	font-size: 16px;
+	color: #ffffff;
+}
+.hotwords {
+	position: absolute;
+	top: 68px;
+	left: 348px;
+}
+.hotwords a {
+	margin: 0 10px;
+}
+.my-car {
+	position: absolute;
+	top: 26px;
+	right: 64px;
+	width: 138px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	border: 2px solid #dfdfdf;
+	background-color: #f7f7f7;
+}
+.my-car .shop-car {
+	font-size: 18px;
+	color: #d94f4f
+}
+.my-car a {
+	font-size: 12px;
+	color: #000;
+}
+.my-car .arrow {
+	font-size: 12px;
+	color: #cbcbcb;
+}
+.my-car .count {
+	position: absolute;
+	top: -8px;
+	left: 100px;
+	height: 14px;
+	line-height: 14px;
+	background-color: #e60012;
+	font-size: 12px;
+	color: #fefefe;
+	border-radius: 7px 7px 7px 0;
+}
