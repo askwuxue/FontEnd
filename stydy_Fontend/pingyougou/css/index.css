@@ -1,0 +1,67 @@
+.main {
+    width: 980px;
+    height: 455px;
+    margin: 10px 0 0 219px;
+}
+.focus {
+    position: relative;
+    float: left;
+    width: 722px;
+    height: 100%;
+    background-color: purple;
+}
+.main_news {
+    float: right;
+    width: 250px;;
+    height: 100%;
+    background-color: skyblue;
+}
+.arrow {
+    position: absolute;
+    width: 25px;
+    height: 35px;
+    top: 50%;
+    margin-top: -18px;
+    text-align: center;
+    line-height: 35px;
+    background: rgba(0, 0, 0, .2);
+    font-weight: 700;
+    color: #fff;
+}
+.arrow:hover {
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+}
+.arrow_left {
+    left: 0;
+    border-radius: 0 17px 17px 0;
+    /* border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px; */
+}
+.arrow_right {
+    right: 0;
+    border-radius: 17px 0 0 17px;
+}
+.circle {
+    height: 10px;
+}
+.circle {
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    
+}
+.circle li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+    border-radius: 50%;
+    /* border: 2px solid rgba(255, 255, 255, .2); */
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, .2);
+    cursor: pointer;
+}
+.circle .current_circle {
+    background-color: #fff; 
+}
