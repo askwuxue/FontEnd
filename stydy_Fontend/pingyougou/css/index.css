@@ -178,3 +178,45 @@
 .common_bd .left {
     border-right: 0;
 }
+/* 楼层区 start */
+.box-hd {
+    height: 30px;
+    margin-top: 20px;
+    line-height: 30px;
+    background-color: pink;
+    border-bottom: 2px solid #c81623;
+}
+.box-hd h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #c81623;
+}
+.tab-list li{
+    float: left;
+    margin: 0 10px;
+    /* line-height: 30px; */
+}
+.box-bd {
+    height: 360px;
+    background-color: purple;
+}
+.tab-con li{
+    float: left;
+    height: 360px;
+} 
+.w209 {
+    width: 209px;
+}
+.w329 {
+    width: 329px;
+}
+.w219 {
+    width: 219px;
+    border-right: 1px solid #ededed;
+}
+.w220 {
+    width: 220px;
+    border-right: 1px solid #ededed;
+}
+
+/* 楼层区 end */
