@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('./fonts/');
+    src: url('./fonts/iconfont.eot?#iefix') format('embedded-opentype'), 
+    url('./fonts/iconfont.woff2') format('./fonts/woff2'), 
+    url('./fonts/iconfont.woff') format('woff'), 
+    url('./fonts/iconfont.ttf') format('truetype'), 
+    url('./fonts/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+header {
+    height: 50px;
+    background-color: #445533;   
+}
+.search {
+    float: right;
+    position: relative;
+    width: 45px;
+    margin-right: 300px;
+    background-color: #ccc;
+    line-height: 50px;
+    transition: width .4s ease-in;
+}
+/* 定位 图标脱离标准流 */
+.search span {
+    position: absolute;
+    left: 5px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding-left: 28px;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+    opacity: 0;
+    font-size: 16px;
+    /* 只使用本行代码，不断刷新页面，会出现本来隐藏的文字闪烁的情况
+    opacity默认值为1，我们手动修改为1，当页面刷新的瞬间，值为1，此处设置transition属性
+    input表被加载，transition执行。会有一个过渡效果。即opacity从1到0的一个变化。注意
+    */
+    /* transition: opacity .4s ease-in; */
+}
+.search:hover {
+    width: 200px;
+}
+.search:hover input {
+    opacity: 1;
+}
+/* 页面加载，下面不会执行，只有当鼠标滑过，才会执行，所以写在此处没有问题 */
+.search:hover input {
+    transition: opacity .4s ease-in;
+}
