@@ -28,10 +28,13 @@ header {
     width: 45px;
     margin-right: 300px;
     background-color: #ccc;
-    line-height: 50px;
+    line-height: 50px;  
     transition: width .4s ease-in;
 }
-/* 定位 图标脱离标准流 */
+.search:hover {
+    width: 200px;
+}
+/* 定位 图标脱离标准流 定位是相对于父盒子定位的 所以会随着父盒子一起具有过渡效果 当鼠标 移入移出 图标都是一个缓慢过渡的效果*/
 .search span {
     position: absolute;
     left: 5px;
@@ -53,13 +56,11 @@ input {
     */
     /* transition: opacity .4s ease-in; */
 }
-.search:hover {
-    width: 200px;
-}
+
 .search:hover input {
     opacity: 1;
 }
 /* 页面加载，下面不会执行，只有当鼠标滑过，才会执行，所以写在此处没有问题 */
-.search:hover input {
+/* .search:hover input {
     transition: opacity .4s ease-in;
-}
+} */
