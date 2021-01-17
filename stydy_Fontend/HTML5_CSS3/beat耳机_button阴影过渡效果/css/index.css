@@ -1,0 +1,40 @@
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+.box {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    margin: 100px auto;
+    line-height: 40px;
+    text-align: center;
+    /* 解决margin外边距合并的问题 */
+    /* border-bottom: 1px solid #ccc; */
+    overflow: hidden;
+}
+a {
+    float: left;
+    width: 100%;
+    height: 100%;
+    /* margin 里面使用百分比 是以包含块的宽度为基准 */
+    /* margin: 25% 50%; */
+    background-color: purple;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.button_copy {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, .5);
+    transition: all .2s linear;
+}
+/* 如果使用访问a标签 添加transform 会出现抖动的情况 */
+.box:hover .button_copy{
+    transform: translateY(-40px);
+}
