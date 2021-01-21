@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+div[class="father"] {
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    z-index: 99;
+    left: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 3.2s ease;
+}
+div[class^="box"] {
+    position: absolute;
+    /* border: 1px solid #ccc; */
+    opacity: 0;
+}
+div[class="box_1"] {
+    width: 154px;
+    height: 100%;
+    background: url(./images/txgc_6d0e9e5.png) no-repeat;
+    animation: move1 .6s steps(2) infinite, box_move 10s linear infinite;
+}
+.box_2 {
+    width: 167px;
+    height: 100%;
+    background: url(./images/txgh_fee2457.png) no-repeat;
+    animation: move2 .6s steps(2) infinite, box_move 10s linear 1.5s infinite;
+}
+.box_3 {
+    width: 156px;
+    height: 100%;
+    background: url(./images/txgl_c15cfd8.png) no-repeat;
+    animation: move3 .6s steps(2) infinite, box_move 10s linear 3s infinite;
+}
+.box_4 {
+    width: 171px;
+    height: 100%;
+    background: url(./images/txgq_d281c9b.png) no-repeat;
+    animation: move4 .6s steps(2) infinite, box_move 10s linear 4.5s infinite;
+}
+@keyframes box_move {
+    0% {
+        transform: translateX(-200px);
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(1920px, 0);
+    }
+}
+@keyframes move1 {
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: -308px bottom;
+    }
+}
+@keyframes move2{
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: -334px bottom;
+    }
+}
+@keyframes move3{
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: -322px bottom;
+    }
+}
+@keyframes move4{
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: -342px bottom;
+    }
+}
