@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div[class="bgc"] {
+    width: 1920px;
+    height: 1080px;
+    /* background-color: #000; */
+    background: url(images/bg_81ab3d6.jpg);
+}
+/* div[class="box"] {
+    position: absolute;
+    left: 500px;
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+} */
+div[class="bgc"] .animation {
+    position: absolute;
+    width: 93px;
+    height: 92px;  
+    /* background-color: #000; */
+    top: 100px;
+    right: 200px;
+    background: url(images/index_z_9769688.png) no-repeat -220px -493px;
+    z-index: 5;
+    animation: anima 2s linear 1s infinite;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+div[class="bgc"] .main {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 115px;
+    right: 214px;
+    background: url(images/index_z_9769688.png) no-repeat -812px -707px;
+    /* background-color: #; */
+    z-index: 4;
+    
+}
+/* TODO :hover 的权重问题 */
+div[class="bgc"] .animation:hover {
+    animation-play-state: paused;
+}
+
+@keyframes anima {
+    0% {
+
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
