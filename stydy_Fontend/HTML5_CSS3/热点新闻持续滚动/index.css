@@ -1,0 +1,55 @@
+ * {
+     margin: 0;
+     padding: 0;
+ }
+ .main {
+     position: relative;
+     width: 500px;
+     height: 800px;
+     margin: 0 auto;
+     background-color: #ccc;
+     overflow: hidden;
+ }
+
+ .main span {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100px;
+    height: 40px;
+    background-color: purple;
+    z-index: 3;
+ }
+ .main .right_nav {
+     position: relative;
+     width: 800px;
+     height: 40px;
+     top: 50px;
+     left: 100px;
+     background-color: pink;
+     z-index: 2;
+     line-height: 40px;
+     font-size: 20px;
+     animation: move 5s linear infinite forwards;
+                /* move 5s linear infinite 4s forwards; */
+     /* transition: position 1s linear; */
+     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+ }
+ .right_nav p {
+    position: absolute;
+    width: 50%;
+ }
+ .right_nav p:first-child {
+     left: 0;
+ }
+ .right_nav p:last-child {
+     left: 50%;
+ }
+@keyframes move {
+    0% {
+
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
