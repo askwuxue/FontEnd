@@ -357,5 +357,9 @@ ul {
 li {
   list-style: none;
 }
-
-
+img {
+  /* vertical-align: top; */
+}
+a {
+  text-decoration: none;
+}
