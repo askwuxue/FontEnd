@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0,
+    maximum-scale=1.0, minimum-scale=1.0">
+    <title>Flex中得到stretch使用</title>
+    <style>
+        div {
+            display: flex;
+            width: 500px;
+            height: 500px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* align-content: space-around; */
+            /* align-content: center; */
+            /* align-content: space-between; */
+            /* stretxh 当子元素不存在高度时，子元素会评分父元素的高度 拉伸的效果 */
+            align-content: stretch;
+        }
+        div span {
+            width: 90px;
+            /* height: 100px; */
+        }
+        div span:nth-child(even) {
+            background-color: purple;
+        }
+        div span:nth-child(odd) {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+    </div>
+</body>
+</html>
