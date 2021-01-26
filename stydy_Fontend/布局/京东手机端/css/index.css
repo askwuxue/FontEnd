@@ -1,0 +1,193 @@
+body {
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 1080px;
+    background-color: #f6f6f6;
+    font-family: -apple-system,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    /* color: #666; */
+    height: 2000px;
+}
+header ul {
+    height: 45px;
+}
+header ul li {
+    float: left;
+    height: 100%;
+    line-height: 45px;
+    text-align: center;
+    background-color:#333333;
+    color: #fff;
+}
+header ul li:nth-child(1) {
+    width: 8%;
+}
+header .img_return {
+    width: 10px;
+}
+header ul li:nth-child(2) {
+    width: 10%;
+    /* background-color: pink; */
+}
+header .img_jd_logo {
+    width: 30px;
+    /* TODO 图片的对齐方式默认是和文字的基线对齐 当图片和文字大小差别较大时 在同一行显示没有对齐 */
+    vertical-align: middle;
+}
+header ul li:nth-child(3) {
+    width: 57%;
+    /* background-color: purple; */
+}
+header ul li:nth-child(4) {
+    width: 25%;
+    background-color: #F63515;
+
+}
+/* 京东头部 start */
+.jd-header {
+    /* fixed 的属性导致宽度发生变化 在全屏显示时 */
+    position: fixed;
+    /* position: relative; */
+    width: 100%;
+    height: 44px;
+    /* 解决子元素因为margin导致的外边距合并 父盒子也向下走的情况 */
+    overflow: hidden;
+    background-color: #E43130;
+}
+.jd-header div[class^="arrow"] {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    /* background-color: purple; */
+}
+.jd-header div:first-child {
+    top: 0;
+    left: 0;
+}
+.jd-header div:first-child span {
+    display: block;
+    width: 20px;
+    height: 18px;
+    margin: 14px 0 0 15px;
+    background: url(../images/arrow_left.png) no-repeat;
+    background-size: 20px 18px;
+}
+.jd-header div:last-child {
+    top: 0;
+    right: 0;
+    line-height: 45px;
+    color: #fff;
+}
+.jd-header .search {
+    position: relative;
+    height: 30px;
+    margin: 7px 50px;
+    border-radius: 15px;
+    /* background-color: purple; */
+    background-color: #fff;
+    overflow: hidden;
+}
+.jd-header .search i {
+    position: absolute;
+}
+.jd-header .search i:first-child {
+    top: 7px;
+    left: 15px;
+    width: 20px;
+    height: 15px;
+    background: url(../images/search_jd_logo.png) no-repeat;
+    background-size: cover;
+}
+.search i:first-child::after {
+    content: "";
+    /* display: block; */
+    position: absolute;
+    left: 28px;
+    width: 1px;
+    height: 15px;
+    background-color: #ccc;
+}
+/* TODO 出现第二个bug 使用 i:last-child 时没有选中最后一个 i元素 肯定是优先级的问题 */
+/* .jd-header .search .search-logo  */
+.jd-header .search i[class="search-logo"]
+{
+    top: 8px;
+    left: 55px;
+    width: 18px;
+    height: 15px;
+    background: url(../images/jd-sprites.png) no-repeat -84px 0;
+    background-size: 200px;
+}
+.jd-header .search a {
+    position: absolute;
+    width: 72%;
+    height: 100%;
+    right: 0;
+    /* background-color: purple; */
+    /* text-align: cen; */
+    line-height: 30px;
+    color: #ccc;
+    font-size: 12px;
+}
+.slide-wrapper {
+    height: 187px;
+    background-color: #E43130;
+}
+.slide-wrapper img {
+    /* margin: 50px auto; */
+    margin-top: 40px;
+    margin-left: 5%;
+    width: 90%;
+    height: 140px;
+    border-radius: 20px;
+}
+/* brand start */
+.brand {
+    background-color: #fff;
+}
+.brand div {
+    float: left;
+    position: relative;
+}
+.brand div:nth-child(1) {
+    width: 25%;
+}
+.brand div:nth-child(2) {
+    width: 50%;
+}
+.brand div:nth-child(3) {
+    width: 25%;
+}
+
+.brand div img {
+    width: 100%;
+}
+.brand div .brand-in-img {
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    width: 63px;
+    height: 63px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.brand-in-img img {
+    width: 100%;
+    /* height: 100%; */
+}
+.nav a {
+    float: left;
+    width: 20%;
+    /* background-color: purple; */
+    text-align: center;
+    margin-top: 10px;
+}
+.nav a img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+.nav a span {
+    display: block;
+}
