@@ -1,0 +1,131 @@
+@import "common";
+@baseFont: 51.2;
+@baseBgcColor: #E20606;
+@searchBgcColor: #fff;
+@baseFontColor: #666;
+@testBgcColor1: purple;
+@testBgcColor2: pink;
+
+@lineHeight: 1.5;
+body {
+    min-width:320px;
+    width: 15rem;
+    font-family: Arial,Helvetica,STHeiTi,sans-serif;
+    margin: 0 auto;
+    background-color: @baseBgcColor;
+    line-height: @lineHeight;
+    font-size: (14rem / @baseFont);
+}
+// header 部分
+header {
+    display: flex;
+    flex-direction: column;
+    height: (180rem / @baseFont);
+}
+// header的上部分
+// TODO 使用 div:first-child 会导致下一个兄弟div中的a标签继承当前的div中的a标签 先埋个点，以后解决
+header .header-nav {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    a {
+        width: (36rem / @baseFont);
+        height: (60rem / @baseFont);
+        &:first-child {
+            margin: (13rem / @baseFont) (10rem / @baseFont) (10rem / @baseFont) (30rem / @baseFont);
+            background: url(../images/classify.png) no-repeat;
+            background-size: (36rem / @baseFont) auto;
+        }
+        &:last-child {
+            margin: (13rem / @baseFont) (30rem / @baseFont) (10rem / @baseFont) (10rem / @baseFont);
+            background: url(../images/login.png) no-repeat;
+            background-size: (36rem / @baseFont) auto;
+        }
+    }
+    div {
+        flex: 1;
+        text-align: center;
+        // padding-left: 50%;
+        a {
+            display: block;
+            position: relative;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            // margin: 0 auto;
+            width: (390rem / @baseFont);
+            height: (76rem / @baseFont);
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+// header div:last-child 
+// 为什么注释 参考上一个div的注释
+header div.header-search {
+    flex: 1;
+    // background-color: @testBgcColor2;
+    box-sizing: border-box;
+    div {
+        // height: 100%;
+        position: relative;
+        box-sizing: border-box;
+        height: (68rem / @baseFont);
+        margin: (12rem / @baseFont) (32rem / @baseFont);
+        border-radius: (44rem / @baseFont);
+        // background-color: @testBgcColor1;
+        background-color: @searchBgcColor;
+        a {
+            display: block;
+            line-height: (68rem / @baseFont);
+            padding-left: (70rem / @baseFont);
+            font-size: 0.5rem;
+            color: @baseFontColor;
+        }
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: (20rem / @baseFont);
+            width: (36rem / @baseFont);
+            height: (36rem / @baseFont);
+            background: url(../images/search.png) no-repeat;
+        }
+    }
+}
+
+// banner start
+.banner {
+    position: relative;
+    img {
+        width: 100%;
+        // 图片对齐方式不一样 导致总是和父盒子下边距有缝隙
+        vertical-align: top;
+    }
+    .swipe-wrapper {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: (702rem / @baseFont);
+        height: 100%;
+        border-radius: (30rem / @baseFont);
+        overflow: hidden;
+        // margin: 0 auto;
+        ul {
+            height: 100%;
+            li {
+                height: 100%;
+                a {
+                    height: 100%;
+                    display: block;
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
