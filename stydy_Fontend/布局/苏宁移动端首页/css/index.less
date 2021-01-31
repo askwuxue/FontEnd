@@ -1,8 +1,11 @@
 @import "common";
 @baseFont: 51.2;
-@baseBgcColor: #E20606;
+// @baseBgcColor: #E20606;
+@baseBgcColor: #fff;
+@headerBgcColor: #FFDB47;
 @searchBgcColor: #fff;
 @baseFontColor: #666;
+@horGapBgc: #fff;
 @testBgcColor1: purple;
 @testBgcColor2: pink;
 
@@ -15,12 +18,16 @@ body {
     background-color: @baseBgcColor;
     line-height: @lineHeight;
     font-size: (14rem / @baseFont);
+    height: 2000px;
 }
 // header 部分
 header {
     display: flex;
     flex-direction: column;
     height: (180rem / @baseFont);
+    // background-color: @headerBgcColor;
+    background: url(../images/header-bgcImg.jpg) no-repeat;
+    background-size: auto 100%;
 }
 // header的上部分
 // TODO 使用 div:first-child 会导致下一个兄弟div中的a标签继承当前的div中的a标签 先埋个点，以后解决
@@ -127,5 +134,76 @@ header div.header-search {
                 }
             }
         }
+    }
+}
+
+// hor-view start
+.hor-view {
+    display: flex;
+    height: (280.75rem / @baseFont);
+    a {
+        flex: 1;
+        img[class^="opa"] {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// enter-list start
+.enter-list {
+    height: (320rem / @baseFont);
+    background: url(../images/enter-list-bgcImg.png) no-repeat;
+    background-size: 100% auto;
+    // background-color: @enterListBgcColor;
+    .enter-wrapper {
+        .fix {
+            display: flex;
+            flex-wrap: wrap;
+            // align-items: ;
+            li {
+                flex: 20%;
+                height: (142rem / @baseFont);
+                .enter-image {
+                    margin: (30rem / @baseFont) auto 0;
+                    width: (84rem / @baseFont);
+                    height: (84rem / @baseFont);
+                    img {
+                        width: 100%;
+                    }
+                }
+                .enter-list-msg {
+                    text-align: center;
+                    font-size: (16rem / @baseFont);
+                }
+            }
+        }
+    }
+}
+
+// newImgFloor
+.newImgFloor {
+    display: flex;
+    height: (234rem / @baseFont);
+    margin-top: (20rem / @baseFont);
+    .newItem-1 {
+        width: (373.5rem / @baseFont);
+    }
+    .newItem-2 {
+        // width: (186.25rem / @baseFont);
+        flex: 1;
+    }
+    .newItem-3 {
+        width: (186.25rem / @baseFont);
+        flex: 1;
+    }
+    .hor-gap {
+        width: (1.98rem / @baseFont);
+        background-color: @horGapBgc;
+    }
+    img {
+        width: 100%;
+        height: 100%;
     }
 }

@@ -41,14 +41,17 @@ body {
   width: 15rem;
   font-family: Arial, Helvetica, STHeiTi, sans-serif;
   margin: 0 auto;
-  background-color: #E20606;
+  background-color: #fff;
   line-height: 1.5;
   font-size: 0.2734375rem;
+  height: 2000px;
 }
 header {
   display: flex;
   flex-direction: column;
   height: 3.515625rem;
+  background: url(../images/header-bgcImg.jpg) no-repeat;
+  background-size: auto 100%;
 }
 header .header-nav {
   display: flex;
@@ -142,5 +145,65 @@ header div.header-search div .search-icon {
   display: block;
 }
 .banner .swipe-wrapper ul li a img {
+  height: 100%;
+}
+.hor-view {
+  display: flex;
+  height: 5.48339844rem;
+}
+.hor-view a {
+  flex: 1;
+}
+.hor-view a img[class^="opa"] {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.enter-list {
+  height: 6.25rem;
+  background: url(../images/enter-list-bgcImg.png) no-repeat;
+  background-size: 100% auto;
+}
+.enter-list .enter-wrapper .fix {
+  display: flex;
+  flex-wrap: wrap;
+}
+.enter-list .enter-wrapper .fix li {
+  flex: 20%;
+  height: 2.7734375rem;
+}
+.enter-list .enter-wrapper .fix li .enter-image {
+  margin: 0.5859375rem auto 0;
+  width: 1.640625rem;
+  height: 1.640625rem;
+}
+.enter-list .enter-wrapper .fix li .enter-image img {
+  width: 100%;
+}
+.enter-list .enter-wrapper .fix li .enter-list-msg {
+  text-align: center;
+  font-size: 0.3125rem;
+}
+.newImgFloor {
+  display: flex;
+  height: 4.5703125rem;
+  margin-top: 0.390625rem;
+}
+.newImgFloor .newItem-1 {
+  width: 7.29492188rem;
+}
+.newImgFloor .newItem-2 {
+  flex: 1;
+}
+.newImgFloor .newItem-3 {
+  width: 3.63769531rem;
+  flex: 1;
+}
+.newImgFloor .hor-gap {
+  width: 0.03867188rem;
+  background-color: #fff;
+}
+.newImgFloor img {
+  width: 100%;
   height: 100%;
 }
