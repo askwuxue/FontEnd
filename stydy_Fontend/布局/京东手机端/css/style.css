@@ -1,0 +1,223 @@
+html {
+  font-size: 50px;
+}
+@media screen and (min-width: 320px), (max-width: 320px) {
+  html {
+    font-size: 21.33333333px;
+  }
+}
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 27.6px;
+  }
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 51.2px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 68.26666667px;
+  }
+}
+body {
+  margin: 0 auto;
+  min-width: 320px;
+  width: 15rem;
+  background-color: #f6f6f6;
+  font-family: -apple-system, Helvetica, sans-serif;
+  font-size: 0.28rem;
+  line-height: 1.5;
+  height: 2000px;
+}
+header ul {
+  height: 0.9rem;
+}
+header ul li {
+  float: left;
+  height: 100%;
+  line-height: 0.9rem;
+  text-align: center;
+  background-color: #333333;
+  color: #fff;
+}
+header ul li:nth-child(1) {
+  width: 8%;
+}
+header ul li:nth-child(2) {
+  width: 10%;
+  /* background-color: pink; */
+}
+header ul li:nth-child(3) {
+  width: 57%;
+  /* background-color: purple; */
+}
+header ul li:nth-child(4) {
+  width: 25%;
+  background-color: #F63515;
+}
+header .img_return {
+  width: 0.2rem;
+}
+header .img_jd_logo {
+  width: 0.6rem;
+  /* TODO 图片的对齐方式默认是和文字的基线对齐 当图片和文字大小差别较大时 在同一行显示没有对齐 */
+  vertical-align: middle;
+}
+/* 京东头部 start */
+.jd-header {
+  /* TODO fixed 的属性导致宽度发生变化 在全屏显示时 fiexd相对于viewport进行定位 随浏览器窗口大小发生变化 */
+  position: fixed;
+  /* 设置最大宽度值 阻止fixed 随视口进行变化 */
+  width: 15rem;
+  height: 0.88rem;
+  /* 解决子元素因为margin导致的外边距合并 带着父盒子向下移动*/
+  overflow: hidden;
+  background-color: #E43130;
+}
+.jd-header div[class^="arrow"] {
+  position: absolute;
+  width: 1rem;
+  height: 100%;
+}
+.jd-header div:first-child {
+  top: 0;
+  left: 0;
+}
+.jd-header div:first-child span {
+  display: block;
+  width: 0.4rem;
+  height: 0.36rem;
+  margin: 0.28rem 0 0 0.3rem;
+  background: url(../images/arrow_left.png) no-repeat;
+  background-size: 0.4rem 0.36rem;
+}
+.jd-header div:last-child {
+  text-align: center;
+  top: 0;
+  right: 0;
+  line-height: 0.9rem;
+  color: #fff;
+}
+.jd-header .search {
+  position: relative;
+  height: 0.6rem;
+  margin: 0.14rem 1rem;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+.jd-header .search i {
+  position: absolute;
+}
+.jd-header .search i:first-child {
+  top: 0.14rem;
+  left: 0.3rem;
+  width: 0.4rem;
+  height: 0.3rem;
+  background: url(../images/search_jd_logo.png) no-repeat;
+  background-size: cover;
+}
+.jd-header .search i:first-child::after {
+  content: "";
+  /* display: block; */
+  position: absolute;
+  left: 0.56rem;
+  width: 0.02rem;
+  height: 0.3rem;
+  background-color: #ccc;
+}
+.jd-header .search i[class="search-logo"] {
+  top: 0.16rem;
+  left: 1.1rem;
+  width: 0.36rem;
+  height: 0.3rem;
+  background: url(../images/jd-sprites.png) no-repeat -1.68rem 0;
+  background-size: 4rem auto;
+}
+.jd-header .search a {
+  position: absolute;
+  width: calc(100% - (78rem / 50));
+  height: 100%;
+  right: 0;
+  /* background-color: purple; */
+  /* text-align: cen; */
+  line-height: 0.6rem;
+  color: #ccc;
+  font-size: 0.24rem;
+}
+.slide-wrapper {
+  height: 3.74rem;
+  background-color: #E43130;
+}
+.slide-wrapper img {
+  /* margin: 50px auto; */
+  margin-top: 0.8rem;
+  margin-left: 5%;
+  width: 90%;
+  height: 2.8rem;
+  border-radius: 0.4rem;
+}
+/* brand start */
+.brand {
+  background-color: #fff;
+  overflow: hidden;
+}
+.brand div[class^="brand"] {
+  float: left;
+  position: relative;
+}
+.brand div[class^="brand"]:nth-child(1) {
+  width: 25%;
+}
+.brand div[class^="brand"]:nth-child(1) .brand-in-img {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 14%;
+  left: 20%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.brand div[class^="brand"]:nth-child(1) .brand-in-img img {
+  width: 100%;
+  height: 100%;
+}
+.brand div[class^="brand"]:nth-child(2) {
+  width: 50%;
+}
+.brand div[class^="brand"]:nth-child(3) {
+  width: 25%;
+}
+.brand div[class^="brand"] .brand_pic {
+  width: 100%;
+}
+.nav {
+  overflow: hidden;
+}
+.nav a {
+  float: left;
+  width: 20%;
+  /* background-color: purple; */
+  text-align: center;
+  margin-top: 0.2rem;
+}
+.nav a img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-bottom: 0.1rem;
+}
+.nav a span {
+  display: block;
+}

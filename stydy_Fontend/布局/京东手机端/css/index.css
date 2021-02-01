@@ -46,12 +46,13 @@ header ul li:nth-child(4) {
 }
 /* 京东头部 start */
 .jd-header {
-    /* fixed 的属性导致宽度发生变化 在全屏显示时 */
+    /* TODO fixed 的属性导致宽度发生变化 在全屏显示时 fiexd相对于viewport进行定位 随浏览器窗口大小发生变化 */
     position: fixed;
-    /* position: relative; */
+    /* 设置最大宽度值 阻止fixed 随视口进行变化 */
+    max-width: 1080px;
     width: 100%;
     height: 44px;
-    /* 解决子元素因为margin导致的外边距合并 父盒子也向下走的情况 */
+    /* 解决子元素因为margin导致的外边距合并 带着父盒子向下移动*/
     overflow: hidden;
     background-color: #E43130;
 }
@@ -59,7 +60,6 @@ header ul li:nth-child(4) {
     position: absolute;
     width: 40px;
     height: 100%;
-    /* background-color: purple; */
 }
 .jd-header div:first-child {
     top: 0;
@@ -84,7 +84,6 @@ header ul li:nth-child(4) {
     height: 30px;
     margin: 7px 50px;
     border-radius: 15px;
-    /* background-color: purple; */
     background-color: #fff;
     overflow: hidden;
 }
@@ -110,8 +109,7 @@ header ul li:nth-child(4) {
 }
 /* TODO 出现第二个bug 使用 i:last-child 时没有选中最后一个 i元素 肯定是优先级的问题 */
 /* .jd-header .search .search-logo  */
-.jd-header .search i[class="search-logo"]
-{
+.jd-header .search i[class="search-logo"]{
     top: 8px;
     left: 55px;
     width: 18px;
@@ -145,6 +143,7 @@ header ul li:nth-child(4) {
 /* brand start */
 .brand {
     background-color: #fff;
+    overflow: hidden;
 }
 .brand div {
     float: left;
@@ -160,20 +159,18 @@ header ul li:nth-child(4) {
     width: 25%;
 }
 
-.brand div img {
+.brand > div[class^="brand"] > img {
     width: 100%;
 }
-.brand div .brand-in-img {
+.brand .brand-in-img {
     position: absolute;
     top: 15px;
     left: 18px;
-    width: 63px;
-    height: 63px;
     border-radius: 7px;
     overflow: hidden;
 }
 .brand-in-img img {
-    width: 100%;
+    /* width: 100%; */
     /* height: 100%; */
 }
 .nav a {
