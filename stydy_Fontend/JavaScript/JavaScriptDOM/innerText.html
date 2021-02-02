@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./insertAfter的实现.js"></script>
+</head>
+<body>
+    <h1 class="title">
+        <p>这是一段文字</p>
+    </h1>
+    <h1></h1>
+    <script>
+        let element = document.querySelector('.title');
+        // element.innerText = '学习前端'
+        // element.innerHTML = '<p>这是一段网页的描述文本<p>';
+        // let childElement = document.createElement('p');
+        // element.appendChild(childElement);
+        // element.lastChild;
+        let childTextNode = document.createTextNode("TextNode");
+        // element.appendChild(childTextNode);
+        // console.log(childTextNode.lastChild);
+        // console.log(element.childNodes);
+        // console.log(element.firstChild.nextSibling);
+        // console.log(element.firstChild.previousSibling)
+        // element.insertBefore(childTextNode, element.firstChild);
+        insertAfter(element, childTextNode, element.firstChild);
+        console.log(element);
+        console.log(element.firstChild);
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        .main {
+            margin: 0 auto;
+            width: 1000px;
+            height: 100px;
+        }
+        .main .arrow {
+            float: right;
+        }
+        .main .arrow span {
+            float: left;
+            width: 60px;
+            height: 40px;
+            margin-right: 40px;
+        }
+        .main span a {
+            display: block;
+            align-items: center;
+            line-height: 40px;
+            height: 100%;
+            text-decoration: none;
+            color: #000;
+        }
+        .main .arrow .show {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="arrow">
+                <span><a href="">登录</a></span>
+                <span>
+                    <a href="" id="displayBtn">微博</a>
+                    <div class="show" >
+                        <span>私信</span>
+                        <span>评论</span>
+                        <span>@我</span>
+                    </div>
+                </span>
+                <span><a href="">博客</a></span>
+                <span><a href="">邮箱</a></span>
+            </div>
+            <!-- <select name="" id="">
+                <option value="私信">私信</option>
+                <option value="评论">评论</option>
+                <option value="@我">@我</option>
+            </select> -->
+        </div>
+    </header>
+    <script>
+        let displayBtn = document.getElementById('displayBtn');
+        displayBtn.onmouseenter = function() {
+            let show = document.querySelector('.show');
+            console.log(show.style.display);
+            show.style.display = 'block';
+            console.log(show.style.display);
+            // console.log(show.style.display);
+        }
+        displayBtn.onmouseout = function() {
+            let show = document.querySelector('.show');
+            show.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

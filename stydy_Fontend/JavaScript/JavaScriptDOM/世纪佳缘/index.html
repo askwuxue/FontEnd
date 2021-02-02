@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        input, button {
+            outline: none;
+        }
+        .main {
+            width: 1000px;
+            height: 100px;
+            line-height: 100px;
+            margin: 0 auto;
+        }
+        .main input {
+            display: inline-block;
+            height: 30px;
+            border: 1px solid #ccc;
+            padding-left: 10px;
+        }
+        .main input:first-child {
+            margin-right: 20px;
+        }
+        .main .onfocus {
+            border: 1px solid pink;
+        }
+        .btn {
+            border: none;
+            margin-left: 20px;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            background-color: skyblue;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <input type="text" value="邮箱/ID/手机号"><input type="text" value="密码"><button class="btn">登录</button>
+        </div>
+    </header>
+    <script>
+        let input = document.getElementsByTagName('input');
+        // 临时保存input的值
+        let valueArr = [];
+        for(let i = 0; i < input.length; i++) {
+            input[i].onfocus = function() {
+                // 对应的input中的value值对应的存储到valueArr中
+                valueArr[i] = input[i].value;
+                // input内文字清空
+                input[i].value = '';
+                // 设置类名 注意css的层叠性 优先级
+                input[i].className = 'onfocus';
+            }
+            input[i].onblur = function() {
+                input[i].value = valueArr[i];
+                input[i].className = '';
+            } 
+        }
+    </script>
+</body>
+</html>
