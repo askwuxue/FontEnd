@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background: -webkit-linear-gradient(red, pink);
+        }
+        .banner .close {
+            top: 30px;
+            right: 30px;
+            position: absolute;
+            background-color: #ccc;
+            color: #fff;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <!-- TODO 如何阻止事件的默认行为 -->
+        <span class="close"><a href="https://www.baidu.com">关闭</a></span>
+    </div>
+    <script>
+        let closeBtn = document.querySelector('a');
+        closeBtn.onclick = function() {
+            let bannerShow = document.getElementsByClassName('banner')[0];
+            //将 display 设置为 none 会将元素从 可访问性树 accessibility tree 中移除。这会导致该元素及其所有子代元素不再被屏幕阅读技术
+            bannerShow.style.display = 'none';
+            // console.log(bannerShow);
+            // 阻止事件的默认行为
+            return false;
+        }
+    </script>
+</body>
+</html>
