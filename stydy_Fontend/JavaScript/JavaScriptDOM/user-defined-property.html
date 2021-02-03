@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .main {
+            display: flex;
+            margin: 200px auto;
+            width: 800px;
+            height: 600px;
+            border: 1px solid #ccc;
+            flex-direction: column;
+        }
+        .list {
+            flex: 10%;
+        }
+        .list ul {
+            display: flex;
+            height: 100%;
+            background-color: purple;
+        }
+        .list ul li {
+            flex: 1;
+        }
+        .list ul li:nth-child(-n + 4) {
+            border-right: 1px solid #ccc;
+        }
+        .list li a {
+            display: block;
+            height: 100%;
+            text-align: center;
+            line-height: 90px;
+            text-decoration: none;
+            color: #000;
+        }
+        /* .list li:nth-child(1) {
+            background-color: pink;
+        } */
+        .list li .select-list {
+            background-color: pink;
+        }
+        .contents {
+            flex: 80%;
+        }
+        /* nth-child 匹配的时元素的子元素 n 是子元素的索引 索引是从零开始的 n + 2 第一个元素之后的 0 + 2 = 2 
+            可以理解为索引是从零开始的 但是选择元素的时候是从1开始的
+
+         */
+        .contents div:nth-child(n + 2) {
+            display: none
+        }
+        .main .contents .contents-select {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="list">
+            <ul>
+                <!-- javascript:; 阻止a标签跳转   -->
+                <li><a href="javascript:;" class="select-list" data-index="1">标题1</a></li>
+                <li><a href="javascript:;" data-index="2">标题2</a></li>
+                <li><a href="javascript:;" data-index="3">标题3</a></li>
+                <li><a href="javascript:;" data-index="4">标题4</a></li>
+                <li><a href="javascript:;" data-index="5">标题5</a></li>
+            </ul>
+        </div>
+        <div class="contents">
+            <!-- 自定义属性必须 以 data开头 -->
+            <div data-index="1">内容1</div>
+            <div data-index="2">内容2</div>
+            <div data-index="3">内容3</div>
+            <div data-index="4">内容4</div>
+            <div data-index="5">内容5</div>
+        </div>
+    </div>
+    <script>
+        var listElement = document.querySelectorAll('.list li a');
+        var contentElement = document.querySelectorAll('.contents div');
+        // 存放点击的元素的index
+        var index;
+        for(var i = 0; i < listElement.length; i++) {
+            listElement[i].onclick = function() {
+                // console.log(i);
+                index = this.dataset.index;
+                console.log(index);
+                // 排他  给当前属性设置样式的时候 先所有元素的样式
+                for(var i = 0; i < listElement.length;i++) {
+                    listElement[i].className = '';
+                }
+                this.className = 'select-list';
+
+                // 给contents 改变样式 用行内样式的形式消除了样式 导致下面外联样式不生效
+                for(var j = 0; j < contentElement.length; j++) {
+                    // contentElement[j].className = '';
+                    contentElement[j].style.display = 'none';
+                }
+                // contentElement[index - 1].className = 'contents-select';
+                contentElement[index - 1].style.display = 'block';
+                // console.log(contentElement[index - 1].style);
+            }
+        }
+    </script>
+</body>
+</html>

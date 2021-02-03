@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 1000px;
+            margin: 200px 0;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="text" cols="50" rows="10" placeholder="请输入要发布的内容"></textarea>
+    <input type="button" value="发布">
+    <div class="main">
+        
+    </div>
+    
+    <script>
+        var textarea = document.getElementById('text');
+        var btn = document.querySelector('input');
+        var main = document.querySelector('.main');
+        btn.onclick = function() {
+            // 元素上不存在value属性  
+            console.log(textarea.hasAttribute('value'));
+            // var textValue = textarea.getAttribute('value');
+            var textValue = textarea.value;
+            // textarea.setAttribute('value', '');
+            textarea.value = '';
+            // 创建元素 只能在document上创建
+            var childElement = document.createElement('p');
+            var textNode = document.createTextNode(textValue);
+            childElement.appendChild(textNode);
+            main.appendChild(childElement);
+        }
+    </script>
+</body>
+</html>
