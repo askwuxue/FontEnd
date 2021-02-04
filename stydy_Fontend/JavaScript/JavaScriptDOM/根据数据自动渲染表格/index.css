@@ -1,0 +1,19 @@
+.main {
+    margin-top: 100px;
+    /* width: 660px; */
+    /* height: 400px; */
+    /* text-align: center; */
+}
+.main table {
+    border: 1px solid #000;
+    /* align: center; */
+    margin: 0 auto;
+    border-spacing: 0;
+    /* border-collapse: 10px; */
+}
+.main table a{
+    text-decoration: none;
+}
+th, td {
+    border: 1px solid #ccc;
+}
