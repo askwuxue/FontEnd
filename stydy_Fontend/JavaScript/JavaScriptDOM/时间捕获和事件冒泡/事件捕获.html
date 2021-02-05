@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            margin: 100px auto;
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+        .father2 {
+            width: 600px;
+            height: 600px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="father2"></div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        var father2 = document.querySelector('.father2');
+        // 时间冒泡  从触发事件的底层元素 沿着DOM树 一层一层将触发的操作向上传递
+        // 最后一个参数为false 则为冒泡 如果为true 则为事件捕获
+        // 注意 事件event中的target属性和this属性不一致的   target是事件触发的元素  this是事件绑定的元素
+        // father中输出了event      其中的target值是 时间触发的元素 即 son 而this指向了自身。
+        // 匿名函数当参数传递
+        // son.addEventListener('click', function(event) {
+        //     console.log('son');
+        //     console.log(event.target);
+        // } ,false)
+        function funcSun(event) {
+            console.log('son');
+            console.log(event.target);
+        }
+        // 具名函数当参数传递   具名函数当参数传递时不需要 括号  
+        son.addEventListener('click', funcSun ,false)
+        // 移除事件监听函数 移除了当前元素的时间监听 但是 点击当前函数依旧会冒泡
+        son.removeEventListener('click', funcSun);
+
+        // father.addEventListener('click', function(event) {
+        //     console.log('father');
+        //     // 当点击 son的时候
+        //     // son
+        //     console.log(event.target);
+        //     // father
+        //     console.log(this);
+        // })
+        function funcFather(event) {
+            console.log('father');
+            // 当点击 son的时候
+            // son
+            console.log(event.target);
+            // father
+            console.log(this);
+        }
+        father.addEventListener('click', funcFather ,false)
+        
+        // document.addEventListener('click', function() {
+        //     console.log('document');
+        // })
+
+        
+        // 事件捕获   从document元素 向下
+        father2.addEventListener('click', function() {
+            console.log('father2');
+        }, true)
+        document.addEventListener('click', function() {
+            console.log('document');
+        }, true)
+
+
+    </script>
+</body>
+</html>
