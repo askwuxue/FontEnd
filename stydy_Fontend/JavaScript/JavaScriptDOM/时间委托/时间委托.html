@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>我们是第1个li</li>
+        <li>我们是第2个li</li>
+        <li>我们是第3个li</li>
+        <li>我们是第4个li</li>
+        <li>我们是第5个li</li>
+        <li>我们是第6个li</li>
+        <li>我们是第7个li</li>
+        <li>我们是第8个li</li>
+        <li>我们是第9个li</li>
+        <li>我们是第10个li</li>
+        <li>我们是第11个li</li>
+        <li>我们是第12个li</li>
+        <li>我们是第13个li</li>
+        <li>我们是第14个li</li>
+        <li>我们是第15个li</li>
+        <li>我们是第16个li</li>
+        <li>我们是第17个li</li>
+        <li>我们是第18个li</li>
+        <li>我们是第19个li</li>
+        <li>我们是第20个li</li>
+    </ul>
+
+    <script>
+        // 利用时间冒泡 将时间绑定给父元素  由父元素统一处理
+        var ulElement = document.querySelector('ul');
+        function fun(event) {
+            console.log('当前处于时间委托, 当前被点击的是' + event.target);
+        }
+        ulElement.addEventListener('click', fun, false);
+    </script>
+</body>
+</html>
