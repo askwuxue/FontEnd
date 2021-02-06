@@ -1,0 +1,201 @@
+@import 'common';
+// 默认分为 15fen  默认  1920
+@no: 128;
+@baseBgcColor: #fff;
+@baseColor: #333;
+@siteTopbarColor: #b0b0b0;
+// @siteTopbarBgcC:  #333;
+@siteTopbarLineColor: #424242;
+@logoColor: #ff6700;
+@inputBorder: #e0e0e0;
+// @inputBorder: #ff6700;
+body {
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: @baseColor;
+    background-color: @baseBgcColor;
+    min-width: 1226px;
+    height: 2000px;
+}
+.topbarBannerWrapper {
+    height: (120rem / @no);
+}
+.topbar-banner-wrapper {
+    height: 100%;
+    .link-block {
+        display: block;
+        height: 100%;
+        background: url(../images/topbar-banner-wrapper.jpg) no-repeat 50%;
+        background-size: auto 100%;
+    }
+}
+// 公共类 设置内容的宽度
+.main {
+    width: 1226px;
+    margin: 0 auto;
+}
+// site-topbar start
+.site-topbar {
+    height: (40rem / @no);
+    background-color: @baseColor;
+    font-size: 12px;
+    color: @siteTopbarColor;
+    line-height: (40rem / @no);
+    // 将链接 和 竖线的样式抽离
+    .headLink {
+        display: inline-block;
+        height: 100%;
+        color:@siteTopbarColor;
+        // line-height: ;
+        &:hover {
+            color: @baseBgcColor;
+        }
+    }
+    .line {
+        margin-left: .03125rem;
+        margin-right: .023438rem;
+        color: @siteTopbarLineColor;
+    }
+    .container {
+        height: 100%;
+        .tapbar-nav {
+            float: left;
+            height: 100%;
+        }
+        
+        .tapbar-cart {
+            float: right;
+            margin-left: .117188rem;
+            width: .9375rem;
+            height: 100%;
+            background-color: @siteTopbarLineColor;
+            text-align: center;
+        }
+        .tapbar-info {
+            float: right;
+            width: 1.113047rem;
+            height: 100%;
+        }
+    }
+}
+
+// site-header start
+.site-header {
+    height: .78125rem;
+    // margin-top 影响
+    overflow: hidden;
+    .header-logo {
+        width: .484375rem;
+        height: .429688rem;
+        float: left;
+        // text-indent: -9999em !important;
+        .logo {
+            display: block;
+            margin-top: .175781rem;
+            width: .429688rem;
+            height: .429688rem;
+            background-color: @logoColor;
+            text-indent: -9999em !important;
+            overflow: hidden;
+            // text-align: left;
+            &::before {
+                content: '.';
+                display: block;  
+                width: 100%;
+                height: 100%;
+                background: url(../images/mi-logo.png) no-repeat center center;
+            }
+            &::after {
+                content: '';
+                display: block;
+            }
+        }
+
+    }
+
+    .header-nav {
+        float: left;
+        height: 100%;
+        margin-left: 1.34375rem;
+        .nav-list {
+            height: 100%;
+            box-sizing: border-box;
+            .nav-items {
+                float: left;
+                margin-top: .09375rem;
+                height: 88%;
+                .link {
+                    display: block;
+                    height: 100%;
+                    padding: .203125rem .078125rem .296875rem;
+                    font-size: .125rem;
+                    color: @baseColor;
+                }
+            }
+        }
+    }
+
+    .header-search {
+        width: 2.3125rem;
+        float: right;
+        .search-from {
+            display: block;
+            margin-top: .195313rem;
+            width: 100%;
+            height: .390625rem;
+            // overflow: hidden;
+            .search-link {
+                .search {
+                    width: 1.914063rem;
+                    height: 100%;
+                    // outline-offset: 0;
+                    border: 1px solid @inputBorder;
+                    padding-left: .117188rem;
+                    &:focus {
+                        border: 1px solid @logoColor;
+                    }
+                }
+
+            }
+            .submit {
+                // margin-top: 1px;
+                width: .398438rem;
+                height: 100%;
+                // 解决行内元素submit 与 search之间没有对齐
+                vertical-align: top;
+                border: 1px solid @inputBorder;
+                border-left: 0;
+            }
+        }
+    }
+}
+
+// home-hero-container start
+.home-hero-container {
+    position: relative;
+    .site-category {
+        position: absolute;
+        width: 1.828125rem;
+        height: 3.59375rem;
+        background: rgba(105, 101, 101, .6);
+        
+        .category {
+            margin-top: .15625rem;
+            .category-items {
+                height: .328125rem;
+                // text-align: ;
+                line-height: .328125rem;
+                .title {
+                    display: block;
+                    height: 100%;
+                    padding-left: .234375rem;
+                    color: @baseBgcColor;
+                }
+                &:hover {
+                    background-color: @logoColor;
+                }
+               
+            }
+        }
+
+    }
+}
