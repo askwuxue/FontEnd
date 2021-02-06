@@ -1,0 +1,187 @@
+html {
+  font-size: 128px;
+}
+@font-face {
+  font-family: "iconfont";
+  src: url('../font/iconfont.eot?t=1612619429671');
+  /* IE9 */
+  src: url('../font/iconfont.eot?t=1612619429671#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../font/iconfont.woff?t=1612619429671') format('woff'), url('../font/iconfont.ttf?t=1612619429671') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('../font/iconfont.svg?t=1612619429671#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+input {
+  outline: 0;
+  border: 0;
+  background: none;
+}
+body {
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  color: #333;
+  background-color: #fff;
+  min-width: 1226px;
+  height: 2000px;
+}
+.topbarBannerWrapper {
+  height: 0.9375rem;
+}
+.topbar-banner-wrapper {
+  height: 100%;
+}
+.topbar-banner-wrapper .link-block {
+  display: block;
+  height: 100%;
+  background: url(../images/topbar-banner-wrapper.jpg) no-repeat 50%;
+  background-size: auto 100%;
+}
+.main {
+  width: 1226px;
+  margin: 0 auto;
+}
+.site-topbar {
+  height: 0.3125rem;
+  background-color: #333;
+  font-size: 12px;
+  color: #b0b0b0;
+  line-height: 0.3125rem;
+}
+.site-topbar .headLink {
+  display: inline-block;
+  height: 100%;
+  color: #b0b0b0;
+}
+.site-topbar .headLink:hover {
+  color: #fff;
+}
+.site-topbar .line {
+  margin-left: 0.03125rem;
+  margin-right: 0.023438rem;
+  color: #424242;
+}
+.site-topbar .container {
+  height: 100%;
+}
+.site-topbar .container .tapbar-nav {
+  float: left;
+  height: 100%;
+}
+.site-topbar .container .tapbar-cart {
+  float: right;
+  margin-left: 0.117188rem;
+  width: 0.9375rem;
+  height: 100%;
+  background-color: #424242;
+  text-align: center;
+}
+.site-topbar .container .tapbar-info {
+  float: right;
+  width: 1.113047rem;
+  height: 100%;
+}
+.site-header {
+  height: 0.78125rem;
+  overflow: hidden;
+}
+.site-header .header-logo {
+  width: 0.484375rem;
+  height: 0.429688rem;
+  float: left;
+}
+.site-header .header-logo .logo {
+  display: block;
+  margin-top: 0.175781rem;
+  width: 0.429688rem;
+  height: 0.429688rem;
+  background-color: #ff6700;
+  text-indent: -9999em !important;
+  overflow: hidden;
+}
+.site-header .header-logo .logo::before {
+  content: '.';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../images/mi-logo.png) no-repeat center center;
+}
+.site-header .header-logo .logo::after {
+  content: '';
+  display: block;
+}
+.site-header .header-nav {
+  float: left;
+  height: 100%;
+  margin-left: 1.34375rem;
+}
+.site-header .header-nav .nav-list {
+  height: 100%;
+  box-sizing: border-box;
+}
+.site-header .header-nav .nav-list .nav-items {
+  float: left;
+  margin-top: 0.09375rem;
+  height: 88%;
+}
+.site-header .header-nav .nav-list .nav-items .link {
+  display: block;
+  height: 100%;
+  padding: 0.203125rem 0.078125rem 0.296875rem;
+  font-size: 0.125rem;
+  color: #333;
+}
+.site-header .header-search {
+  width: 2.3125rem;
+  float: right;
+}
+.site-header .header-search .search-from {
+  display: block;
+  margin-top: 0.195313rem;
+  width: 100%;
+  height: 0.390625rem;
+}
+.site-header .header-search .search-from .search-link .search {
+  width: 1.914063rem;
+  height: 100%;
+  border: 1px solid #e0e0e0;
+  padding-left: 0.117188rem;
+}
+.site-header .header-search .search-from .search-link .search:focus {
+  border: 1px solid #ff6700;
+}
+.site-header .header-search .search-from .submit {
+  width: 0.398438rem;
+  height: 100%;
+  vertical-align: top;
+  border: 1px solid #e0e0e0;
+  border-left: 0;
+}
+.home-hero-container {
+  position: relative;
+}
+.home-hero-container .site-category {
+  position: absolute;
+  width: 1.828125rem;
+  height: 3.59375rem;
+  background: rgba(105, 101, 101, 0.6);
+}
+.home-hero-container .site-category .category {
+  margin-top: 0.15625rem;
+}
+.home-hero-container .site-category .category .category-items {
+  height: 0.328125rem;
+  line-height: 0.328125rem;
+}
+.home-hero-container .site-category .category .category-items .title {
+  display: block;
+  height: 100%;
+  padding-left: 0.234375rem;
+  color: #fff;
+}
+.home-hero-container .site-category .category .category-items:hover {
+  background-color: #ff6700;
+}
