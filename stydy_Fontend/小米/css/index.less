@@ -8,13 +8,23 @@
 @siteTopbarLineColor: #424242;
 @logoColor: #ff6700;
 @inputBorder: #e0e0e0;
+@heroSub1Bgc: #5f5750;
+@channelListBgc: #665e57;
+@channelListColor: #757575;
+@pageMainBgc: #f5f5f5;
+@roundColor: #ef3a3b;
+@flashCountdownBgc: #f1eded;
+@countdowniBgc: #605751;
+@countdownTop: #e53935;
+@h3Color: #212121;
+@priceColor: #ff6709;
 // @inputBorder: #ff6700;
 body {
     font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
     color: @baseColor;
     background-color: @baseBgcColor;
     min-width: 1226px;
-    height: 2000px;
+    height: 3000px;
 }
 .topbarBannerWrapper {
     height: (120rem / @no);
@@ -186,9 +196,23 @@ body {
                 line-height: .328125rem;
                 .title {
                     display: block;
+                    position: relative;
                     height: 100%;
                     padding-left: .234375rem;
+                    // padding-right: .3125rem;
                     color: @baseBgcColor;
+                    em {
+                        position: absolute;
+                        // height: 16px;
+                        // top: 10px;
+                        // top: 50%;
+                        // transform: translateY(-50%);
+                        right: .171875rem;
+                        &::before {
+                            content: '\e63c';
+                            // display: block;
+                        }
+                    }
                 }
                 &:hover {
                     background-color: @logoColor;
@@ -198,4 +222,376 @@ body {
         }
 
     }
+}
+
+.home-hero-sub {
+    margin-top: 10px;
+    // display: flex;
+    overflow: hidden;
+    .hero-sub1 {
+        float: left;
+        .home-channel-list {
+            display: flex;
+            width: 1.828125rem;
+            height: 1.328125rem;
+            background-color: @heroSub1Bgc;
+            flex-wrap: wrap;
+            li {
+                flex: 32%;
+                position: relative;
+                margin: 1px;
+                // height: 20px;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    left: 6px;
+                    top: 1px;
+                    width: 66px;
+                    height: 1px;
+                    background-color: @channelListBgc;
+                    // background-color: #fff; 
+                }
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 12px;
+                    left: 1px;
+                    width: 1px;
+                    height: 66px;
+                    // background-color: #fff;
+                    background-color: @channelListBgc;
+                }
+                .channel-link {
+                    display: block;
+                    // height: 80px;
+                    height: 80%;
+                    overflow: hidden;
+                    text-align: center;
+                    font-size: 12px;
+                    color: @siteTopbarColor;
+                    img {
+                        display: block;
+                        margin: 20px auto 5px;
+                        width: 24px;
+                        height: 24px;
+                    }
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+    }
+    .hero-sub2 {
+        display: flex;
+        float: right;
+        width: 7.640625rem;
+        height: 1.328125rem;
+        div[class^="hero-img"] {
+            flex: 1;
+            .hero-img-items {
+                display: block;
+                width: 100%;
+                height: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &:nth-child(-n + 2) {
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+
+.page-main {
+    background-color: @pageMainBgc;
+    .flashsale {
+        .box-id {
+            position: relative;
+            height: .453125rem;
+            line-height: .453125rem;
+            .title {
+                font-size: .171875rem;
+                // 不带单位
+                font-weight: 200;
+                color: @baseColor;
+            }
+            .swiper-controls {
+                position: absolute;
+                bottom: 10px;
+                right: 0;
+                width: .546875rem;
+                height: .195313rem;
+                background-color: purple;
+                span[class^="swiper-flashsale"] {
+                    display: inline-block;
+                    width: 50%;
+                    height: 100%;
+                    // 解决 由于对齐方式导致的span 没正好在父元素的内部
+                    vertical-align: top;
+                }
+            }
+        }
+        .box-bd {
+            .row {
+                // 抽取公共的顶部border样式 减少代码量
+                .flash-countdown,.swiper-slide {
+                    border-top-width: 1px;
+                    border-top-style: solid;
+                }
+                .flash-countdown {
+                    float: left;
+                    width: 234px;
+                    height: 340px;
+                    text-align: center;
+                    background-color: @flashCountdownBgc;
+                    border-top-color: @countdownTop;
+                    box-sizing: border-box;
+                    .round {
+                        padding-top: 54px;
+                        font-size: .164063rem;
+                        color: @roundColor;
+                    }
+                    .lightning {
+                        margin: 25px auto;
+                    }
+                    .countdown {
+                        width: 1.3125rem;
+                        margin: .21875rem auto 0;
+                        span {
+                            float: left;
+                            width: .359375rem;
+                            height: .359375rem;
+                            background-color: @countdowniBgc;
+                            line-height: .359375rem;
+                            font-size: .1875rem;
+                            color: @baseBgcColor;
+                        }
+                        i {
+                            float: left;
+                            width: .117188rem;
+                            height: .359375rem;
+                            line-height: .359375rem;
+                            font-size: 28px;
+                            font-style: normal;
+                            color: @countdowniBgc;
+                        }
+                    }
+                }
+                .falshSaleList {
+                    float: right;
+                    height: 340px;
+                    width: 978px;
+                    // background-color: pink;
+                    .swiper-wrapper {
+                        width: 100%;
+                        height: 100%;
+                        .swiper-slide {
+                            float: left;
+                            width: 234px;
+                            height: 100%;
+                            // background-color: purple;
+                            background-color: @baseBgcColor;
+                            &:nth-child(-n + 3) {
+                                margin-right: 14px;
+                            }
+                            .content {
+                                // margin: auto;
+                                margin: 39px 0;
+                                height: 263px;
+                                // background-color: yellow;
+                                text-align: center;
+                                // 图片显示区域
+                                .thumb {
+                                    margin: 0 auto 20px;
+                                    width: 160px;
+                                    height: 166px;
+                                    // background-color: blue;
+                                }
+                                // 商品title
+                                .title {
+                                    margin: 0 auto .023438rem;
+                                    font-size: 14px;
+                                    font-weight: 400px;
+                                    white-space: nowrap;
+                                    color: @h3Color;
+                                }
+                                // 商品描述
+                                .desc {
+                                    height: .140625rem;
+                                    margin: 0 .15625rem .09375rem;
+                                    font-size: .09375rem;
+                                    white-space: nowrap;
+                                    color: @siteTopbarColor;
+                                }
+                                .price {
+                                    margin: 0;
+                                    color: @priceColor;
+                                    del {
+                                        color: @siteTopbarColor;;
+                                    }
+                                }
+                            } 
+                        }
+                    }
+                }
+                
+            }
+            // 清除浮动
+            .clearfix::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+        }
+    }
+}
+
+/* home-banner-box start  less 嵌套个人没有注意 导致嵌套过深 ，接下来注意 */
+.home-banner-box {
+    height: .9375rem;
+    margin: 22px 0;
+}
+
+// 抽离一个公共的头部样式
+.box-hd {
+    position: relative;
+    height: .453125rem;
+    .title {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 200;
+        line-height: .453125rem;
+    }
+}
+// 清除浮动的公共样式
+.box-bd {
+    // background-color: #fff;
+    perspective: 1000px;
+    .clearfix::after {
+        content:'';
+        display: block;
+        clear: both;
+    }
+}
+// 抽离
+.more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    line-height: .453125rem;
+    .more-link {
+        font-size: 16px;
+        color: @siteTopbarLineColor;
+        // margin-left: 10px;
+        .iconfont-arrow-right {
+            // float: right;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            padding: 4px;
+            margin-left: 8px;
+            border-radius: 20px;
+            font-size: 12px;
+            line-height: 12px;
+            background-color: @siteTopbarColor;
+            color: @baseBgcColor;
+        }
+    }
+}
+// 提取公共的span4 
+.span4 {
+    float: left;
+    width: 1.828125rem;
+    .brick-item-l {
+        // background-color: @pageMainBgc;
+        // img 没有填满 鼠标经过 原本的没填满的部分 背景色会没有 显示出白色
+        height: 614px;
+    }
+}
+// 抽离公共的span 16
+.span16 {
+    float: right;
+    width: 978px;
+    .brick-item {
+        float: left;
+        width: 234px;
+        height: 300px;
+        box-sizing: border-box;
+        // background-color: purple;
+        &:nth-child(-n + 3),&:nth-child(n + 5) {
+            margin-right: 14px;
+        }
+        &:nth-child(n + 5) {
+            margin-top: 14px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+// 抽离 .brick-item类
+.brick-item {
+    padding: 20px 0;
+    text-align: center;
+    background-color: @baseBgcColor;
+    transition: transform .3s linear;
+    .figure {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 18px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .title {
+        margin: 0 auto 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 14px;
+        font-weight: 400;
+        color: @baseColor;
+    }
+    .desc {
+        height: 18px;
+        margin: 0 10px 10px ;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 12px;
+        color: @siteTopbarColor;
+    }
+    .price {
+        margin: 0 10px 14px;
+        color: @logoColor; 
+    }
+}
+
+// brick-item-l span4中图片为1张时用 
+.brick-item-l {
+    transition: transform .3s linear;
+}
+// span4 中图片为2张时用
+.brick-item-m {
+    width: 234px;
+    height: 300px;
+    box-sizing: border-box;
+    transition: transform .3s linear;
+    &:last-child {
+        margin-top: 14px;
+    } 
+}
+
+// 抽离 鼠标经过 .brick-item 的 公共样式
+.brick-item:hover,
+.brick-item-l:hover,
+.brick-item-m:hover {
+    // transform: translateY(-2px);
+    transform: translate3d(0, -2px, 1px);
+    box-shadow: 0 15px 30px 5px rgba(20, 20, 20, .1)    
 }
