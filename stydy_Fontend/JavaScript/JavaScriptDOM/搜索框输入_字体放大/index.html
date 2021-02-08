@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 200px auto;
+        }
+        .box {
+            position: relative;
+            display: none;
+        }
+        .amplification {
+             display: block;
+             height: 20px;
+             margin-bottom: 10px;
+             margin-left: 20px;
+             font-size: 20px;
+            /* width: 80px;
+            height: 15px; */
+        }
+        .triangle {
+            /* display: block; */
+            position: absolute;
+            bottom: -10px;
+            left: 40px;
+            width: 0;
+            height: 0;
+            /* background-color: #000; */
+            border-width: 5px;
+            border-style: solid;
+            border-color: #000 transparent transparent;
+        }
+        .search {
+            position: absolute;
+            top: 35px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"><input type="text" class="amplification"><span class="triangle"></span></div>
+        <input type="search" placeholder="请输入" class="search">
+    </div>
+
+    <script>
+        var amplification = document.querySelector('.amplification');
+        var search = document.querySelector('.search');
+        var box = document.querySelector('.box');
+        function keyupFn(event) {
+            if(this.value == '') {
+                box.style.display = 'none';
+            } else {
+                box.style.display = 'block';
+                amplification.value = this.value;
+            }
+            
+        }
+        search.addEventListener('keyup', keyupFn, false)
+    </script>
+</body>
+</html>

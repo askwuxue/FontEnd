@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 600px;
+            margin: 100 auto;
+        }
+        li {
+            list-style: none;
+        }
+        .click-li {
+            background-color: purple;
+        }
+        .add-li {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <ul class="list">
+            <li>这是第1个li元素</li>
+            <li>这是第2个li元素</li>
+            <li>这是第3个li元素</li>
+            <li>这是第4个li元素</li>
+            <li>这是第5个li元素</li>
+            <li>这是第6个li元素</li>
+            <li>这是第7个li元素</li>
+            <li>这是第8个li元素</li>
+            <li>这是第9个li元素</li>
+            <li>这是第10个li元素</li>
+        </ul>
+        <input type="button" value="按钮" class="btn">
+    </div>
+
+    <script>
+        var list = document.querySelector('.list');
+        var btn = document.querySelector('.btn');
+        
+        function clickFn(event) {
+            var liArr = document.querySelectorAll('.list li');
+            // 点击li之前 先清除其他li的样式
+            for(var i = 0; i < liArr.length; i++) {
+                // this在函数内部  指向的是调用该函数的对象
+                // console.log(this);
+                liArr[i].className = '';
+            } 
+            event.target.className = 'click-li';
+        }
+        // 事件委托 
+        list.addEventListener('click', clickFn, false);
+        // 添加新的元素
+        function addLiEle(event) {
+            var liEle = document.createElement('li');
+            var liText = document.createTextNode('这是一个新的li标签');
+            liEle.appendChild(liText);
+            liEle.className = 'add-li';
+            list.insertBefore(liEle, list.children[0]);
+            console.log(event);
+        }
+        btn.addEventListener('click', addLiEle, false);
+    </script>
+</body>
+</html>
