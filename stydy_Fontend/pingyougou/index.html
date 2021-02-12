@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <!-- 视口标签 meta -->
-    <!-- 宽度是设备宽度 不允许用户进行缩放 初始的缩放倍数 最大缩放比 最小缩放比  -->   
+    <!-- 宽度是设备宽度 不允许用户进行缩放 初始的缩放倍数 最大缩放比 最小缩放比  -->
     <meta name="viewport" content="width=device-width, user-scalable=none initial-scale=1.0 
     maximum-scale=1.0 minimum-scale=1.0">
     <title>品优购</title>
@@ -11,7 +12,10 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/animation.js"></script>
+    <script src="js/index.js"></script>
 </head>
+
 <body>
     <!-- shortcut start -->
     <div class="shortcut">
@@ -29,7 +33,7 @@
                     <li><a href="#">我的订单</a></li>
                     <li class="spacer"></li>
                     <li><a href="#">我的品优购</a>&nbsp;<i class="iconfont">&#xe65e</i></li>
-                    
+
                     <li class="spacer"></li>
                     <li><a href="#">品优购会员</a></li>
                     <li class="spacer"></li>
@@ -63,7 +67,7 @@
             <a href="#">美满99减30</a>
             <a href="#">办公用品</a>
             <a href="#">电脑</a>
-            <a href="#">通信</a>              
+            <a href="#">通信</a>
         </div>
         <div class="my-car">
             <i class="iconfont shop-car">&#xe63f;</i>&nbsp;<a href="#">我的购物车</a>&nbsp;&nbsp;<i class="iconfont arrow">&#xe65f;</i>
@@ -172,7 +176,7 @@
                 </div>
             </div>
             <div class="nav-items fl">
-                <ul>                              
+                <ul>
                     <li><a href="#">服装城</a></li>
                     <li><a href="#">美妆馆</a></li>
                     <li><a href="#">传智超市</a></li>
@@ -192,18 +196,22 @@
             <div class="focus">
                 <a href="#" class="arrow arrow_left"><i class="iconfont">&#xe65f;</i></a>
                 <a href="#" class="arrow arrow_right"><i class="iconfont">&#xe660;</i></a>
-                <ul>
-                    <li><a href="#"><img src="./upload/focus.png" alt="无法显示图片" title="最优推荐"></a></li>
+                <ul class="focus-list">
+                    <li>
+                        <a href="#"><img src="./upload/focus.png" alt="无法显示图片" title="最优推荐"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./upload/focus.png" alt="无法显示图片" title="最优推荐"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./upload/focus.png" alt="无法显示图片" title="最优推荐"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./upload/focus.png" alt="无法显示图片" title="最优推荐"></a>
+                    </li>
                 </ul>
                 <ol class="circle">
-                    <li></li>
-                    <li></li>
-                    <li class="current_circle"></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <!-- <li class="current_circle"></li> -->
                 </ol>
             </div>
             <div class="main_news">
@@ -253,10 +261,18 @@
         </div>
         <div class="common_bd">
             <ul>
-                <li><a href="#"><img src="./upload/pic.jpg" alt=""></a></li>
-                <li><a href="#"><img src="./upload/pic.jpg" alt=""></a></li>
-                <li><a href="#"><img src="./upload/pic.jpg" alt=""></a></li>
-                <li class="left"><a href="#"><img src="./upload/pic.jpg" alt=""></a></li>
+                <li>
+                    <a href="#"><img src="./upload/pic.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./upload/pic.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./upload/pic.jpg" alt=""></a>
+                </li>
+                <li class="left">
+                    <a href="#"><img src="./upload/pic.jpg" alt=""></a>
+                </li>
             </ul>
         </div>
     </div>
@@ -284,7 +300,7 @@
                         <li><span>|</span></li>
                         <li><a href="#">新奇特</a></li>
                         <li><span>|</span></li>
-                        <li><a href="#">高端电器</a></li>    
+                        <li><a href="#">高端电器</a></li>
                     </ul>
                 </div>
             </div>
@@ -401,12 +417,13 @@
                     <p><a href="#">关于我们&nbsp;&nbsp;|&nbsp;&nbsp;联系我们&nbsp;&nbsp;|&nbsp;&nbsp;联系客服&nbsp;&nbsp;|&nbsp;&nbsp;商家入驻&nbsp;&nbsp;|&nbsp;&nbsp;营销中心&nbsp;&nbsp;|&nbsp;&nbsp;手机品优购&nbsp;&nbsp;|&nbsp;&nbsp;友情链接&nbsp;&nbsp;|&nbsp;&nbsp;销售联盟&nbsp;&nbsp;|&nbsp;&nbsp;品优购社区&nbsp;&nbsp;|&nbsp;&nbsp;品优购公益&nbsp;&nbsp;|&nbsp;&nbsp;English Site&nbsp;&nbsp;|&nbsp;&nbsp;Contact U</a><br></p>
                 </div>
                 <div class="address">
-                    <p>地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn
-                        京ICP备08001421号京公网安备110108007702</p>
+                    <p>地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn 京ICP备08001421号京公网安备110108007702
+                    </p>
                 </div>
             </div>
         </div>
     </div>
     <!-- footer end -->
 </body>
+
 </html>
