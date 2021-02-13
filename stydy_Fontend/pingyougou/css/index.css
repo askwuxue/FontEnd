@@ -7,9 +7,9 @@
 .focus {
     position: relative;
     float: left;
-    width: 722px;
+    width: 721px;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* background-color: purple; */
 }
 
@@ -17,16 +17,23 @@
     /* 为了动画效果 添加绝对定位 */
     position: absolute;
     width: 600%;
+    height: 100%;
 }
 
 .focus-list li {
     float: left;
+    width: 721px;
+    height: 100%;
+}
+
+.focus-list li img {
+    width: 100%;
+    height: 100%;
 }
 
 .main_news {
     float: right;
     width: 250px;
-    ;
     height: 100%;
     /* background-color: skyblue; */
     /* border: 1px solid #e4e4e4; */

@@ -49,6 +49,37 @@ function main() {
         }
         var target = -event.target.getAttribute('index') * focus.offsetWidth;
         animation(focusList, target);
+    });
+    // 录播图自由切换克隆第一个轮播图添加到最后
+    focusList.appendChild(focusList.children[0].cloneNode(true));
+    // 点击左右箭头 动画播放
+    arrow_left.addEventListener('click', animationPlay)
+        // 用户点击次数
+    var num = 0;
+    // 节流阀
+    var flag = true;
 
-    })
+    function animationPlay(event) {
+        if (flag) {
+            // flag = false;
+            num++;
+            // 如果点击到了最后一张 则动画到第二张
+            if (num == focusList.children.length) {
+                num = 1;
+            }
+            // console.log(focusList.offsetLeft);
+            // 回调函数内将节流阀打开
+            // TODO 函数调用不成功 animation函数 导致元素没法到达指定位置
+            animation(focusList, -num * window.getComputedStyle(focus).width, function() {
+                console.log('callback...');
+                flag = true;
+            });
+            // animate(focusList, -num * focus.offsetWidth, function() {
+            //     console.log('callback...');
+            // })
+        }
+        // console.log(focusList.offsetLeft);
+        // console.log(focus.offsetWidth);
+
+    }
 }

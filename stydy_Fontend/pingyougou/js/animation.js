@@ -8,19 +8,20 @@ function animation(element, target, callback) {
     element.timer = setInterval(function() {
         // 获得元素的当前位置
         var current_x = element.offsetLeft;
-        // console.log('current_x: ', current_x);
-        // console.log('target: ', target)
-        // 移动步长
+        console.log('current_x: ', current_x);
+        console.log('target: ', target)
+            // 移动步长
         var step = (target - current_x) / 10;
         step = step > 0 ? Math.ceil(step) : Math.floor(step);
-        // console.log('step: ', step);
+        console.log('step: ', step);
         if (target == current_x) {
+            console.log(callback);
             clearInterval(element.timer);
             if (callback) {
+                console.log(callback);
                 callback();
             }
         }
-
         element.style.left = element.offsetLeft + step + 'px';
     }, 10);
 }

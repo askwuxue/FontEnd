@@ -10,6 +10,7 @@ body {
     /* background: #fafafc; */
     /* background-color: pink; */
 }
+
 .search-index {
     position: fixed;
     display: flex;
@@ -21,6 +22,7 @@ body {
     height: 44px;
     /* background-color: #fff; */
 }
+
 .search-index .search {
     position: relative;
     flex: 1;
@@ -28,6 +30,7 @@ body {
     border-radius: 15px;
     background-color: #fff;
 }
+
 .search-index .search::before {
     content: "";
     position: absolute;
@@ -38,18 +41,21 @@ body {
     background: url(../images/home-common-sprite2x@v7.15.png) no-repeat 0 0;
     background-size: 21px auto;
 }
+
 .search-index .search span {
     position: absolute;
     top: 8px;
     left: 36px;
     font-size: 14px;
 }
+
 .search-index .user {
     width: 44px;
     height: 44px;
     font-size: 12px;
     text-align: center;
 }
+
 .search-index .user::before {
     content: "";
     display: block;
@@ -59,27 +65,82 @@ body {
     background: url(../images/home-common-sprite2x@v7.15.png) no-repeat 0 -76px;
     background-size: 21px auto;
 }
+
 .banner {
+    position: relative;
     width: 100%;
     height: 154px;
-    border-radius: 0 0 10px 10px;
-    overflow: hidden;
-    background: url(../uploads/0zg1g120008cuy4tqF42A.jpg) no-repeat;
-    background-size: 100% 154px;
+    /* border-radius: 0 0 10px 10px; */
+    /* overflow: hidden; */
+    /* background: url(../uploads/0zg1g120008cuy4tqF42A.jpg) no-repeat; */
+    /* background-size: 100% 154px; */
 }
+
+.banner ul {
+    width: 600%;
+    height: 100%;
+    display: flex;
+    /* 正常显示第一张 */
+    margin-left: -100%;
+}
+
+.banner ul li {
+    /* float: left; */
+    flex: 1;
+    /* width: 100%; */
+    height: 100%;
+}
+
+.banner ul img {
+    width: 100%;
+    height: 100%;
+}
+
+.banner span {
+    position: absolute;
+    width: 140px;
+    height: 20px;
+    bottom: 10px;
+    right: 10px;
+    /* background-color: red; */
+}
+
+.banner ol {
+    margin: 0;
+    /* width: 100%; */
+    height: 100%;
+}
+
+.banner ol li {
+    float: left;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background-color: red;
+    margin-left: 5px;
+    /* line-height: 20px; */
+}
+
+.banner ol .current {
+    width: 40px;
+    transition: all 0.3s linear;
+}
+
 .local-nav {
     display: flex;
     /* flex 之后 relative 属性不会失效 relative 占据位置 */
     /* position: relative; */
     height: 64px;
-    margin: -50px 10px 0 10px;
+    margin: 10px 10px 0 10px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(13, 13, 13, .2);
     border-radius: 10px;
 }
+
 .local-nav li {
     width: 20%;
 }
+
 .local-nav li a {
     display: flex;
     height: 100%;
@@ -89,43 +150,52 @@ body {
     font-size: 12px;
     color: #222;
 }
+
 .local-nav li a span[class^="icon-local-scenic"] {
     /* display: flex; */
     width: 40px;
     height: 40px;
 }
+
 .local-nav li a span[class="icon-local-scenic-1"] {
     background: url(../images/home-fivemain-sprite2x@v7.15.png) no-repeat 0 0;
     background-size: 40px;
 }
+
 .local-nav li a span[class="icon-local-scenic-2"] {
     background: url(../images/home-fivemain-sprite2x@v7.15.png) no-repeat 0 -40px;
     background-size: 40px;
 }
+
 .local-nav li a span[class="icon-local-scenic-3"] {
     background: url(../images/home-fivemain-sprite2x@v7.15.png) no-repeat 0 -80px;
     background-size: 40px;
 }
+
 .local-nav li a span[class="icon-local-scenic-4"] {
     background: url(../images/home-fivemain-sprite2x@v7.15.png) no-repeat 0 -120px;
     background-size: 40px;
 }
+
 .local-nav li a span[class="icon-local-scenic-5"] {
     background: url(../images/home-fivemain-sprite2x@v7.15.png) no-repeat 0 -160px;
     background-size: 40px;
 }
+
 nav {
     margin: 10px 10px 0 10px;
     border-radius: 10px;
     /* background-color: pink; */
     overflow: hidden;
 }
+
 div[class^="nav-common"] {
     display: flex;
     /* margin: 10px 10px 0 10px; */
     height: 56px;
     /* background-color: purple; */
 }
+
 div[class^="nav-common"] a {
     text-align: center;
     /* line-height: 100%; */
@@ -134,78 +204,98 @@ div[class^="nav-common"] a {
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
 }
+
 div[class="nav-common-1"] {
     background: -webkit-linear-gradient(left, #FA5C56, #FFD151);
 }
+
 div[class="nav-common-1"] a:nth-child(1) {
     background: url(../images/grid-nav-items-hotel@v7.15.png) no-repeat bottom right;
     background-size: 73px auto;
 }
+
 div[class="nav-common-1"] a:nth-child(2) {
     background: url(../images/grid-nav-items-minsu@v7.15.png) no-repeat bottom left;
     background-size: 37px auto;
 }
+
 div[class="nav-common-1"] a:nth-child(3) {
     background: url(../images/grid-nav-items-hot.png) no-repeat bottom right;
     background-size: 161px auto;
 }
+
 div[class="nav-common-2"] {
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     background: -webkit-linear-gradient(left, #4C91ED, #53BAED);
 }
+
 div[class="nav-common-2"] a:nth-child(1) {
     background: url(../images/grid-nav-items-flight@v7.15.png) no-repeat bottom right;
     background-size: 80px auto;
 }
+
 div[class="nav-common-2"] a:nth-child(2) {
     background: url(../images/grid-nav-items-train.png) no-repeat bottom left;
     background-size: 42px auto;
 }
+
 div[class="nav-common-3"] {
     background: -webkit-linear-gradient(left, #38C3A3, #6AD45A);
 }
+
 div[class="nav-common-3"] a:nth-child(1) {
     background: url(../images/grid-nav-items-travel@v7.15.png) no-repeat bottom right;
     background-size: 98px auto;
 }
+
 div[class="nav-common-3"] a:nth-child(2) {
     background: url(../images/grid-nav-items-dingzhi@v7.15.png) no-repeat bottom left;
     background-color: 61px auto;
 }
+
 div[class^="nav-common"] a:nth-child(1) {
     flex: 31%;
     border-right: 1px solid #fff;
 }
+
 div[class^="nav-common"] a:nth-child(2) {
     flex: 23%;
     border-right: 1px solid #fff;
 }
+
 .nav-common-1:nth-child(1) a:nth-child(3) {
     flex: 47%;
 }
+
 nav div:nth-child(n + 2) a:nth-child(3) {
     flex: 23%;
     border-right: 1px solid #fff;
 }
+
 nav div:nth-child(n + 2) a:nth-child(4) {
     flex: 24%;
 }
 
+
 /* subnav-entry */
+
 .subnav-entry {
     display: flex;
     margin: 0 7px;
     /* background-color: purple; */
     flex-wrap: wrap;
 }
+
 .subnav-entry li {
     height: 54px;
     flex: 20%;
 }
+
 .subnav-entry li:nth-child(2) {
     /* flex: 21%; */
 }
+
 .subnav-entry li a {
     display: flex;
     height: 100%;
@@ -216,53 +306,66 @@ nav div:nth-child(n + 2) a:nth-child(4) {
     justify-content: flex-end;
     text-align: center;
 }
+
 .subnav-entry li a span:first-child {
     width: 28px;
     margin: 0 auto;
     height: 28px;
 }
+
 .subnav-entry li:nth-child(1) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -2px;
     background-size: 28px auto;
 }
+
 .subnav-entry li:nth-child(2) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -31px;
     background-size: 28px auto;
 }
+
 .subnav-entry li:nth-child(3) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -58px;
     background-size: 28px auto;
 }
+
 .subnav-entry li:nth-child(4) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -86px;
     background-size: 28px auto;
 }
+
 .subnav-entry li:nth-child(5) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -114px;
     background-size: 28px auto;
 }
+
 .subnav-entry li:nth-child(6) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -142px;
     background-size: 28px auto;
 }
+
 .subnav-entry li:nth-child(7) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -169px;
     background-size: 28px auto;
 }
+
 .subnav-entry li:nth-child(8) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -198px;
     background-size: 28px auto;
 }
+
 .subnav-entry li:nth-child(9) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -227px;
     background-size: 28px auto;
 }
+
 .subnav-entry li:nth-child(10) span:first-child {
     background: url(../images/un_ico_subnav2x@v7.152.png) no-repeat 0px -255px;
     background-size: 28px auto;
 }
 
+
 /* footer */
+
 footer .tool-cn {
     display: flex;
     margin-top: 10px;
@@ -271,6 +374,7 @@ footer .tool-cn {
     height: 61px;
     background-color: #fff;
 }
+
 footer .tool-cn a {
     display: flex;
     flex: 1;
@@ -281,4 +385,3 @@ footer .tool-cn a {
     /* 侧轴为多行或多列时 */
     /* align-content: center; */
 }
-
