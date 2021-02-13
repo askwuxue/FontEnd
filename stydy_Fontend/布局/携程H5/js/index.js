@@ -46,7 +46,6 @@ function main() {
     var flag = false;
     // 开始按下
     bannerUl.addEventListener('touchstart', function(event) {
-
         clearInterval(bannerUl.timer);
         beginX = event.targetTouches[0].pageX;
         event.preventDefault();

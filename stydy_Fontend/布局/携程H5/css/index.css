@@ -100,7 +100,7 @@ body {
     position: absolute;
     width: 140px;
     height: 20px;
-    bottom: 10px;
+    bottom: 0;
     right: 10px;
     /* background-color: red; */
 }
@@ -113,8 +113,8 @@ body {
 
 .banner ol li {
     float: left;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 3px;
     background-color: red;
     margin-left: 5px;
@@ -122,7 +122,7 @@ body {
 }
 
 .banner ol .current {
-    width: 40px;
+    width: 30px;
     transition: all 0.3s linear;
 }
 

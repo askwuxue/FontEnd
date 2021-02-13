@@ -1,6 +1,13 @@
 html {
   font-size: 128px;
 }
+body {
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  color: #333;
+  background-color: #fff;
+  min-width: 1226px;
+  height: 3000px;
+}
 @font-face {
   font-family: "iconfont";
   src: url('../font/iconfont.eot?t=1612657410387');
@@ -21,22 +28,18 @@ input {
   border: 0;
   background: none;
 }
-body {
-  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
-  color: #333;
-  background-color: #fff;
-  min-width: 1226px;
-  height: 3000px;
-}
 .topbarBannerWrapper {
   height: 0.9375rem;
+}
+.link-inline-block {
+  width: 100%;
+  display: inline-block;
+  height: 100%;
 }
 .topbar-banner-wrapper {
   height: 100%;
 }
-.topbar-banner-wrapper .link-block {
-  display: block;
-  height: 100%;
+.topbar-banner-wrapper .link-inline-block {
   background: url(../images/topbar-banner-wrapper.jpg) no-repeat 50%;
   background-size: auto 100%;
 }
@@ -51,12 +54,10 @@ body {
   color: #b0b0b0;
   line-height: 0.3125rem;
 }
-.site-topbar .headLink {
-  display: inline-block;
-  height: 100%;
+.site-topbar .link-inline-block {
   color: #b0b0b0;
 }
-.site-topbar .headLink:hover {
+.site-topbar .link-inline-block:hover {
   color: #fff;
 }
 .site-topbar .line {

@@ -1,6 +1,13 @@
 html {
   font-size: 128px;
 }
+body {
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  color: #333;
+  background-color: #fff;
+  min-width: 1226px;
+  height: 3000px;
+}
 @font-face {
   font-family: "iconfont";
   src: url('../font/iconfont.eot?t=1612657410387');
