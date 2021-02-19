@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            id: 1,
+            name: '小米',
+            price: 1999
+        };
+
+        // Object.defineProperty(obj, obj.id, {
+        //     writable: false,
+        //     enumerable: true,
+        //     configurable: false
+        // });
+
+        // configurable  为false 时  不允许删除 或者 再次修改属性
+        // Object.defineProperty(obj, 'id', {
+        //     value: 2,
+        //     writable: false,
+        //     enumerable: false,
+        //     configurable: true
+        // });
+
+        // enumerable 为false 无法进行枚举
+        Object.defineProperty(obj, 'id', {
+            value: 3,
+            writable: false,
+            enumerable: true,
+            configurable: true
+        });
+
+        // writable  为false  无法进行属性值得修改  但是当configurable 为true 还是可以使用这种方式进行修改
+        // 不能使用 obj.key = value 方式进行修改属性值
+        Object.defineProperty(obj, 'id', {
+            value: 4,
+            writable: false,
+            enumerable: true,
+            configurable: true
+        });
+
+        // obj.id = 2;
+        var objKey = Object.keys(obj);
+        console.log(obj.id);
+        console.log(objKey);
+    </script>
+</body>
+
+</html>
