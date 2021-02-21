@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+                id: 1,
+                name: 'ask',
+                sex: 'man',
+                stag: [18, 25, 30],
+                msg: {
+                    address: 'shanghai',
+                    slogan: 'love study'
+                }
+            }
+            // 浅拷贝就是将对象的简单数据类型进行值拷贝，复杂数据类型进行引用拷贝
+        var o = {};
+        for (var key in obj) {
+            o[key] = obj[key];
+        }
+        // 修改o的属性值为对象的值，obj的属性值为对象的值也会发生变化
+        o.msg.address = 'ningxia';
+        console.log(obj.msg.address);
+        console.log(o);
+
+        // 浅拷贝的语法糖
+        var newObj = {};
+        Object.assign(newObj, obj);
+        console.log(newObj);
+    </script>
+</body>
+
+</html>
