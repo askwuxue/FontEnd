@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            id: 1,
+            name: 'ask',
+            sex: 'man',
+            stag: [18, 25, 30],
+            msg: {
+                address: 'shanghai',
+                slogan: 'love study'
+            }
+        };
+        // 本质上，深拷贝的原理是通过递归将对象的每一项进行拷贝
+        // 对象间的直接拷贝其实是引用的拷贝
+        // 深拷贝的实质是利用递归思想将对象的每一项进行值拷贝
+        function deepCopy(newObj, oldObj) {
+            // newObj = {};
+            for (var key in oldObj) {
+                // 如果属性值是一个数组
+                if (oldObj[key] instanceof Array) {
+                    // 新增一个空数组 保存递归数组的内容
+                    newObj[key] = [];
+                    deepCopy(newObj, oldObj[key]);
+                    // 如果属性值是一个对象
+                } else if (oldObj[key] instanceof Object) {
+                    // 新增一个空对象，保存递归对象的内容
+                    newObj[key] = {};
+                    deepCopy(newObj, oldObj[key]);
+                } else {
+                    newObj[key] = oldObj[key]
+                }
+            }
+            return newObj;
+        }
+        var o = {};
+        console.log(deepCopy(o, obj));
+    </script>
+</body>
+
+</html>
