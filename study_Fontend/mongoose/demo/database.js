@@ -55,17 +55,23 @@ const postsSchema = new Schema({
     category: {
         type: String,
         // input must include enum
-        enum: ['html', 'css', 'javascript', 'NodeJs']
+        enum: {
+            values: ['html', 'css', 'javascript', 'NodeJs'],
+            message: '输入的分类必须在制定的范围内'
+        }
     },
     author: {
-        type: String,
-        // 自定义验证 
-        validate: {
-            validator: v => {
-                // 长度大于4 返回布尔值 true: 验证成功
-                return v && v.length > 4;
-            }
-        }
+        // 创建集合连接
+        type: mongoose.Schema.Types.ObjectId,
+        // 指定连接的集合
+        ref: 'Users',
+        // TODO  自定义验证 创建集合连接的时候 使用集合的验证规则报错
+        // validate: {
+        //     validator: v => {
+        //         // 长度大于4 返回布尔值 true: 验证成功
+        //         return v && v.length > 4;
+        //     }
+        // },
     }
 })
 
@@ -87,24 +93,35 @@ const course = new Course({
 
 
 // create new document
-Course.create({ name: 'love You', author: 'xuning', isPublished: true })
-    .then(data => {
-        console.log(data);
-    })
-    .catch(err => {
-        console.log(err);
-    })
+// Course.create({ name: 'love You', author: 'xuning', isPublished: true })
+//     .then(data => {
+//         console.log(data);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     })
 
 course.save();
 
-// create new posts document
-Posts.create({ title: 'firstPost', number: 2, category: 'html', author: 'askwuxue' })
-    .then(data => {
+// create new posts document and connect 
+// Posts.create({ title: 'three', number: 3, category: 'html', author: '5c09f1e5aeb04b22f8460965' })
+//     .then(data => {
+//         console.log(data);
+//     })
+//     .catch(err => {
+//         // error dispose and get error message
+//         for (let key in err.errors) {
+//             console.log(err.errors[key].properties.message);
+//         }
+//     });
+
+// 查询集合连接后的结果 使用populate() 建立集合后 该集合中对应的该字段必须全部满足条件或者为空，否则会报错 字段类型不一致
+Posts.find().populate('author').then(data => {
         console.log(data);
     })
     .catch(err => {
         console.log(err);
-    })
+    });
 
 // import database
 // C:\Program Files\MongoDB\Server\4.1\bin
@@ -182,9 +199,9 @@ Posts.create({ title: 'firstPost', number: 2, category: 'html', author: 'askwuxu
 //         console.log(err);
 //     });
 
-Users.updateMany({}, { name: '大家的名字全部被改了' }).then(data => {
-        console.log(data);
-    })
-    .catch(err => {
-        console.log(err);
-    });
+// Users.updateMany({}, { name: '大家的名字全部被改了' }).then(data => {
+//         console.log(data);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
