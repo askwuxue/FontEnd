@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 第一步使用template 浏览器版本  -->
+    <script src="./template-web.js"></script>
+</head>
+
+<body>
+    <div class="container"></div>
+    <script type="text/html" id="tp1">
+        <!-- <h1>{{ username }}</h1>
+        <p>{{ email }}</p> -->
+    </script>
+    <script>
+        // 使用template生成内容 生成的是已经渲染成功的html返回的是id中的内容
+        // 所以第一个参数为要渲染在id为tp1的HTML结构中
+        let html = template('tp1', {
+            username: "wuxue",
+            email: "9725*****@qq.com"
+        });
+        console.log(html);
+        // 将渲染好的数据与结构重新插入到HTML结构中，本质上来说是用到了dom操作
+        document.querySelector('.container').innerHTML = html;
+    </script>
+</body>
+
+</html>
