@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ajax.js"></script>
+</head>
+
+<body>
+    <form id="form" name="form">
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="button" id="btn" value="submit" name="btn">
+    </form>
+    <script>
+        let form = document.getElementById('form');
+        let btn = document.getElementById('btn');
+
+        function handleBtnClick() {
+
+            console.log(form);
+
+            let formData = new FormData(form);
+
+            // TODO FormData 是一种特殊格式的对象 无法打印
+            console.log('formData: ', formData);
+
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('POST', 'http://localhost:3000/FormData');
+
+            // TODO 对于FormData对象，不能设置常规的Content-Type
+            // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.send(formData);
+
+            xhr.onload = () => {
+                console.log(xhr.responseText);
+            }
+
+
+            // console.log(formData.get("username"));
+
+            // ajax({
+            //     type: 'POST',
+            //     url: 'http://localhost:3000/FormData',
+            //     header: {
+            //         'Content-Type': 'application/x-www-form-urlencoded'
+            //     },
+            //     params: formData,
+            //     access: (data) => {
+            //         console.log(data);
+            //     },
+            //     error: (err) => {
+            //         console.log(err);
+            //     }
+            // });
+        }
+
+        btn.addEventListener('click', handleBtnClick);
+    </script>
+</body>
+
+</html>
