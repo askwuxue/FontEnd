@@ -4,6 +4,7 @@ const port = 3000;
 
 const public = express.static('public');
 
+// TODO 如何可以设置多个静态访问地址
 // const upload = express.static('upload');
 
 const formidable = require('formidable');
