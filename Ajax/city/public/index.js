@@ -1,5 +1,7 @@
-const main = () => {
-    console.log('js start....');
-}
+ import ajax from './ajax.js';
+ const main = () => {
+     // import ajax from './ajax.js';
+     console.log('js start....');
+ }
 
-addEventListener('DOMContentLoaded', main);
+ addEventListener('DOMContentLoaded', main);
