@@ -79,18 +79,3 @@ const ajax = (options) => {
 
 // TODO ES6的export和import如何使用？
 export { ajax };
-// export function test() {
-//     console.log('111111111111111111111111');
-// }
-// ajax({
-//     type: 'POST',
-//     url: 'http://localhost:3000/post',
-//     header: {
-//         'Content-Type': 'application/json'
-//     },
-//     params: {
-//         name: "wuxue",
-//         age: 25
-//     },
-// });
-// addEventListener('load', main);
