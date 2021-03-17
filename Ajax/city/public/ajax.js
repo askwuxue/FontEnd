@@ -76,6 +76,8 @@ const ajax = (options) => {
         }
     }
 }
+
+// TODO ES6的export和import如何使用？
 export { ajax };
 // export function test() {
 //     console.log('111111111111111111111111');
