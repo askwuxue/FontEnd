@@ -77,5 +77,9 @@ const ajax = (options) => {
     }
 }
 
-// TODO ES6的export和import如何使用？
+// TODO 使用export导出变量时 导出单个特性时 必须使用命令符
+export let a = 3;
+// 另一种方式是使用 {} 导出多个变量的方式
 export { ajax };
+
+// TODO ES6的export和import如何使用？
