@@ -13,19 +13,31 @@
     <script>
         window.onload = function() {
             let btn = document.getElementById('btn');
-            btn.onclick = function() {
-                jsonp({
-                    url: 'http://localhost:3001/get',
-                    params: {
-                        name: "wuxue",
-                        age: 18
-                    },
-                    // 成功回调函数
-                    success: function(data) {
-                        console.log(data);
-                    }
-                })
-            };
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('get', 'http://localhost:3001/get');
+
+            xhr.send();
+
+            xhr.onload = function() {
+                console.log(xhr.responseText);
+            }
+
+
+            // btn.onclick = function() {
+            //     jsonp({
+            //         url: 'http://localhost:3001/get',
+            //         params: {
+            //             name: "wuxue",
+            //             age: 18
+            //         },
+            //         // 成功回调函数
+            //         success: function(data) {
+            //             console.log(data);
+            //         }
+            //     })
+            // };
         }
 
         function jsonp(options) {

@@ -18,7 +18,7 @@ app.use(bodyParse.json({ extended: true }))
 
 // 使用get参数，如果url中有参数 依旧匹配地址课只写url的部分，不写参数
 app.get('/get', (req, res) => {
-    console.log(req.url);
+    // console.log(req.url);
     // 请求url中的参数
     let urlParams = req.url.substring(req.url.indexOf('?') + 1);
     // 对请求参数切割
