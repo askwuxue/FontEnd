@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+            let btn = document.getElementById('btn');
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('get', 'http://localhost:3001/get');
+
+            xhr.send();
+
+            xhr.onload = function() {
+                console.log(xhr.responseText);
+            }
+
+
+            // btn.onclick = function() {
+            //     jsonp({
+            //         url: 'http://localhost:3001/get',
+            //         params: {
+            //             name: "wuxue",
+            //             age: 18
+            //         },
+            //         // 成功回调函数
+            //         success: function(data) {
+            //             console.log(data);
+            //         }
+            //     })
+            // };
+        }
+    </script>
+    <!-- <script src="http://localhost:3001/get"></script> -->
+    <h1>服务端跨域资源共享</h1>
+    <input type="button" value="发送请求" id="btn">
+</body>
+
+</html>
