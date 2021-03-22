@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- -->
+    <form id="form" name="form">
+        <input type="text" name="username" value="123">
+        <input type="password" name="password" value="123">
+        <input type="button" id="btn" value="submit" name="btn">
+    </form>
+    <script>
+        let btn = document.getElementById('btn');
+
+        function handleBtnClick() {
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('GET', 'http://localhost:3000/get');
+
+            xhr.send();
+
+            xhr.onload = () => {
+                console.log(xhr.responseText);
+            }
+        }
+
+        btn.addEventListener('click', handleBtnClick);
+    </script>
+</body>
+
+</html>
