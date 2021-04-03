@@ -1,3 +1,58 @@
+function animate(obj, target, callback) {
+    // console.log(callback);  callback = function() {}  调用的时候 callback()
+
+    // 先清除以前的定时器，只保留当前的一个定时器执行
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function() {
+        // 步长值写到定时器的里面
+        // 把我们步长值改为整数 不要出现小数的问题
+        // var step = Math.ceil((target - obj.offsetLeft) / 10);
+        var step = (target - obj.offsetLeft) / 10;
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+        console.log(obj.offsetLeft, target);
+        console.log(step);
+        if (obj.offsetLeft == target) {
+            // 停止动画 本质是停止定时器
+            clearInterval(obj.timer);
+            // 回调函数写到定时器结束里面
+            // if (callback) {
+            //     // 调用函数
+            //     callback();
+            // }
+            callback && callback();
+        }
+        // 把每次加1 这个步长值改为一个慢慢变小的值  步长公式：(目标值 - 现在的位置) / 10
+        obj.style.left = obj.offsetLeft + step + 'px';
+
+    }, 15);
+}
+// 元素选择器名 元素移动目标的位置 动画间隔时间    默认这个函数只在x轴上移动
+function animation(element, target, callback) {
+
+    if (element.timer) {
+        clearTimeout(element.timer);
+    }
+
+    element.timer = setInterval(function() {
+        // 获得元素的当前位置
+        var current_x = element.offsetLeft;
+        console.log('current_x: ', current_x);
+        console.log('target: ', target)
+            // 移动步长
+        var step = (target - current_x) / 10;
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+        console.log('step: ', step);
+        if (target == current_x) {
+            console.log(callback);
+            clearInterval(element.timer);
+            if (callback) {
+                console.log(callback);
+                callback();
+            }
+        }
+        element.style.left = element.offsetLeft + step + 'px';
+    }, 10);
+}
 addEventListener('DOMContentLoaded', main);
 
 function main() {
