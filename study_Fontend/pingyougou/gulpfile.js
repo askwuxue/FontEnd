@@ -12,13 +12,6 @@ let uglify = require('gulp-uglify');
 // rename
 let rename = require('gulp-rename');
 
-// // 合并文件
-// function gulpConcat() {
-//     return src('css/*.css')
-//         .pipe(concat('all.css'))
-//         .pipe(dest('css'));
-// }
-
 //处理css文件 task任务必须是异步任务 参加gulp 异步执行
 function gulpCss() {
     src('css/*.css')
