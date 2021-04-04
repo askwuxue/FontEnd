@@ -1,18 +1,19 @@
 {
   "name": "my-react-app",
   "version": "1.0.0",
-  "description": "study react",
+  "description": "",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "@babel/preset-react": "^7.13.13"
+  "directories": {
+    "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "react"
-  ],
-  "author": "wuxue",
-  "license": "ISC"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-transform-react-jsx": "^7.13.12"
+  }
 }

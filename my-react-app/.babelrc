@@ -1,0 +1,14 @@
+{
+    "presets": [
+    ],
+    "plugins": [
+        [
+          "@babel/plugin-transform-react-jsx",
+          {
+            "throwIfNamespace": false, // defaults to true
+            "runtime": "automatic", // defaults to classic
+            "importSource": "src/js" // defaults to react
+          }
+        ]
+      ]
+}
