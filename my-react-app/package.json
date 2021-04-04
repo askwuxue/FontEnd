@@ -1,0 +1,18 @@
+{
+  "name": "my-react-app",
+  "version": "1.0.0",
+  "description": "study react",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/preset-react": "^7.13.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "wuxue",
+  "license": "ISC"
+}
