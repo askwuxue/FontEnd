@@ -1,6 +1,9 @@
 // template {{name}}很厉害，才{{age}}岁
 // content {name: wuxue, age: 25}
 
+let str = '{{name}}很厉害，才{{age}}';
+let obj = {name: 'wuxue', age: 25};
+
 // V0.1
 function render(template, context) {
     Object.keys(context).forEach(key => {
@@ -12,5 +15,7 @@ function render(template, context) {
 // V1.0
 function template(str, obj) {
     // 第二个参数为function 返回值会替换匹配的子串 match为匹配到的子串 key相当于$n
-    return str.replace(/\{\{(.*?)\}\}/g, (match, key) => obj[key].trim())
+    return str.replace(/\{\{(.*?)\}\}/g, (match, key) => obj[key.trim()])
 }
+
+console.log(template(str, obj));
