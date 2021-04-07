@@ -15,7 +15,7 @@ function render(template, context) {
 // V1.0
 function template(str, obj) {
     // 第二个参数为function 返回值会替换匹配的子串 match为匹配到的子串 key相当于$n
-    return str.replace(/\{\{(.*?)\}\}/g, (match, key) => obj[key.trim()])
+    return str.replace(/\{\{(.*?)\}\}/g, (match, key) => obj[key.trim()]);
 }
 
 console.log(template(str, obj));
