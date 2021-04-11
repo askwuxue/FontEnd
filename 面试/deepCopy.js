@@ -1,35 +1,6 @@
-// TODO 下面注释的代码功能实现了，但是不是深拷贝
-// function deepCopy(newObj, oldObj) {
-//     for (let key in oldObj) {
-//         console.log(oldObj[key]);
-//         if (oldObj[key] instanceof Array) {
-//             newObj[key] = [];
-//             deepCopy(newObj[key], oldObj[key]);
-//         } else if (oldObj[key] instanceof Object) {
-//             newObj[key] = {};
-//             deepCopy(newObj[key], oldObj[key]);
-//         }
-//         newObj[key] = oldObj[key];
-//     }
-//     return newObj;
-// }
-
-// let oldObj = { name: 'wu', hobbies: ['a', 'b'], json: {a: "1", b: "2"} };
-
-// let newObj = {};
-
-// // deepCopy(newObj, oldObj); 
-// // console.log('deepCopy(newObj, oldObj): ', deepCopy(newObj, oldObj));
-
-// let target = deepCopy(newObj, oldObj);
-
-// target.json.b = "3";
-
-// console.log('oldObj: ', oldObj);
-
 function deepCopy(obj) {
     
-    // 如果传递的参数不是引用数组类型，直接返回
+    // 如果传递的参数不是引用类型，直接返回
     if (typeof obj !== 'object') return obj;
  
     const newObj = Array.isArray(obj) ? [] : {};

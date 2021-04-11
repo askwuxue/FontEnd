@@ -21,7 +21,7 @@ function parseUrl(url) {
             // 将url的参数进行转义
             val = decodeURIComponent(val);
 
-            // 如果parseObj中已经有了对应的属性 则将该属性的属性值设置为数组格式并增加
+            // 如果parseObj中已经有了对应的属性 则将该属性的属性值设置为数组格式并添加到数组中
             if (paramObj[key]) {
                 paramObj[key] = [].concat(paramObj[key], val);
             } else {

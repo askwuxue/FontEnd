@@ -10,7 +10,7 @@ function _new(constructor, ...params) {
 
     let obj = Object.create(constructor.prototype);
 
-    // 将空对象绑定到构造函数逇this上
+    // 将空对象绑定到构造函数的this上
     let context = constructor.apply(obj, paramsArr);
 
     // 如果构造函数内明确返回了一个object， 则返回该对象，否则返回实例对象obj
