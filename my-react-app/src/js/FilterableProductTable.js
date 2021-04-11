@@ -45,14 +45,43 @@ function ProductCategoryRow(props) {
     const productCategory = [...new Set(props.goodMessage.map(item => {
         return item.category;
     }))];
-    console.log('productCategory: ', productCategory);
-    return <h3></h3>
-    // return <h3 title={this.props.title}></h3>
+    const sportingArr = props.goodMessage.filter((item) => {
+        if (item.category === "Sporting Goods") {
+            return item;            
+        }
+    });
+    // console.log('sportingArr: ', sportingArr);
+    const electronicsArr = props.goodMessage.filter(item => {
+        if (item.category === "Electronics") {
+            return item;            
+        }
+    });
+    // console.log('electronicsArr: ', electronicsArr);
+    // console.log('productCategory: ', productCategory);
+    return(
+        <div>
+            <div>
+                <h3>{productCategory[0]}</h3>
+                <ProductRow item={sportingArr} 
+                    
+                />
+            </div>
+            <div>
+                <h3>{productCategory[1]}</h3>
+            </div>
+        </div>
+    ) 
 }
 
 // 每行展示一个产品
 function ProductRow(props) {
-    return <p goods={this.props.goods}></p>
+    console.log(props);
+    return (
+        <div>
+            {/* <span>{props.item.category}</span>&nbsp;&nbsp;
+            <span>{this.props.item.price}</span> */}
+        </div>
+    )
 }
 
 // 整个页面的最高级组件
