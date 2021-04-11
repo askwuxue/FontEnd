@@ -72,7 +72,6 @@ class FilterableProductTable extends React.Component {
     }
 }
 
-
 // 控制用户输入的组件
 class SearchBar extends React.Component {
     constructor(props) {
