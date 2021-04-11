@@ -10,12 +10,15 @@ const goodMessage = [
 
 // 控制用户输入的组件
 class SearchBar extends React.Component {
-    
+    constructor(props) {
+        super(props);
+    }
     render() {
+        // console.log(this.props);
         return(
             <div>
-                <input type="text" /><br />
-                <input type="checkbox" id="cbox1"/>
+                <input type="text" onChange={this.props.handleInputChange}/><br />
+                <input type="checkbox" id="cbox1" onChange={this.props.handleCheckboxChange}/>
                 <label htmlFor="cbox1">Only show production in stocked</label>
             </div>
         )
@@ -25,22 +28,20 @@ class SearchBar extends React.Component {
 // 展示产品内容并根据用户选择条件筛选结果
 function ProductTable(props) {
     console.log(props.goodMessage);
-    
+    const filterArr = props.goodMessage;
+
     return(
         <div>
-            {/* <h3>Name</h3> */}
             <span>Name</span>&nbsp;&nbsp;
             <span>Price</span>
-            {/* <h3>price</h3> */}
             <ProductCategoryRow goodMessage={props.goodMessage}/>
-            {/* <ProductRow /> */}
         </div>
     )
 }
 
 // 每个产品类别标题展示
 function ProductCategoryRow(props) {
-    console.log(props.goodMessage);
+    // console.log(props.goodMessage);
     // 获得商品分类
     const productCategory = [...new Set(props.goodMessage.map(item => {
         return item.category;
@@ -62,12 +63,15 @@ function ProductCategoryRow(props) {
         <div>
             <div>
                 <h3>{productCategory[0]}</h3>
-                <ProductRow item={sportingArr} 
-                    
-                />
+                {
+                    sportingArr.map((ele) => <ProductRow value={ele} key={ele.name}/>)
+                }
             </div>
             <div>
                 <h3>{productCategory[1]}</h3>
+                {
+                    electronicsArr.map((ele) => <ProductRow value={ele} key={ele.name}/>)
+                }
             </div>
         </div>
     ) 
@@ -75,28 +79,59 @@ function ProductCategoryRow(props) {
 
 // 每行展示一个产品
 function ProductRow(props) {
-    console.log(props);
+    // console.log(props);
     return (
         <div>
-            {/* <span>{props.item.category}</span>&nbsp;&nbsp;
-            <span>{this.props.item.price}</span> */}
+            <span>{props.value.name}</span>&nbsp;&nbsp;
+            <span>{props.value.price}</span>
         </div>
     )
 }
 
 // 整个页面的最高级组件
 class FilterableProductTable extends React.Component {
-
     constructor(props) {
         super(props);
+        this.state = {
+            // 用户输入和用户checkbox 的选择状态
+            filterText: '', inStockOnly: false
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+    }
+
+    // 用户输入事件
+    handleInputChange(e) {
+        // console.log(e.target.value);
+        this.setState({
+            filterText: e.target.value
+        })
+    }
+
+    // 用户checkbox状态改变事件
+    handleCheckboxChange(e) {
+        // console.log(e.target.checked);
+        this.setState({
+            inStockOnly: !e.target.checked
+        })
     }
 
     render() {
         // console.log(this.props.goodMessage);
+        // const filterArr = this.props.goodMessage;
+        let filterText = this.state.filterText;
+        let inStockOnly = this.state.inStockOnly;
+        const filterArr = this.props.goodMessage.filter(ele => {
+            console.log(ele);
+            if (ele.name.includes(filterText) && ele.stocked === inStockOnly) {
+                return ele;
+            }
+        });
+        console.log(filterArr);
         return(
             <div>
-                <SearchBar />
-                <ProductTable goodMessage={this.props.goodMessage}/>
+                <SearchBar handleInputChange={this.handleInputChange} handleCheckboxChange={this.handleCheckboxChange}/>
+                <ProductTable goodMessage={filterArr}/>
             </div>
         )
     }
