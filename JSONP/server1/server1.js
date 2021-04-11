@@ -21,8 +21,6 @@ app.get('/get', (req, res) => {
 
     // req.query get请求参数对象
     // console.log(req.query);
-
-    // console.log(req.method);
     let data = 'servername ';
     res.send('get(data)');
 })
