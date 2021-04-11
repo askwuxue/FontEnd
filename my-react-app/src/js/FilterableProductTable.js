@@ -13,12 +13,14 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
     }
+
     render() {
         // console.log(this.props);
+        // const checkedState = this.props.checkedState;
         return(
             <div>
                 <input type="text" onChange={this.props.handleInputChange}/><br />
-                <input type="checkbox" id="cbox1" onChange={this.props.handleCheckboxChange}/>
+                <input type="checkbox" id="cbox1" onChange={this.props.handleCheckboxChange} />
                 <label htmlFor="cbox1">Only show production in stocked</label>
             </div>
         )
@@ -121,16 +123,21 @@ class FilterableProductTable extends React.Component {
         // const filterArr = this.props.goodMessage;
         let filterText = this.state.filterText;
         let inStockOnly = this.state.inStockOnly;
-        const filterArr = this.props.goodMessage.filter(ele => {
-            console.log(ele);
-            if (ele.name.includes(filterText) && ele.stocked === inStockOnly) {
+        let filterArr = this.props.goodMessage.filter(ele => {
+            // console.log(ele);
+            if (ele.name.includes(filterText)) {
                 return ele;
             }
         });
+        // filterArr = filterArr.filter(ele => {
+        //     if (ele.stocked || ) {
+        //         return ele;
+        //     }
+        // })
         console.log(filterArr);
         return(
             <div>
-                <SearchBar handleInputChange={this.handleInputChange} handleCheckboxChange={this.handleCheckboxChange}/>
+                <SearchBar checkedState={this.state.inStockOnly} handleInputChange={this.handleInputChange} handleCheckboxChange={this.handleCheckboxChange}/>
                 <ProductTable goodMessage={filterArr}/>
             </div>
         )
