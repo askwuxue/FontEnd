@@ -121,7 +121,7 @@ class FilterableProductTable extends React.Component {
     handleCheckboxChange(e) {
         console.log(e.target.checked);
         this.setState({
-            inStockOnly: !e.target.checked
+            inStockOnly: e.target.checked
         })
     }
 
