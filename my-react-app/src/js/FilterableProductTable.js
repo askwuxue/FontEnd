@@ -93,7 +93,7 @@ class SearchBar extends React.Component {
 
 // 展示产品内容并根据用户选择条件筛选结果
 function ProductTable(props) {
-    console.log(props.goodMessage);
+    // console.log(props.goodMessage);
     const filterArr = props.goodMessage;
 
     return(
