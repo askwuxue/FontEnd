@@ -8,6 +8,71 @@ const goodMessage = [
     {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
   ];
 
+// 整个页面的最高级组件
+class FilterableProductTable extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            // 用户输入和用户checkbox 的选择状态
+            filterText: '', inStockOnly: false
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+        // this.handleFilter = this.handleFilter.bind(this);
+        this.filterArr = this.props.goodMessage.filter(ele => {
+            // console.log(ele);
+            if (ele.name.includes(this.state.filterText)) {
+                return ele;
+            }
+        });
+    }
+
+    // 用户输入事件
+    handleInputChange(e) {
+        // console.log(e.target.value);
+        this.setState({
+            filterText: e.target.value
+        })
+    }
+
+    // 用户checkbox状态改变事件
+    handleCheckboxChange(e) {
+        console.log(e.target.checked);
+        this.setState({
+            inStockOnly: e.target.checked
+        })
+    }
+
+    render() {
+        // console.log(this.props.goodMessage);
+        let filterText = this.state.filterText;
+        let inStockOnly = this.state.inStockOnly;
+        // console.log('this.state.inStockOnly: ', this.state.inStockOnly);
+        // console.log('inStockOnly: ', inStockOnly);
+        const filterArr = this.props.goodMessage.filter(ele => {
+            // console.log(ele);
+            if (inStockOnly) {
+                if (ele.name.includes(filterText) && ele.stocked) {
+                    return ele;
+                }
+            } else {
+                if (ele.name.includes(this.state.filterText)) {
+                    return ele;
+                }
+            }
+        });
+
+        // console.log(filterArr);
+        return(
+            <div>
+                <SearchBar checkedState={this.state.inStockOnly} handleInputChange={this.handleInputChange} handleCheckboxChange={this.handleCheckboxChange}/>
+                <ProductTable goodMessage={filterArr}/>
+            </div>
+        )
+    }
+}
+
+
 // 控制用户输入的组件
 class SearchBar extends React.Component {
     constructor(props) {
@@ -88,85 +153,6 @@ function ProductRow(props) {
             <span>{props.value.price}</span>
         </div>
     )
-}
-
-// 整个页面的最高级组件
-class FilterableProductTable extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            // 用户输入和用户checkbox 的选择状态
-            filterText: '', inStockOnly: false
-        };
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-        // this.handleFilter = this.handleFilter.bind(this);
-        this.filterArr = this.props.goodMessage.filter(ele => {
-            // console.log(ele);
-            if (ele.name.includes(this.state.filterText)) {
-                return ele;
-            }
-        });
-    }
-
-    // 用户输入事件
-    handleInputChange(e) {
-        // console.log(e.target.value);
-        this.setState({
-            filterText: e.target.value
-        })
-    }
-
-    // 用户checkbox状态改变事件
-    handleCheckboxChange(e) {
-        console.log(e.target.checked);
-        this.setState({
-            inStockOnly: e.target.checked
-        })
-    }
-
-    // handleFilter() {
-    //     if (condition) {
-            
-    //     }
-    //     this.filterArr = this.filterArr.filter(ele => {
-    //         if (this.state.inStockOnly) {
-    //             return ele
-    //         } else {
-
-    //         }
-    //     })
-    //     console.log(this.state.inStockOnly)
-    // }
-
-    render() {
-        // console.log(this.props.goodMessage);
-        // const filterArr = this.props.goodMessage;
-        let filterText = this.state.filterText;
-        let inStockOnly = this.state.inStockOnly;
-        console.log('this.state.inStockOnly: ', this.state.inStockOnly);
-        console.log('inStockOnly: ', inStockOnly);
-        const filterArr = this.props.goodMessage.filter(ele => {
-            // console.log(ele);
-            if (inStockOnly) {
-                if (ele.name.includes(filterText) && ele.stocked) {
-                    return ele;
-                }
-            } else {
-                if (ele.name.includes(this.state.filterText)) {
-                    return ele;
-                }
-            }
-        });
-
-        console.log(filterArr);
-        return(
-            <div>
-                <SearchBar checkedState={this.state.inStockOnly} handleInputChange={this.handleInputChange} handleCheckboxChange={this.handleCheckboxChange}/>
-                <ProductTable goodMessage={filterArr}/>
-            </div>
-        )
-    }
 }
 
 ReactDOM.render(
