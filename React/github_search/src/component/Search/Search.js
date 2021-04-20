@@ -21,8 +21,6 @@ export default class Search extends Component {
                 listItems: [] 
             });
 
-            console.log(`当前的请求是：http://localhost:3000/api1/users?q=${value}`);
-
             // TODO 相当于请求了代理，然后代理(参考src/setupProxy.js)通过代理发送请求
             axios.get(`http://localhost:3000/api1/users?q=${value}`,
                 {}
@@ -40,6 +38,7 @@ export default class Search extends Component {
                     })
                 }
             }, error => {
+
                 // 服务器错误时
                 PubSub.publishSync('setData', {
                     isFirst: false,
@@ -57,7 +56,6 @@ export default class Search extends Component {
             <div>
                 <h3>请输入Github用户名</h3>
                 <div className="input-group input-group-lg">
-                    {/* <span className="input-group-addon" id="sizing-addon1">@</span> */}
                     <input type="text" onKeyUp={this.getUserInfo}  className="form-control" placeholder="输入信息，按下回车搜索" aria-describedby="sizing-addon1" />
                 </div>
             </div>
