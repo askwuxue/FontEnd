@@ -15,6 +15,7 @@ export default class Nav extends Component {
                 {/* <a className="btn btn-default" href="/about" role="button">About</a> */}
                      {/* <Link to='/about' className="btn btn-default">About</Link> */}
                      <NavLink to="/home" className="btn btn-default"  activeClassName="hightLight">About</NavLink>
+                     {/* 路由组件接受的默认接受到props history location match */}
                      <Route path='/home' component={ Home }/>
                      <Route path='/about' component={ About }/>
                 </nav>
