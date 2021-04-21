@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import About from '../pages/About'
 import Home from '../pages/Home'
 import MyNavLink from './MyNavLink'
@@ -21,11 +21,18 @@ export default class Nav extends Component {
                     <NavLink to="/home" activeClassName="highLight" className="list-group-item" >About</NavLink> */}
                     
                     {/* 封装的MyNavLink的使用 */}
-                    <MyNavLink to="/home">Home</MyNavLink>
+                    <MyNavLink to="/home/ass">Home</MyNavLink>
                     <MyNavLink to="/about">About</MyNavLink>
-                    {/* 路由组件接受的默认接受到props history location match */}
-                    <Route path='/home' component={ Home }/>
-                    <Route path='/about' component={ About }/>
+
+                    {/* Switch 选择匹配 当其中一个匹配成功后就结束查找 */}
+                    <Switch>
+                        {/* 路由组件接受的默认接受到props history location match */}
+                        {/* 属性exact开启严格匹配 也就是上述中的to路径必须包含path值且以path值开头*/}
+                        <Route path='/home' component={ Home }/>
+                        <Route path='/about' component={ About }/>
+                        {/* 卸载路由规则的下方当没有路由规则匹配的时候，重定向到一个路由 */}
+                        <Redirect to='/home'></Redirect>
+                    </Switch>    
                 </nav>
             </div>
         )
