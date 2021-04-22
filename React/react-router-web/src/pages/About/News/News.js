@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Home extends Component {
+export default class News extends Component {
     render() {
-        console.log(this.props);
         return (
             <div>
-                this is Home page
+                this is new .....
             </div>
         )
     }

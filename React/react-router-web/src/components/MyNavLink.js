@@ -10,7 +10,7 @@ export default class MyNavLink extends Component {
                     {this.props.children} 不用写咋标签体里面，直接放在属性中
                     渲染的时候会被渲染成和在标签体中一样的
                 */}
-                <NavLink {...this.props} activeClassName="highLight" className="list-group-item" ></NavLink>
+                <NavLink {...this.props} activeClassName="highLight" className="btn btn-default navbar-btn" ></NavLink>
             </div>
         )
     }

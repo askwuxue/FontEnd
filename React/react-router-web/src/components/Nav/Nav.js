@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import About from '../pages/About'
-import Home from '../pages/Home'
-import MyNavLink from './MyNavLink'
+import About from '../../pages/About/About'
+import Home from '../../pages/Home/Home'
+import MyNavLink from '../MyNavLink'
+import './Nav.css'
 
 export default class Nav extends Component {
     render() {
@@ -21,7 +22,7 @@ export default class Nav extends Component {
                     <NavLink to="/home" activeClassName="highLight" className="list-group-item" >About</NavLink> */}
                     
                     {/* 封装的MyNavLink的使用 */}
-                    <MyNavLink to="/home/ass">Home</MyNavLink>
+                    <MyNavLink to="/home">Home</MyNavLink>
                     <MyNavLink to="/about">About</MyNavLink>
 
                     {/* Switch 选择匹配 当其中一个匹配成功后就结束查找 */}
