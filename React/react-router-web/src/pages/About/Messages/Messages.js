@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Route, Link, Switch, Redirect} from 'react-router-dom'
+import {Route, Link, Switch} from 'react-router-dom'
 import Detail from './Detail/Detail'
 
 export default class Messages extends Component {
