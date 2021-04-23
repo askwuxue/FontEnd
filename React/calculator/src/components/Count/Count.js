@@ -1,34 +1,46 @@
 import React, { Component } from 'react'
+import store from '../../redux/store';
 
 export default class Count extends Component {
     constructor(props) {
         super(props);
-        // 初始
-        this.state = {count: 0};
         // 存放select的ref
         this.selectRef = React.createRef();
         // 存放定时器ID
-        this.timer = null;        
+        this.timer = null;
+    }
+
+    // 订阅reducer的改变
+    componentDidMount() {
+        // store.subscribe() 订阅reducer返回值的变化 接受一个回调函数 在回调函数中通过this.setState({})
+        // 触发组件的重新渲染， 也可以在根组件的生命周期函数中订阅reducer的改变
+        store.subscribe(() => {
+            this.setState({})
+        });
     }
 
     // 增加
     increase = () => {
         let curSelected = parseInt(this.selectRef.current.value);
-        this.setState({count: this.state.count + curSelected});
-        console.log(this.selectRef.current.value);
+        // store.dispatch() 像reducer分发内容 参数是action对象
+        store.dispatch({type: 'increase', data: curSelected});
+        // console.log(this.selectRef.current.value);
+        // store.getState() 接受reducer返回的内容
+        // console.log(store.getState());
     }
 
     // 减小
     decrease = () => {
         let curSelected = parseInt(this.selectRef.current.value);
-        this.setState({count: this.state.count - curSelected});
+        // this.setState({count: this.state.count - curSelected});
+        store.dispatch({type: 'decrease', data: curSelected});
     }
 
     // 当选择的是奇数才加载
     increaseOdd = () => {
         let curSelected = parseInt(this.selectRef.current.value);
         if (curSelected % 2 === 1) {
-            this.setState({count: this.state.count + curSelected});
+            store.dispatch({type: 'increase', data: curSelected});
         }
     }
     
@@ -37,14 +49,14 @@ export default class Count extends Component {
         let curSelected = parseInt(this.selectRef.current.value);
         clearTimeout(this.timer);
         this.timer = setTimeout(() => {
-            this.setState({count: this.state.count + curSelected});
+            store.dispatch({type: 'increase', data: curSelected});
         }, 500)
     }
 
     render() {
         return (
             <div>
-                <h1>当前的求和结果是: {this.state.count}</h1>
+                <h1>当前的求和结果是: {store.getState()}</h1>
                 <select ref={this.selectRef}>
                     <option>1</option>
                     <option>2</option>
