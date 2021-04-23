@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import store from '../../redux/store';
-import { increaseAction, decreaseAction } from '../../redux/countAction'
+import { increaseAction, decreaseAction, increaseAsyncAction } from '../../redux/countAction'
 
 export default class Count extends Component {
     constructor(props) {
@@ -51,11 +51,14 @@ export default class Count extends Component {
     // 异步加载
     increaseAsync = () => {
         let curSelected = parseInt(this.selectRef.current.value);
-        clearTimeout(this.timer);
-        this.timer = setTimeout(() => {
-            // store.dispatch({type: 'increase', data: curSelected});
-            store.dispatch(increaseAction(curSelected))
-        }, 500)
+        // 1. 在action中使用异步加载
+        store.dispatch(increaseAsyncAction(curSelected, 1000));
+        // clearTimeout(this.timer);
+        // 2. 在组件内进行异步加载
+        // this.timer = setTimeout(() => {
+        //     // store.dispatch({type: 'increase', data: curSelected});
+        //     store.dispatch(increaseAction(curSelected))
+        // }, 500)
     }
 
     render() {
