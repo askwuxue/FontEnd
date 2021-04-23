@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import store from '../../redux/store';
+import { increaseAction, decreaseAction } from '../../redux/countAction'
 
 export default class Count extends Component {
     constructor(props) {
@@ -23,7 +24,8 @@ export default class Count extends Component {
     increase = () => {
         let curSelected = parseInt(this.selectRef.current.value);
         // store.dispatch() 像reducer分发内容 参数是action对象
-        store.dispatch({type: 'increase', data: curSelected});
+        // store.dispatch({type: 'increase', data: curSelected});
+        store.dispatch(increaseAction(curSelected))
         // console.log(this.selectRef.current.value);
         // store.getState() 接受reducer返回的内容
         // console.log(store.getState());
@@ -33,14 +35,16 @@ export default class Count extends Component {
     decrease = () => {
         let curSelected = parseInt(this.selectRef.current.value);
         // this.setState({count: this.state.count - curSelected});
-        store.dispatch({type: 'decrease', data: curSelected});
+        // store.dispatch({type: 'decrease', data: curSelected});
+        store.dispatch(decreaseAction(curSelected))
     }
 
     // 当选择的是奇数才加载
     increaseOdd = () => {
         let curSelected = parseInt(this.selectRef.current.value);
         if (curSelected % 2 === 1) {
-            store.dispatch({type: 'increase', data: curSelected});
+            // store.dispatch({type: 'increase', data: curSelected});
+            store.dispatch(increaseAction(curSelected))
         }
     }
     
@@ -49,7 +53,8 @@ export default class Count extends Component {
         let curSelected = parseInt(this.selectRef.current.value);
         clearTimeout(this.timer);
         this.timer = setTimeout(() => {
-            store.dispatch({type: 'increase', data: curSelected});
+            // store.dispatch({type: 'increase', data: curSelected});
+            store.dispatch(increaseAction(curSelected))
         }, 500)
     }
 
