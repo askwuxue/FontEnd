@@ -1,13 +1,69 @@
-// 该容器组件连接UI组件，对UI组件的数据进行输入和输出
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import CountUI from '../../components/CountUI/CountUI'
+import { increaseAction, 
+        decreaseAction, 
+        increaseOddAction, 
+        increaseAsyncAction } 
+        from '../../redux/countAction';
 
-import { increaseAction, decreaseAction, increaseOddAction, increaseAsyncAction } from '../../redux/countAction'
+class CountUI extends Component {
+    constructor(props) {
+        super(props);
+        // 存放select的ref
+        this.selectRef = React.createRef();
+    }
+
+    // 增加
+    increase = () => {
+        let curSelected = parseInt(this.selectRef.current.value);
+        // TODO this.props 接收到的是在容器组件里面定义的两个函数 mapStateToProps， mapDispatchToProps的返回值
+        this.props.increase(curSelected);
+    }
+
+    // 减小
+    decrease = () => {
+        let curSelected = parseInt(this.selectRef.current.value);
+        this.props.decrease(curSelected);
+    }
+
+    // 当选择的是奇数才加载
+    increaseOdd = () => {
+        let curSelected = parseInt(this.selectRef.current.value);
+        this.props.increaseOdd(curSelected);
+    }
+    
+    // 异步加载
+    increaseAsync = () => {
+        let curSelected = parseInt(this.selectRef.current.value);
+        this.props.increaseAsync(curSelected, 1000);
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>当前的求和结果是: {this.props.data}</h1>
+                <select ref={this.selectRef}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                &nbsp;&nbsp;
+                <button onClick={this.increase}>+</button>
+                &nbsp;&nbsp;
+                <button onClick={this.decrease}>-</button>
+                &nbsp;&nbsp;
+                <button onClick={this.increaseOdd}>奇数加</button>
+                &nbsp;&nbsp;
+                <button onClick={this.increaseAsync}>异步加</button>
+                &nbsp;&nbsp;
+            </div>
+        )
+    }
+}
 
 // 它的作用就是像它的名字那样，建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系。
 const mapStateToProps = ( state, ownProps ) => ({
-    // TODO mapStateToProps 返回的对象中的值，即UI组件最终渲染的值，store只要发生变化，就会调用
-    // mapStateToProps 这个方法
+    // TODO mapStateToProps 返回的对象中的值，即UI组件最终渲染的值，store只要发生变化，就会调用mapStateToProps
     data: state
 })
 
