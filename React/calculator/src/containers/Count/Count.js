@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { increaseAction, 
-        decreaseAction, 
-        increaseOddAction, 
-        increaseAsyncAction } 
-        from '../../redux/countAction';
+         decreaseAction, 
+         increaseOddAction, 
+         increaseAsyncAction } from '../../redux/count/countAction';
 
 class CountUI extends Component {
     constructor(props) {
@@ -41,7 +40,8 @@ class CountUI extends Component {
     render() {
         return (
             <div>
-                <h1>当前的求和结果是: {this.props.data}</h1>
+                <h2>Count组件，Person组件求和为:  {this.props.userTotal}</h2>
+                <h3>当前的求和结果是: {this.props.count}</h3>
                 <select ref={this.selectRef}>
                     <option>1</option>
                     <option>2</option>
@@ -62,9 +62,11 @@ class CountUI extends Component {
 }
 
 // 它的作用就是像它的名字那样，建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系。
+// TODO state就是reducers返回的对象，其中包括了count属性和person属性。
 const mapStateToProps = ( state, ownProps ) => ({
     // TODO mapStateToProps 返回的对象中的值，即UI组件最终渲染的值，store只要发生变化，就会调用mapStateToProps
-    data: state
+    count: state.count,
+    userTotal: state.person.length
 })
 
 // 1. 函数式的mapDispatchToProps

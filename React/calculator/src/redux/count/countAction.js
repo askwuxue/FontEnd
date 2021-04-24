@@ -7,7 +7,7 @@ export const increaseAction = data => ({ type: INCREASE, data })
 export const decreaseAction = data => ({ type: DECREASE, data })
 
 // 奇数加的action
-export const increaseOddAction = data => ((data % 2 === 1) ? {type: INCREASE, data} : null)
+export const increaseOddAction = data => ((data % 2 === 1) ? {type: INCREASE, data} : {type: null})
 
 // 借助中间间可以使用function action 异步action
 let timer = null;

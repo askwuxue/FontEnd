@@ -5,10 +5,8 @@ import { INCREASE, DECREASE } from '../constant';
 const initState = 0;
 // reducer处理函数 接受处理前的state和action参数 action = {type, data}
 export default function countReducer (preState = initState, action) {
-    // console.log('action: ', action);
-    // console.log('preState: ', preState);
     
-    let { type, data } = action; 
+    let { type, data } = action;
 
     switch (type) {
         // +
