@@ -11,6 +11,6 @@ import countReducer from './countReducer'
 // 导出一个store对象
 export default createStore(
     countReducer,
-    // 使用中间间允许异步 action(function)
+    // TODO 使用中间间允许异步 action(function)
     applyMiddleware(thunk)
     )
