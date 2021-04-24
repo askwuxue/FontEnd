@@ -7,7 +7,6 @@ import ListFirst from './ListFirst/ListFirst'
 import ListLoading from './ListLoading/ListLoading'
 
 export default class List extends Component {
-
     // 初始化时有的数据，后续根据订阅的结果更新 
     state = {
         isFirst: true,
@@ -19,7 +18,6 @@ export default class List extends Component {
     // 组件挂载结束之后订阅
     componentDidMount() {
         this.token = PubSub.subscribe('setData', (msg, data) => {
-
             // 根据订阅结果更新state
             this.setState(data);
         })

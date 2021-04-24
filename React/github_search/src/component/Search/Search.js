@@ -4,12 +4,10 @@ import PubSub from 'pubsub-js'
 export default class Search extends Component {
     
     getUserInfo = async (e) => {
-
         // 用户按下回车 
         // TODO 对象的解构赋值
         let { keyCode } = e;
         if (keyCode === 13) {
-
             // 对象的解构赋值
             let { target: { value } } = e;
 
@@ -20,6 +18,7 @@ export default class Search extends Component {
                 isError: false,
                 listItems: [] 
             });
+            
             //#region TODO 使用axios 发送请求，本质XHR 
             // TODO 相当于请求了代理，然后代理(参考src/setupProxy.js)通过代理发送请求
             // axios.get(`http://localhost:3000/api1/users?q=${value}`,
