@@ -1,10 +1,16 @@
-import React, { Component } from 'react'
+// TODO lazy 配合Suspense 实现路由组件懒加载，当需要该路由组件时，加载。Suspense 组件，包裹路由组件。属性fallback指定回退计划
+import React, { Component,lazy, Suspense } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import About from '../../pages/About/About'
-import Home from '../../pages/Home/Home'
-import MyNavLink from '../MyNavLink'
+// import About from '../../pages/About/About'
+// import Home from '../../pages/Home/Home'
+import MyNavLink from '../MyNavLink/MyNavLink'
 import './Nav.css'
+import Loading from '../Loading/Loading'
 
+
+const Home = lazy(() => (import('../../pages/Home/Home')));
+
+const  About = lazy(() => (import('../../pages/About/About')));
 export default class Nav extends Component {
     render() {
         return (
@@ -29,10 +35,12 @@ export default class Nav extends Component {
                     <Switch>
                         {/* 路由组件接受的默认接受到props history location match */}
                         {/* 属性exact开启严格匹配 也就是上述中的to路径必须包含path值且以path值开头*/}
+                        <Suspense fallback={<Loading />}>
                         <Route path='/home' component={ Home }/>
                         <Route path='/about' component={ About }/>
                         {/* 卸载路由规则的下方当没有路由规则匹配的时候，重定向到一个路由 */}
                         <Redirect to='/home'></Redirect>
+                        </Suspense>
                     </Switch>    
                 </nav>
             </div>

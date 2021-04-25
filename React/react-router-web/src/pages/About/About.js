@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Switch, Route, Redirect} from 'react-router-dom'
-import MyNavLink from '../../components/MyNavLink'
+import MyNavLink from '../../components/MyNavLink/MyNavLink'
 import './About.css'
 import Messages from './Messages/Messages'
 import News from './News/News'
