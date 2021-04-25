@@ -1,5 +1,5 @@
 // createStore 专门用于创建redux中的核心对象store
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 
 // TODO 引入使用redux-devtools-extension 的第三方库无法使用
 // import { composeWithDevTools } from 'redux-devtools-extension'
