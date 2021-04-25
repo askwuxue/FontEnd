@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { nanoid }  from 'nanoid'
-import { personAddAction } from '../../redux/person/personAction'
+import { personAdd } from '../../redux/person/personAction'
 
 class Person extends Component {
 
@@ -41,7 +41,7 @@ const mapStateToProps = (state) => ({
 
 // 建立 UI 组件的参数到store.dispatch方法的映射 
 const mapDispatchToProps = {
-    personAdd: personAddAction
+    personAdd
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Person)

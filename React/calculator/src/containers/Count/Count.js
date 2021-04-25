@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { increaseAction, 
-         decreaseAction, 
-         increaseOddAction, 
-         increaseAsyncAction } from '../../redux/count/countAction';
+import { increase, 
+         decrease, 
+         increaseOdd, 
+         increaseAsync } from '../../redux/count/countAction';
 
 class CountUI extends Component {
     constructor(props) {
@@ -91,10 +91,10 @@ const mapStateToProps = ( state, ownProps ) => ({
 // 2. 对象方式的 mapDispatchToProps
 // 建立 UI 组件的参数到store.dispatch方法的映射 
 const mapDispatchToProps = {
-    increase: increaseAction,
-    decrease: decreaseAction,
-    increaseOdd: increaseOddAction,
-    increaseAsync: increaseAsyncAction
+    increase,
+    decrease,
+    increaseOdd,
+    increaseAsync
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountUI)
