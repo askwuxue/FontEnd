@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+</head>
+<body>
+    <button class="btn">submit</button>
+    <script>
+        let btn = document.querySelector('.btn');
+        addEventListener('click', function() {
+            axios({
+                method: 'post',
+                url: 'https://service-avvfxxuz-1259223244.sh.apigw.tencentcs.com/release/test_20210417',
+                // data: 
+                data: JSON.stringify({test: 'test-data'}), 
+                dataType: 'json', 
+                contentType: 'application/json'
+            })
+            .then(data => {
+                console.log(data);
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "event": {
+    "body": "{\"test\":\"test-data\"}",
+    "headerParameters": {},
+    "headers": {
+      "accept": "application/json, text/plain, */*",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "connection": "keep-alive",
+      "content-length": "20",
+      "content-type": "application/x-www-form-urlencoded",
+      "endpoint-timeout": "15",
+      "host": "service-avvfxxuz-1259223244.sh.apigw.tencentcs.com",
+      "origin": "http://127.0.0.1:5500",
+      "referer": "http://127.0.0.1:5500/",
+      "requestsource": "APIGW",
+      "sec-ch-ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"90\", \"Google Chrome\";v=\"90\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "cross-site",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
+      "x-api-requestid": "5376fa5f361972e3a0640ededd5c1889",
+      "x-api-scheme": "https",
+      "x-b3-traceid": "5376fa5f361972e3a0640ededd5c1889",
+      "x-qualifier": "$DEFAULT"
+    },
+    "httpMethod": "POST",
+    "isBase64Encoded": false,
+    "path": "/test_20210417",
+    "pathParameters": {},
+    "queryString": {},
+    "queryStringParameters": {},
+    "requestContext": {
+      "httpMethod": "ANY",
+      "identity": {},
+      "path": "/test_20210417",
+      "serviceId": "service-avvfxxuz",
+      "sourceIp": "114.95.99.55",
+      "stage": "release"
+    }
+  }
+}
