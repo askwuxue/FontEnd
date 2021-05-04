@@ -1,5 +1,6 @@
 // 使用common JS语法配置webpack
 const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // 打包入口
@@ -28,13 +29,19 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    // 如果没有安装less，需要安装less和less-loader
-                    'less-loader'
+                    // TODO 如果没有安装less，需要安装less和less-loader
                 ]
             }
         ]
     },
-    plugins: [],
+    plugins: [
+        // TODO 使用插件对HTML进行生成,自动引入打包后的资源文件
+        // TODO htmlWebpackPlugin 必须和webpack的版本一致
+        new HtmlWebpackPlugin({
+            // TODO 模板中也不需要引入，生成的模板中会自动引入
+            template: './src/index.html'
+        })
+    ],
     // 设置模式
     mode: 'development'
 }

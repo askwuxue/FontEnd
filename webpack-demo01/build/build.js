@@ -98,15 +98,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./public/app.less":
-/*!***************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./public/app.less ***!
-  \***************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./public/test.less":
+/*!****************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./public/test.less ***!
+  \****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"h1 {\\r\\n    color: aliceblue;\\r\\n}\", \"\"]);\n// Exports\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./public/app.less?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"h1 {\\r\\n    color: aliceblue;\\r\\n}\", \"\"]);\n// Exports\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./public/test.less?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -146,18 +146,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
-/***/ "./public/app.less":
-/*!*************************!*\
-  !*** ./public/app.less ***!
-  \*************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_app_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js!./app.less */ \"./node_modules/css-loader/dist/cjs.js!./public/app.less\");\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_app_less__WEBPACK_IMPORTED_MODULE_1__[\"default\"], options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_app_less__WEBPACK_IMPORTED_MODULE_1__[\"default\"].locals || {});\n\n//# sourceURL=webpack:///./public/app.less?");
-
-/***/ }),
-
 /***/ "./public/data.json":
 /*!**************************!*\
   !*** ./public/data.json ***!
@@ -166,6 +154,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module) {
 
 eval("module.exports = JSON.parse(\"{\\\"a\\\":1,\\\"b\\\":2}\");\n\n//# sourceURL=webpack:///./public/data.json?");
+
+/***/ }),
+
+/***/ "./public/test.less":
+/*!**************************!*\
+  !*** ./public/test.less ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_test_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js!./test.less */ \"./node_modules/css-loader/dist/cjs.js!./public/test.less\");\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_test_less__WEBPACK_IMPORTED_MODULE_1__[\"default\"], options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_test_less__WEBPACK_IMPORTED_MODULE_1__[\"default\"].locals || {});\n\n//# sourceURL=webpack:///./public/test.less?");
 
 /***/ }),
 
@@ -189,7 +189,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n/* harmony import */ var _public_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../public/data.json */ \"./public/data.json\");\nvar _public_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../public/data.json */ \"./public/data.json\", 1);\n/* harmony import */ var _public_app_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../public/app.css */ \"./public/app.css\");\n/* harmony import */ var _public_app_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../public/app.less */ \"./public/app.less\");\n// webpack的入口文件 /src/index.js\r\n\r\n\r\n// 开发环境打包\r\n// webpack .\\src\\index.js -o .\\build\\build.js --mode=development\r\n\r\n// 线上环境打包 会将入口文件压缩\r\n// webpack .\\src\\index.js -o .\\build\\build.js --mode=production\r\n\r\n// webpack 默认只支持打包.js .json 对与.css img 等资源不支持，需要借助loader和plugins实现\r\n\r\n\r\n\r\n\r\nconst { a, b } = _public_data_json__WEBPACK_IMPORTED_MODULE_1__;\r\n\r\nObject(_app__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(a, b);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n/* harmony import */ var _public_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../public/data.json */ \"./public/data.json\");\nvar _public_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../public/data.json */ \"./public/data.json\", 1);\n/* harmony import */ var _public_app_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../public/app.css */ \"./public/app.css\");\n/* harmony import */ var _public_test_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../public/test.less */ \"./public/test.less\");\n// webpack的入口文件 /src/index.js\r\n\r\n\r\n// 开发环境打包\r\n// webpack .\\src\\index.js -o .\\build\\build.js --mode=development\r\n\r\n// 线上环境打包 会将入口文件压缩\r\n// webpack .\\src\\index.js -o .\\build\\build.js --mode=production\r\n\r\n// webpack 默认只支持打包.js .json 对与.css img 等资源不支持，需要借助loader和plugins实现\r\n\r\n\r\n\r\n\r\nconst { a, b } = _public_data_json__WEBPACK_IMPORTED_MODULE_1__;\r\n\r\nObject(_app__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(a, b);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
