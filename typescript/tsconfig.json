@@ -15,12 +15,12 @@
         "target": "es5",
         // 使用的模块化规范
         // 'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'esnext'
-        "module": "amd", 
+        "module": "amd"
         // 项目中使用的库,一般不需要修改
         // "lib": ["dom"]
         // 编译后文件存放位置
-        "outDir": "./build",
+        // "outDir": "./build"
         // 将编译后的文件合并到一个文件中 
-        "outFile": "./build/index.js"  
+        // "outFile": "../build/index.js"
     }
 }

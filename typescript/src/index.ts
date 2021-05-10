@@ -3,6 +3,6 @@ let a = 1;
 function demo(num: number | string):void {
     console.log(num);
     console.log(num + 'demo1');
-    console.log(c)
+    console.log(c);
 }
-demo(1);
+demo(5); 
