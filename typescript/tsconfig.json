@@ -31,6 +31,16 @@
         // 是否生成编译后的JavaScript文件
         "noEmit": false,
         // 当有错误时不生成编译文件
-        "noEmitOnError": false
+        "noEmitOnError": false,
+        // TODO 是否开启严格模式 当存在导入模块时，该属性无效，将会一直是严格模式
+        "alwaysStrict": true,
+        // 不允许隐式的any 
+        "noImplicitAny": true,
+        // 不允许不明确的this
+        "noImplicitThis": true,
+        // TODO 严格检查空值
+        "strictNullChecks": false,
+        // 所有严格检查的总阀
+        "strict": true
     }
 }

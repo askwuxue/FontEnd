@@ -7,4 +7,4 @@ function demo(num) {
     console.log(num + 'demo1');
     console.log(c_1.c);
 }
-demo(5);
+demo(10);

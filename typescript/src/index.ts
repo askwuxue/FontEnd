@@ -5,4 +5,4 @@ function demo(num: number | string):void {
     console.log(num + 'demo1');
     console.log(c);
 }
-demo(5); 
+demo(10);
