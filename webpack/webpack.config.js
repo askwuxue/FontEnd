@@ -1,6 +1,7 @@
 // 使用common JS语法配置webpack
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     // 打包入口
@@ -28,7 +29,11 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: [
-                    'style-loader',
+                    // 创建style标签，将样式放入
+                    // 'style-loader',
+                    // TODO 代替style-loader 生成单独的文件
+                    MiniCssExtractPlugin.loader,
+                    // 将css文件整合到js文件中
                     'css-loader',
                     // TODO 如果没有安装less，需要安装less和less-loader
                 ]
@@ -41,7 +46,7 @@ module.exports = {
                 options: {
                     // TODO 对图片的大小进行限制，如果超过小于限制，使用base编码，减小请求次数
                     // 注：base64编码，会导致图片体积稍微变大一点。
-                    limit: 8 * 1024
+                    limit: 1 * 1024
                 }
             },
             {
@@ -61,6 +66,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             // TODO 模板中也不需要引入，生成的模板中会自动引入
             template: './src/index.html'
+        }),
+        // TODO 使用插件，生成单独的css文件。存在bug，没有生成所有的css
+        new MiniCssExtractPlugin({
+            filename: './css/bound.css'
         })
     ],
     // 设置模式
