@@ -29,10 +29,16 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: [
-                    // 创建style标签，将样式放入
-                    // 'style-loader',
-                    // TODO 代替style-loader 生成单独的文件
-                    MiniCssExtractPlugin.loader,
+                    {
+                        // 创建style标签，将样式放入
+                        // 'style-loader',
+                        // TODO 代替style-loader 生成单独的文件
+                        loader: MiniCssExtractPlugin.loader,
+                        // TODO 解决CSS中background背景图访问地址错误
+                        options: {
+                            publicPath: '../'
+                        }  
+                    },
                     // 将css文件整合到js文件中
                     'css-loader',
                     // TODO 如果没有安装less，需要安装less和less-loader
@@ -69,9 +75,22 @@ module.exports = {
         }),
         // TODO 使用插件，生成单独的css文件。存在bug，没有生成所有的css
         new MiniCssExtractPlugin({
-            filename: './css/bound.css'
+            filename: './css/bound.css',
+            
         })
     ],
     // 设置模式
-    mode: 'development'
+    mode: 'development',
+
+    // 热更新启动命令 npx webpack serve
+    devServer: {
+        // 项目构建好的路径
+        contentBase: resolve(__dirname, 'build'),
+        // 开启压缩
+        compress: true,
+        // 浏览器启动的端口
+        port: '8888',
+        // 是否打开浏览器
+        open: true
+    }
 }
