@@ -7,13 +7,40 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
         // 代替clean-webpack-plugin 编译前先清除目录
-        clean: true
+        clean: true,
+        // webpack默认打包使用的是箭头函数作为一个全局的自执行函数，关闭arrowFunction选项，使得webpack使用普通函数
+        environment: {
+            'arrowFunction': false
+        }
     },
     module: {
         rules: [
             {
                 test: /\.ts$/,
-                use: ['ts-loader']
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                [
+                                    '@babel/preset-env', {
+                                        // 要兼容的目标浏览器
+                                        targets: {
+                                            // 'chrome': '58',
+                                            'ie': '11'
+                                        },
+
+                                        // 制定corejs 的版本
+                                        'corejs': '3',
+                                        // 使用corejs 的方式usage表示按需加载
+                                        'useBuiltIns': 'usage'
+                                    }
+                                ]
+                            ]
+                        }
+                    },
+                    'ts-loader'
+                ]
             }
         ]
     },
