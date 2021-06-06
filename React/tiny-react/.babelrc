@@ -4,6 +4,7 @@
         [
             "@babel/preset-react",
             {
+                // 默认是React.createElement 手动更改为
                 "pragma": "TinyReact.createElement"
             }
         ]
