@@ -6,7 +6,7 @@ export default function updateNodeElement(newElement, virtualDom) {
         // 事件处理函数
         if (propsName.startsWith('on')) {
             // 事件名
-            const eventName = propsValue.slice(2);
+            const eventName = propsName.slice(2).toLowerCase();
             newElement.addEventListener(eventName, propsValue);
             // 属性名是value 或者checked无法通过setAttribute设置
         } else if (propsName === 'value' || propsName === 'checked') {

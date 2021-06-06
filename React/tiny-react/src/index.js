@@ -2,12 +2,15 @@ import TinyReact from './TinyReact';
 
 const root = document.getElementById('root');
 
-// const virtualDom = (
-//     <div className="shopping-list">
-//         <h1 style="color: blue">Shopping List for</h1>
-//         { 1 > 2}
-//     </div>
-// )
+const virtualDom = (
+    <div className="shopping-list">
+        <h1 style="color: blue">Shopping List for</h1>
+        { 1 > 2}
+        <button onClick={e => console.log(e.target)}>点击</button>
+    </div>
+)
+
+// TinyReact.render(virtualDom, root);
 
 function Demo() {
     return <h1>Demo</h1>
