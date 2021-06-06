@@ -3,12 +3,10 @@ import isFunction from './isFunction';
 import mountComponent from './mountComponent';
 
 export default function mountElement(virtualDom, container) {
-    // 两种不同的元素，一种是组件形式的，一种是原生的JSX形式
-    // component
+    // 组件形式的JSX
     if (isFunction(virtualDom)) {
-        // console.log('组件');
         mountComponent(virtualDom, container);
-        // NativeElement
+        // 原生JSX
     } else {
         mountNativeElement(virtualDom, container);
     }

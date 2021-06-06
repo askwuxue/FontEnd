@@ -6,7 +6,6 @@ export default function mountComponent(virtualDom, container) {
     let nextVirtualDOM = null;
     // 1. 函数组件
     if (isFunctionComponent(virtualDom)) {
-        // console.log('函数组件');
         nextVirtualDOM = buildFunctionComponent(virtualDom);
         // 组件中返回了另一个组件
         if (isFunction(nextVirtualDOM)) {
@@ -16,7 +15,6 @@ export default function mountComponent(virtualDom, container) {
         }
         // 2. 类组件
     } else {
-        // console.log('类组件');
         nextVirtualDOM = buildClassComponent(virtualDom);
         // 返回了另一个组件
         if (isFunction(nextVirtualDOM)) {
@@ -29,9 +27,7 @@ export default function mountComponent(virtualDom, container) {
 
 // 编译函数组件
 function buildFunctionComponent(virtualDom) {
-    // 组件的内容
-    // console.log('组件的内容: ' + JSON.stringify(virtualDom.type({})));
-    // 为组件添加props，这里时函数组件
+    // 为组件添加props
     return virtualDom.type(virtualDom.props || {});
 }
 
@@ -42,5 +38,4 @@ function buildClassComponent(virtualDom) {
     // 渲染DOM
     const nextVirtualDOM = component.render();
     return nextVirtualDOM;
-    // console.log(virtualDom);
 }

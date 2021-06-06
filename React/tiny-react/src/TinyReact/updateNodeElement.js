@@ -1,3 +1,4 @@
+// 为生成的DOM元素添加属性
 export default function updateNodeElement(newElement, virtualDom) {
     let newProps = virtualDom.props;
     Object.keys(newProps).forEach(propsName => {
