@@ -2,32 +2,53 @@ import TinyReact from './TinyReact';
 
 const root = document.getElementById('root');
 
-const virtualDom = (
-    <div className="shopping-list">
-        <h1 style="color: blue">Shopping List for</h1>
-        { 1 > 2}
-        <button onClick={e => console.log(e.target)}>点击</button>
-    </div>
-)
+// const virtualDom = (
+//     <div className="shopping-list">
+//         <h1 style="color: blue">Shopping List for</h1>
+//         { 1 > 2}
+//         <button onClick={e => console.log(e.target)}>点击</button>
+//     </div>
+// )
 
-// TinyReact.render(virtualDom, root);
+// // TinyReact.render(virtualDom, root);
 
-function Demo() {
-    return <h1>Demo</h1>
+// 1. 函数组件
+// function Demo() {
+//     return <h1>Demo</h1>
+// }
+
+// // TinyReact.render(virtualDom, root);
+// function Header(props) {
+//     return (
+//         <div>
+//             {props.title}
+//             <Demo />
+//         </div>
+//     )
+// }
+
+// // console.log(Header);
+
+// TinyReact.render(<Header title="Header"></Header>, root);
+
+// 2. 类组件
+
+class Alert extends TinyReact.Component {
+    // 父类中定义this.props。子类中也可以使用了
+    constructor(props) {
+        // TODO 子类的的constructor中this的指向???
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>Alert, {this.props.name}, {this.props.age}</div>
+        )
+    }
 }
 
-// TinyReact.render(virtualDom, root);
-function Header(props) {
-    return (
-        <div>
-            {props.title}
-            <Demo />
-        </div>
-    )
-}
+console.log(Alert);
 
-// console.log(Header);
-
-TinyReact.render(<Header title="Header"></Header>, root);
+TinyReact.render(<Alert name="wuxue" age={18} />, root);
 
 // console.log(virtualDom);
