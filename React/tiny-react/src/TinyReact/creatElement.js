@@ -1,5 +1,5 @@
 export default function createElement(type, props, ...children) {
-    const textElement = [...children].reduce((result, child) => {
+    const childElement = [...children].reduce((result, child) => {
         if (child !== true && child !== false && child !== undefined && child !== null) {
             if (child instanceof Object) {
                 result.push(child)
@@ -11,7 +11,7 @@ export default function createElement(type, props, ...children) {
     }, [])
     return {
         type,
-        props,
-        children: textElement
+        props: Object.assign({ children: childElement }, props),
+        children: childElement
     }
 }
