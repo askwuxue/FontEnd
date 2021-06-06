@@ -1,11 +1,14 @@
 export default function createElement(type, props, ...children) {
-    const textElement = [...children].map(child => {
-        if (child instanceof Object) {
-            return child;
-        } else {
-            return createElement('text', { textContent: child })
+    const textElement = [...children].reduce((result, child) => {
+        if (child !== true && child !== false && child !== undefined && child !== null) {
+            if (child instanceof Object) {
+                result.push(child)
+            } else {
+                result.push(createElement('text', { textContent: child }));
+            }
         }
-    })
+        return result;
+    }, [])
     return {
         type,
         props,
