@@ -1,10 +1,30 @@
 import TinyReact from './TinyReact';
 
-const virtualDom = (
-    <div className="shopping-list">
-        <h1>Shopping List for </h1>
-        { 1 > 2}
-    </div>
-)
+const root = document.getElementById('root');
 
-console.log(virtualDom);
+// const virtualDom = (
+//     <div className="shopping-list">
+//         <h1 style="color: blue">Shopping List for</h1>
+//         { 1 > 2}
+//     </div>
+// )
+
+function Demo() {
+    return <h1>Demo</h1>
+}
+
+// TinyReact.render(virtualDom, root);
+function Header(props) {
+    return (
+        <div>
+            {props.title}
+            <Demo />
+        </div>
+    )
+}
+
+// console.log(Header);
+
+TinyReact.render(<Header title="Header"></Header>, root);
+
+// console.log(virtualDom);

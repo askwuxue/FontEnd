@@ -1,4 +1,5 @@
 export default function createElement(type, props, ...children) {
+    // console.log('createElement');
     const childElement = [...children].reduce((result, child) => {
         if (child !== true && child !== false && child !== undefined && child !== null) {
             if (child instanceof Object) {
