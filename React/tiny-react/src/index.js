@@ -19,7 +19,7 @@ const newVirtualDOM = (
         { 1 > 2}
         <button onClick={e => console.log('Hello World')}>点击</button>
         <div>
-            <span>这是一被修改过的文本</span>
+            <p>这是一被修改过的文本</p>
         </div>
     </div>
 )
