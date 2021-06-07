@@ -1,20 +1,23 @@
 import mountElement from './mountElement';
 import updateNodeElement from './updateNodeElement';
 
-export default function createDOMElement(virtualDom) {
+export default function createDOMElement(virtualDOM) {
     // 生成真实DOM
     let newElement = null;
     // 1. 文本节点
-    if (virtualDom.type === 'text') {
-        newElement = document.createTextNode(virtualDom.props.textContent);
+    if (virtualDOM.type === 'text') {
+        newElement = document.createTextNode(virtualDOM.props.textContent);
     } else {
-        newElement = document.createElement(virtualDom.type);
+        newElement = document.createElement(virtualDOM.type);
         // 为元素添加属性
-        updateNodeElement(newElement, virtualDom);
+        updateNodeElement(newElement, virtualDOM);
     }
 
+    // 给DOM元素添加_virtualDOM属性
+    newElement._virtualDOM = virtualDOM
+
     // 递归创建
-    virtualDom.children.forEach(child => {
+    virtualDOM.children.forEach(child => {
         mountElement(child, newElement);
     });
 
