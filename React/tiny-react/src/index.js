@@ -8,7 +8,8 @@ const virtualDOM = (
         { 1 > 2}
         <button onClick={e => console.log(e.target)}>点击</button>
         <div>
-            <span>这是一段文本</span>
+            <span>这是一段文本</span><br></br>
+            <span>这是一个即将被删除的元素</span>
         </div>
     </div>
 )
@@ -19,7 +20,7 @@ const newVirtualDOM = (
         { 1 > 2}
         <button onClick={e => console.log('Hello World')}>点击</button>
         <div>
-            <p>这是一被修改过的文本</p>
+            <span>这是被修改的一段文本</span>
         </div>
     </div>
 )
