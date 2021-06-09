@@ -3,22 +3,29 @@ import mountElement from './mountElement';
 import updateNodeElement from './updateNodeElement';
 import updateTextNode from './updateTextNode';
 import unmountNode from './unmountNode';
+import diffComponent from './diffComponent';
 
 export default function diff(virtualDOM, container, oldDOM) {
     // 旧virtualDOM,挂载在DOM元素的属性上
     const oldVirtualDOM = oldDOM && oldDOM._virtualDOM;
+    // console.log(oldVirtualDOM);
+    const oldComponent = oldDOM && oldDOM._virtualDOM.component;
     // 首次渲染
     if (!oldDOM) {
         // 挂载元素
         mountElement(virtualDOM, container)
         // 更新DOM元素
         // 类型不同
-    } else if (virtualDOM.type !== oldVirtualDOM.type && virtualDOM.type !== 'function') {
+    } else if (virtualDOM.type !== oldVirtualDOM.type && typeof virtualDOM.type !== 'function') {
         // 新的DOM元素
         const newElement = createDOMElement(virtualDOM);
         // 节点替换
         oldDOM.parentNode.replaceChild(newElement, oldDOM);
         // 类型相同
+
+        // 类型是组件
+    } else if (typeof virtualDOM.type === 'function') {
+        diffComponent(virtualDOM, oldComponent, oldDOM, container);
     } else if (oldVirtualDOM && oldVirtualDOM.type === virtualDOM.type) {
         // 文本类型节点
         if (virtualDOM.type === 'text') {
