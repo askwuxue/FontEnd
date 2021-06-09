@@ -8,6 +8,7 @@ export default function createDOMElement(virtualDOM) {
     if (virtualDOM.type === 'text') {
         newElement = document.createTextNode(virtualDOM.props.textContent);
     } else {
+        // console.log(virtualDOM.type);
         newElement = document.createElement(virtualDOM.type);
         // 为元素添加属性
         updateNodeElement(newElement, virtualDOM);
