@@ -29,4 +29,30 @@ export default class Component {
         return this._dom;
     }
 
+    // 更新props
+    updateProps(props) {
+        this.props = props;
+    }
+
+    // 生命周期 UNSAFE_componentWillReceiveProps() 会在已挂载的组件接收新的 props 之前被调用
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        console.log('UNSAFE_componentWillReceiveProps: ', nextProps);
+    }
+
+    // 根据 shouldComponentUpdate() 的返回值，判断 React 组件的输出是否受当前 state 或 props 更改的影响。默认行为是 state 每次发生变化组件都会重新渲染
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('shouldComponentUpdate: ', this.props !== nextProps || this.state !== nextState);
+        return this.props !== nextProps || this.state !== nextState;
+    }
+
+    // 当组件收到新的 props 或 state 时，会在渲染之前调用 UNSAFE_componentWillUpdate()。使用此作为在更新发生之前执行准备更新的机会。初始渲染不会调用此方法。
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
+        console.log('UNSAFE_componentWillUpdate: ', nextProps);
+    }
+
+    // componentDidUpdate() 会在更新后会被立即调用。首次渲染不会执行此方法。
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('componentDidUpdate: ', prevProps);
+    }
+
 }
