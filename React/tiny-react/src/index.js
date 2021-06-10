@@ -86,7 +86,7 @@ class Alert extends TinyReact.Component {
     render() {
         return (
             <div>
-                <div>{this.state.name}</div>
+                <div>{this.props.name}------------{this.props.age}</div>
                 <button onClick={this.handleChangeName}>改变名字</button>
             </div>
         )
@@ -108,8 +108,8 @@ class Test extends TinyReact.Component {
 TinyReact.render(<Alert name="wuxue" age={18} />, root);
 
 setTimeout(() => {
-    // TinyReact.render(<Alert name="wuxue" age={18} />, root);
-    TinyReact.render(<Test name="wuxue" age={18} />, root);
+    TinyReact.render(<Alert name="xuning" age={16} />, root);
+    // TinyReact.render(<Test name="wuxue" age={18} />, root);
 }, 2000)
 
 // console.log(virtualDom);
