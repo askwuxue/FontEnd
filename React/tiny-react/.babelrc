@@ -4,7 +4,8 @@
         [
             "@babel/preset-react",
             {
-                // 默认是React.createElement 手动更改为
+                // 默认是React.createElement 手动更改为TinyReact.createElement
+                // 遇到JSX编译时会使用
                 "pragma": "TinyReact.createElement"
             }
         ]
