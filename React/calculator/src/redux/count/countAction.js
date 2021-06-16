@@ -1,13 +1,12 @@
 import { INCREASE, DECREASE } from '../constant'
 
 // 该文件用于创建action对象
-// () 中的对象当成函数的返回值被返回，如果不加小括号，大括号会被当成函数体处理
 export const increase = data => ({ type: INCREASE, data })
 
 export const decrease = data => ({ type: DECREASE, data })
 
 // 奇数加的action
-export const increaseOdd = data => ((data % 2 === 1) ? {type: INCREASE, data} : {type: null})
+export const increaseOdd = data => ((data % 2 === 1) ? { type: INCREASE, data } : { type: null })
 
 // 借助中间间可以使用function action 异步action
 let timer = null;
@@ -22,8 +21,3 @@ export const increaseAsync = (data, delay) => {
         }, delay)
     }
 }
-
-// TODO exports 导出函数必须是一个具名函数 
-// export function test() {
-//     console.log(1);
-// }
