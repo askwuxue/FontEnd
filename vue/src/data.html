@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">this is app div
+        <ul>
+            <li>{{ contents[0] }}</li>
+            <li>{{ contents[1] }}</li>
+            <li>{{ contents[2] }}</li>
+        </ul>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                contents: ['内容1', '内容2', '内容3']
+            }
+        })
+        // TODO 对于data是数组，使用length和index无法改变数据的展示,数据已经改变，但是无法及时渲染，需要使用Vue.set()
+        // 除此之外，数据的其他方法都可以使用
+        console.log(vm.$data.contents);
+        setTimeout(() => {
+            // vm.$data.contents[0] = '新内容';
+            // vm.$data.contents.length = 2;
+            // console.log('vm.$data.contents.length: ', vm.$data.contents.length);
+            // console.log('vm.$data.contents[0]: ', vm.$data.contents[0]);
+            Vue.set(vm.contents, 0, '新内容');
+            vm.$data.contents.pop();
+            console.log('vm.$data.contents[0]: ', vm.$data.contents[0]);
+        }, 2000)
+    </script>
+</body>
+</html>
