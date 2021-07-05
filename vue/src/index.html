@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">this is app div</div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        // 第一种方式
+        // let vm = new Vue({
+        //     el: '#app',
+        //     data: {
+        //         num: 3
+        //     }
+        // });
+        // console.log(vm.$data.num);
+
+        // 第二种方式
+        // let app = document.querySelector('#app');
+        // let vm = new Vue({
+        //     el: app,
+        //     data: {
+        //         num: 3
+        //     }
+        // });
+        // console.log(vm.$el);
+        // console.log(vm.$data.num);
+
+        // 第三种方式
+        let vm = new Vue({});
+        // vm.$mount('#app');
+        let app = document.querySelector('#app');
+        vm.$mount(app);
+         console.log(vm.$el);
+        // console.log(vm.$data.num);
+    </script>
+</body>
+</html>
