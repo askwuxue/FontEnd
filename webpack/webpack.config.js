@@ -2,6 +2,7 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     // 打包入口
@@ -84,8 +85,9 @@ module.exports = {
         // TODO 使用插件，生成单独的css文件。存在bug，没有生成所有的css
         new MiniCssExtractPlugin({
             filename: './css/bound.css',
-
-        })
+        }),
+        // 清空打包目录然后存放本次打包结果
+        new CleanWebpackPlugin()
     ],
     // 设置模式
     mode: 'development',
