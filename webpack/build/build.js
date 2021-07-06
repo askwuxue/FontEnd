@@ -40,6 +40,16 @@ eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // 
 
 /***/ }),
 
+/***/ "./src/loader.md":
+/*!***********************!*\
+  !*** ./src/loader.md ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Module\nvar code = \"<h3 id=\\\"这是一个测试-md-文件的-loader\\\">这是一个测试 md 文件的 loader</h3>\\n<p>console.log(&#39;### 这是一个测试 md 文件的 loader&#39;);</p>\\n\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://webpack-first-test/./src/loader.md?");
+
+/***/ }),
+
 /***/ "./public/test.less":
 /*!**************************!*\
   !*** ./public/test.less ***!
@@ -106,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n/* harmony import */ var _public_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../public/data.json */ \"./public/data.json\");\n/* harmony import */ var _public_app_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../public/app.css */ \"./public/app.css\");\n/* harmony import */ var _public_test_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../public/test.less */ \"./public/test.less\");\n// webpack的入口文件 /src/index.js\r\n\r\n\r\n// 开发环境打包\r\n// webpack .\\src\\index.js -o .\\build\\build.js --mode=development\r\n\r\n// 线上环境打包 会将入口文件压缩\r\n// webpack .\\src\\index.js -o .\\build\\build.js --mode=production\r\n\r\n// webpack 默认只支持打包.js .json 对与.css img 等资源不支持，需要借助loader和plugins实现\r\n\r\n\r\n\r\n\r\nconst { a, b } = _public_data_json__WEBPACK_IMPORTED_MODULE_1__;\r\n\r\n(0,_app__WEBPACK_IMPORTED_MODULE_0__.default)(a, b);\n\n//# sourceURL=webpack://webpack-first-test/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n/* harmony import */ var _public_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../public/data.json */ \"./public/data.json\");\n/* harmony import */ var _public_app_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../public/app.css */ \"./public/app.css\");\n/* harmony import */ var _public_test_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../public/test.less */ \"./public/test.less\");\n/* harmony import */ var _loader_md__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./loader.md */ \"./src/loader.md\");\n// webpack的入口文件 /src/index.js\r\n\r\n\r\n// 开发环境打包\r\n// webpack .\\src\\index.js -o .\\build\\build.js --mode=development\r\n\r\n// 线上环境打包 会将入口文件压缩\r\n// webpack .\\src\\index.js -o .\\build\\build.js --mode=production\r\n\r\n// webpack 默认只支持打包.js .json 对与.css img 等资源不支持，需要借助loader和plugins实现\r\n\r\n\r\n\r\n\r\n\r\nconst { a, b } = _public_data_json__WEBPACK_IMPORTED_MODULE_1__;\r\n\r\n(0,_app__WEBPACK_IMPORTED_MODULE_0__.default)(a, b);\n\n//# sourceURL=webpack://webpack-first-test/./src/index.js?");
 
 /***/ })
 

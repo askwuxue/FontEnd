@@ -37,7 +37,7 @@ module.exports = {
                         // TODO 解决CSS中background背景图访问地址错误
                         options: {
                             publicPath: '../'
-                        }  
+                        }
                     },
                     // 将css文件整合到js文件中
                     'css-loader',
@@ -63,6 +63,14 @@ module.exports = {
                 options: {
                     esModule: false
                 }
+            },
+            {
+                test: /\.md$/,
+                // loader: './src/loader/makedown-loader.js';
+                use: [
+                    'html-loader',
+                    './src/loader/makedown-loader.js'
+                ]
             }
         ]
     },
@@ -76,7 +84,7 @@ module.exports = {
         // TODO 使用插件，生成单独的css文件。存在bug，没有生成所有的css
         new MiniCssExtractPlugin({
             filename: './css/bound.css',
-            
+
         })
     ],
     // 设置模式
