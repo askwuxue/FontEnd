@@ -80,7 +80,14 @@ module.exports = {
         // TODO htmlWebpackPlugin 必须和webpack的版本一致
         new HtmlWebpackPlugin({
             // TODO 模板中也不需要引入，生成的模板中会自动引入
-            template: './src/index.html'
+            template: './src/index.html',
+            // TODO 设置了template属性，title属性不生效
+            // title: 'html-webpack-plugin auto create html'
+        }),
+        // TODO 生成多页面
+        new HtmlWebpackPlugin({
+            filename: 'about.html',
+            title: 'create multi page'
         }),
         // TODO 使用插件，生成单独的css文件。存在bug，没有生成所有的css
         new MiniCssExtractPlugin({
