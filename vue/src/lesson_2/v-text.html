@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 元素的内容整体替换为指定的纯文本(有结构无法转义)内容 -->
+    <div id="app" v-text="contents">这是一段会被替换的文本</div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                contents: '新内容'
+            }
+        })
+    </script>
+</body>
+</html>

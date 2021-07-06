@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!-- v-for 结合数组的操作 -->
+            <li v-for="(item, index) in arr">元素值为: {{ item }}, 索引为: {{ index }}</li>
+            <hr>
+            <!-- v-for 结合对象的操作 -->
+            <li v-for="(item, key, index) in contents">健值为: {{ item }}, 键: {{ key }}, 索引: {{ index }}</li>
+            <hr>
+            <!-- v-for循环生成元素 -->
+            <li v-for="(item, index) in 5">元素值为: {{ item }}, 索引为: {{ index }}</li>
+        </ul>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                arr: ['内容1', '内容2', '内容3'],
+                contents: {
+                    content1: '内容1',
+                    content2: '内容2',
+                    content3: '内容3'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

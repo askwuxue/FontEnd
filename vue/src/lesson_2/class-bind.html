@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 1. class绑定的第一种方式 -->
+        <!-- 错误使用法1,:class 只能绑定一个变量 -->
+        <!-- <p class="a" :class="cls1 cls2 cls3"></p> -->
+        <!-- 错误使用法2,:class 只能绑定一次 -->
+        <!-- <p class="a" :class="cls1" :class="cls2"></p> -->
+        <!-- 灵活性较差 -->
+        <p class="a" :class="cls"></p>
+
+        <!-- 2. 对象形式的 :class -->
+        <!-- 对象使用键值对的方式，键名为类名，健值为布尔值，为true，该类生效 -->
+        <p class="a" :class="{x: isX, y: isY, z: isZ}"></p>
+
+        <!-- 3. 数组形式的 :class -->
+        <!-- 在第一和第二种方式的基础上优化，减少不必要的操作 -->
+        <!-- 默认的类名，直接作为元素，存放在数组中，根据数据动态生成的类名，参考第二种方式 -->
+        <p class="a" :class="[x, { y: isY }, { z: isZ }]"></p>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                // cls1: 'x',
+                // cls2: 'y',
+                // cls3: 'z',
+                cls: 'x y z',
+                isX: true,
+                isY: false,
+                isZ: true
+            }
+        })
+    </script>
+</body>
+</html>

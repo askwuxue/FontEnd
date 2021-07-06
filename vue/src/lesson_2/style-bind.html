@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 1. 默认样式和通过:style绑定的样式同时存在。已绑定的为主 -->
+        <!-- <p style="width: 100px; background-color: aqua;" :style="baseStyle">this is p</p> -->
+        <!-- 2. 使用数组绑定style属性。更好的代码复用 -->
+        <!-- 共同样式为baseStyle -->
+        <p :style="[baseStyle, style1]">this is p1</p>
+        <p :style="[baseStyle, style2]">this is p2</p>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                baseStyle: {
+                    width: '200px',
+                    height: '200px',
+                    // 驼峰命名和横线命名都可以,驼峰最优
+                    backgroundColor: 'green',
+                    'font-size': '30px'
+                },
+                style1: {
+                    backgroundColor: 'pink'
+                },
+                style2: {
+                    backgroundColor: 'purple'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
