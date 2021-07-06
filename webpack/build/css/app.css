@@ -1,0 +1,12 @@
+h1 {
+  color: aliceblue;
+}
+.imag1 {
+    width: 800px;
+    height: 400px;
+    background: url('../src/images/react.jpeg') no-repeat;
+}
+.imag3 {
+    width: 800px;
+    height: 400px;
+}
