@@ -98,30 +98,51 @@ module.exports = {
         // 清空打包目录然后存放本次打包结果
         new CleanWebpackPlugin(),
         // copy文件
-        new CopyWebpackPlugin(
-            {
-                patterns: [
-                    // 1. 第一种
-                    { from: 'public', to: 'css' }
-                    // 2. 第二种
-                    // 'public'
-                ]
-            }),
+        // new CopyWebpackPlugin(
+        //     {
+        //         patterns: [
+        //             // 1. 第一种
+        //             { from: 'public', to: 'css' }
+        //             // 2. 第二种
+        //             // 'public'
+        //         ]
+        //     }),
         // 自定义插件，去除打包后的注释 /** */
         new CleanComment()
     ],
+
+    // 设置source-map 实现打包前的source和打包后的source的映射，方便调试
+    // source-map生成.map文件，在文件最后添加一行注释
+    devtool: 'source-map',
+    // 定位源代码文件的名称
+    // devtool: 'eval', 
+
     // 设置模式
     mode: 'development',
 
     // 热更新启动命令 npx webpack serve
     devServer: {
-        // 项目构建好的路径
-        contentBase: resolve(__dirname, 'build'),
+        // 静态资源路径存放的位置,devServe会去找该文件
+        contentBase: resolve(__dirname, 'dist'),
         // 开启压缩
         compress: true,
         // 浏览器启动的端口
         port: '8888',
         // 是否打开浏览器
-        open: true
-    }
+        open: true,
+        // 设置代理
+        proxy: {
+            // 所有包含/api 的本地url都会被重定向
+            // localhost:8888/api/user => https://api.github.com/api/user
+            '/api': {
+                target: 'https://api.github.com',
+                // 对代理之后的url进行重写
+                pathRewrite: {
+                    '^/api': ''
+                },
+                // 改变请求源
+                changeOrigin: true
+            }
+        }
+    },
 }
