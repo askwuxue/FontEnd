@@ -17,7 +17,16 @@
             <hr>
             <!-- v-for循环生成元素 -->
             <li v-for="(item, index) in 5">元素值为: {{ item }}, 索引为: {{ index }}</li>
+            <hr>
+            <!-- TODO 使用v-for绑定key属性 -->
+            <li v-for="(item, key, index) in contents" :key="item">元素值为: {{ item }}, 索引为: {{ index }}</li>
+            
+            <hr>
         </ul>
+        <!-- 使用template 类型与React中的Fragment 不能使用key属性-->
+        <template v-for="(item, key, index) in contents">
+            {{ item }}
+        </template>
     </div>
     <script src="../../node_modules/vue/dist/vue.js"></script>
     <script>
