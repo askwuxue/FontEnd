@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanComment = require('./src/plugins/cleanComment');
 
 module.exports = {
     // 打包入口
@@ -105,7 +106,9 @@ module.exports = {
                     // 2. 第二种
                     // 'public'
                 ]
-            })
+            }),
+        // 自定义插件，去除打包后的注释 /** */
+        new CleanComment()
     ],
     // 设置模式
     mode: 'development',
