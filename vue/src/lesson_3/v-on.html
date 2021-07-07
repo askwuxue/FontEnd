@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-on 用于处理事件函数 -->
+        <p>
+            {{ content }}
+        </p>
+        <!-- 1. 使用v-on:eventName 的方式 -->
+        <button v-on:click="content='这是修改后的内容1'">按钮1</button>
+        <!-- 2. 使用v-on的简写方式 @eventName -->
+        <button @click="content='这是修改后的内容2'">按钮2</button>
+        <!-- 3. 使用methods绑定事件处理 默认参数为事件对象 -->
+        <button @click="fn">按钮3</button>
+        <!-- TODO 4. 使用methods绑定事件处理 如果传递事件对象 必须显示的使用$event作为实参 -->
+        <button @click="fn2(200, $event)">按钮4</button>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                content: '这是默认内容'
+            },
+            methods: {
+                fn(event) {
+                    this.content = '这是修改后的内容3'
+                    // console.log(event)
+                },
+                fn2(num, event) {
+                    console.log(num)
+                    console.log(event)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
