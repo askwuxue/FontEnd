@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-model 实现数据的双向数据绑定 只有input， textarea select 等标签才可以使用v-model -->
+        <p >元素的内容为{{ value }}</p>
+        <input type="text" v-model="value">
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                value: '100'
+            }
+        })
+    </script>
+</body>
+</html>
