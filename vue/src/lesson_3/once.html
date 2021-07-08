@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div :style="style" @click="fn">
+            <!-- .once 事件修饰符，事件函数只执行一次 -->
+            <!-- TODO 下面这种方式 .once 前面的修饰符只生效一次 -->
+            <a href="http://www.baidu.com" @click.prevent.stop.once="fn2">百度</a>
+            <!-- button 按钮事件只会生效一次 但是冒泡依旧会存在 -->
+            <button @click.once="fn2">button</button>
+        </div>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                style: {
+                    width: '300px',
+                    height: '300px',
+                    backgroundColor: 'pink',
+                }
+            },
+            methods: {
+                fn(event) {
+                    console.log('div: ', event);
+                },
+                fn2(event) {
+                    console.log('button: ', event);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
