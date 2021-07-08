@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- .stop 事件修饰符 阻止事件冒泡 相当于 event.stopPropagation() -->
+        <div :style="style" @click="fn">
+            <button @click.stop="fn2">按钮</button>
+            <!-- 支持多个修饰符的链式调用 -->
+            <a href="http://www.baidu.com" @click.prevent.stop="fn2">百度</a>
+        </div>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                style: {
+                    width: '300px',
+                    height: '300px',
+                    backgroundColor: 'pink',
+                }
+            },
+            methods: {
+                fn(event) {
+                    console.log('div: ', event);
+                },
+                fn2(event) {
+                    console.log('button: ', event);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
