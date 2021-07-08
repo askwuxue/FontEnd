@@ -7,17 +7,61 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
     <div id="app">
         <!-- v-model 实现数据的双向数据绑定 只有input， textarea select 等标签才可以使用v-model -->
         <p >元素的内容为{{ value }}</p>
         <input type="text" v-model="value">
+   
+        <hr>
+        <!-- 单选框的数据双向绑定 v-model绑定为单选框的value值 -->
+        <p>单选的内容为: {{ value2 }} </p>
+        <label for="one">选项1</label>
+        <input type="radio" id="one" value="1" v-model="value2">
+        <label for="two">选项2</label>
+        <input type="radio" id="two" value="2" v-model="value2">
+        <hr>
+        <!-- 复选框的数据双向绑定 -->
+        <!-- 1. 只有一个复选框时,对于单个复选框来说，选中还是未选中的数据是一个Boolean值。 -->
+        <input type="checkbox"  id="three" value="选项内容" v-model="value3">
+        <label for="three">复选框的选中值为: {{ value3 }}</label>
+        <hr>
+        <!-- 2 有多个复选框时 初始值必须是一个数组，否则会当成一个整体进行显示，一个选中则全选中 -->
+        <!-- 多个CheckBox存在时，数据显示为数组中的元素，即每个元素的value值，非Boolean，和单选复选框有差别 -->
+        <p>多个复选框选中的值为: {{ value4 }}</p>
+        <input type="checkbox" name="checkbox" id="four" value="复选框内容1" v-model="value4">
+        <label for="four">复选框1</label>
+        <input type="checkbox" name="checkbox" id="five" value="复选框内容2" v-model="value4">
+        <label for="four">复选框2</label>
+        <hr>
+        <!-- 选择框的数据双向绑定 -->
+        <!-- 1. 单选选择框 -->
+        <p>单选选择选择框的值为: {{value5 }}</p>
+        <select name="" id="" v-model="value5">
+            <option value="">请选择</option>
+            <option value="1">选项1</option>
+            <option value="2">选项2</option>
+            <option value="3">选项3</option>
+        </select>
+
+        <!-- 2. 多选选择框 为select添加multiple属性并且数据默认值为数组 -->
+        <p>多选选择选择框的值为: {{ value6 }}</p>
+        <select name="" id="" v-model="value6" multiple>
+            <option value="1">选项1</option>
+            <option value="2">选项2</option>
+            <option value="3">选项3</option>
+        </select>
     </div>
-    <script src="../../node_modules/vue/dist/vue.js"></script>
     <script>
         let vm = new Vue({
             el: '#app',
             data: {
-                value: '100'
+                value: '100',
+                value2: '99',
+                value3: '',
+                value4: [],
+                value5: '',
+                value6: []
             }
         })
     </script>
