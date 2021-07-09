@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 1. 按键修饰符 可以设置为keycode或者是按键名key。当按键按下时，只有，满足条件的按键才会触发事件函数  -->
+        <!-- <input type="text" @keyup.65="fn"> -->
+        <input type="text" @keyup.a ="fn">
+        <!-- 2. 对于特殊按键，最好使用vue提供的别名 参考vue官方文档按键修饰符 -->
+        <hr>
+        <input type="text" @keyup.esc="fn">
+        <!-- 3. 按键修饰符可以使用链式调用，链式调用间是或的关系 -->
+        <hr>        
+        <input type="text" @keyup.esc.delete="fn">
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+                fn(event) {
+                    console.log('event: ', event);
+                    console.log('keyup')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
