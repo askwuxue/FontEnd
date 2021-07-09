@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://webpack-first-test/./public/test.less"],"names":[],"mappings":"AAAA;IACI,gBAAgB;AACpB;AACA;IACI,YAAY;CACC;IACb,IAAmD;AACvD","file":"./css/bound.css","sourcesContent":["h1 {\r\n    color: aliceblue;\r\n}\r\n.imag2 {\r\n    width: 800px;\r\n    height: 400px;\r\n    background: url('../src/images/vue.jpeg') no-repeat;\r\n}"],"sourceRoot":""}

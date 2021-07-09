@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanComment = require('./src/plugins/cleanComment');
+const webpack = require('webpack');
 
 module.exports = {
     // 打包入口
@@ -108,7 +109,10 @@ module.exports = {
         //         ]
         //     }),
         // 自定义插件，去除打包后的注释 /** */
-        new CleanComment()
+        new CleanComment(),
+
+        // 使用HRM 插件
+        new webpack.HotModuleReplacementPlugin()
     ],
 
     // 设置source-map 实现打包前的source和打包后的source的映射，方便调试
@@ -143,6 +147,8 @@ module.exports = {
                 // 改变请求源
                 changeOrigin: true
             }
-        }
+        },
+        // 开启热更新HMR。热更新开启后，页面只会刷新修改的内容，如JavaScript，css。页面不会刷新
+        hot: true
     },
 }

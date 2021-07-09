@@ -14,6 +14,8 @@ import '../public/test.less';
 import './loader.md';
 
 const { a, b } = data;
+console.log('a: ', a);
+console.log('b: ', b);
 // console.log(c);
 
 test(a, b);
