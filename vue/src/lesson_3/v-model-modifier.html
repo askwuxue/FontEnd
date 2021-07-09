@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-model 修饰符 -->
+        <!-- 1. .trim 修饰符 去除输入的空格 -->
+        <p>{{ keyValue }}</p>
+        <input type="text" v-model.trim="keyValue">
+        <!-- 2. .lazy 修饰符 默认v-model是每次输入发生变化时，进行数据更新 .lazy 修饰符 当标签失去标签 类似于 change事件时才进行数据更新 -->
+        <hr>
+        <p>{{ keyValue1 }}</p>
+        <input type="text" v-model.lazy="keyValue1">
+        <!-- 3. .number 修饰符 将输入通过parseFloat 进行转化 如果无法转换，输出原始内容 -->
+        <hr>
+        <p>{{ keyValue2 }}</p>
+        <input type="text" v-model.number="keyValue2" @keyup="fn">
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                keyValue: '',
+                keyValue1: '',
+                keyValue2: ''
+            },
+            methods: {
+                fn() {
+                    console.log(typeof this.keyValue2)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
