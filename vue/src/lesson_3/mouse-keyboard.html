@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 鼠标按键修饰符 .eft .right .middle-->
+        <!-- 当设置了鼠标按键修饰符 只有对应的按键按下才会触发事件处理函数 -->
+        <button @click.left="fn">按钮1</button>
+        <button @click.right="fn">按钮1</button>
+        <button @click.middle="fn">按钮1</button>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                keyValue: ''
+            },
+            methods: {
+                fn(event) {
+                    console.log('event: ', event);
+                    console.log('点击了');
+                }
+            }
+        })
+    </script>
+</body>
+</html>
