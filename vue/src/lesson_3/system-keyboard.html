@@ -10,6 +10,7 @@
     <div id="app">
         <!-- 系统修饰符通常与其他按键一起使用  vue使用系统修饰符同样如此，常用的系统修饰符如.ctrl 等 -->
         <!-- 只有Ctrl 和 q 同时按下才会触发事件处理函数 -->
+        <!-- 如果想要只在点击系统按键的时候触发 使用.exact  如ctrl.exact-->
         <input type="text" @keyup.ctrl.q="fn" v-model="keyValue">
     </div>
     <script src="../../node_modules/vue/dist/vue.js"></script>
