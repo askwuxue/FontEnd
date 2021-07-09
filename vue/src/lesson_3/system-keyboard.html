@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 系统修饰符通常与其他按键一起使用  vue使用系统修饰符同样如此，常用的系统修饰符如.ctrl 等 -->
+        <!-- 只有Ctrl 和 q 同时按下才会触发事件处理函数 -->
+        <input type="text" @keyup.ctrl.q="fn" v-model="keyValue">
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                keyValue: ''
+            },
+            methods: {
+                fn(event) {
+                    console.log('event: ', event);
+                    console.log('keyup');
+                    this.keyValue = '';
+                }
+            }
+        })
+    </script>
+</body>
+</html>
