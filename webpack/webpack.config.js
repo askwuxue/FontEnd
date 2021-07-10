@@ -113,6 +113,7 @@ module.exports = {
 
         // 使用HRM 插件 默认只有.css 文件会使用热替换功能，JavaScript文件，图片文件等，需要单独处理热替换功能
         // 使用 module.hot.accept('./XXX.js', () => { xxxx })
+        // TODO 如果没有使用webpack.HotModuleReplacementPlugin对象。无法使用module进行单独热处理
         new webpack.HotModuleReplacementPlugin()
     ],
 
