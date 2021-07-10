@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-focus.a.b='100 + 1'>
+    </div>
+    <!-- 全局自定义指令，只在对应的元素中生效 -->
+    <div id="app2">
+        <input type="text" v-focus>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            directives: {
+                focus: {
+                    // TODO 其他参考全局自定义指令
+                    inserted(el) {
+                        el.focus();
+                        console.log('el: ', el);
+                    }
+                }
+            }
+        })
+
+        // <!-- 全局自定义指令，只在对应的元素中生效 -->
+        const vm2 = new Vue({
+            el: '#app2',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+</html>
