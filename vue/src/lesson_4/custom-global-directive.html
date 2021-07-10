@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 自定义全局指令 -->
+        <input type="text" v-focus.a.b='100 + 1'>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        // 自定义全局指令， 页面中所有的元素都可以使用
+        Vue.directive('focus', {
+            inserted(el, binding) {
+                // binding 存放了当前元素的各种信息 包括修饰器内容
+                el.focus();
+                console.log('el: ', el);
+                console.log('binding: ', binding);
+            }
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {}
+        })
+    </script>
+</body>
+</html>
