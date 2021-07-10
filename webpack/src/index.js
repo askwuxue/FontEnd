@@ -12,10 +12,16 @@ import data from '../public/data.json';
 import '../public/app.css';
 import '../public/test.less';
 import './loader.md';
+import hmr from './hrm';
 
 const { a, b } = data;
 console.log('a: ', a);
 console.log('b: ', b);
-// console.log(c);
+console.log('js: hrm');
+alert('refresh');
+
+module.hot.accept('./hrm', () => {
+    console.log('module 更新了，这里需要手动处理热替换逻辑')
+})
 
 test(a, b);

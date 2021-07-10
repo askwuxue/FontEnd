@@ -111,7 +111,8 @@ module.exports = {
         // 自定义插件，去除打包后的注释 /** */
         new CleanComment(),
 
-        // 使用HRM 插件
+        // 使用HRM 插件 默认只有.css 文件会使用热替换功能，JavaScript文件，图片文件等，需要单独处理热替换功能
+        // 使用 module.hot.accept('./XXX.js', () => { xxxx })
         new webpack.HotModuleReplacementPlugin()
     ],
 
