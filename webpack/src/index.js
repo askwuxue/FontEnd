@@ -21,6 +21,8 @@ console.log('js: hrm');
 alert('refresh');
 
 module.hot.accept('./hrm', () => {
+    const hrsss = new hmr();
+    hrsss.fn();
     console.log('module 更新了，这里需要手动处理热替换逻辑')
 })
 

@@ -150,6 +150,9 @@ module.exports = {
             }
         },
         // 开启热更新HMR。热更新开启后，页面只会刷新修改的内容，如JavaScript，css。页面不会刷新
-        hot: true
+        // hot: true
+        // TODO hot 和 hotOnly的区别，hot到代码出错还是会自动刷新，导致无法捕捉错误。
+        // hotOnly 出现错误，仍然使用HMR。不会刷新，可以捕捉错误
+        hotOnly: true
     },
 }

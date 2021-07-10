@@ -3,6 +3,6 @@ export default class hmr {
 
     }
     fn() {
-        console.log('DDDD')
+        console.log(absss)
     }
 }
