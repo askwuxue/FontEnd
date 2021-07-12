@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p :title="value | valueFilter">{{ value | valueFilter | uppercaseFilter }}</p>
+        <p>{{value | prefixFilter('prefix-')}}</p>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+
+        // 1. 全局过滤器可以使用多个管道符将上次filter的结果作为下一个filter的输入进行处理
+        // 2. filter函数可以接受参数，无论如何传递参数，filter接受的第一个参数一定是管道符前面的数据
+        
+        // 字符串重新拼接 
+        Vue.filter('valueFilter', value => {
+            return value.split('-').join('');
+        })
+
+        // 首字符转大写
+        Vue.filter('uppercaseFilter', value => {
+            return value[0].toUpperCase() + value.slice(1);
+        })
+
+        // filter 接受参数
+        Vue.filter('prefixFilter', (param1, param2) => {
+            console.log('param1: ', param1);
+            console.log('param2: ', param2);
+            return param2 + param1.split('-').join('');
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                value: 'x-y-z',
+                
+            }
+        })
+    </script>
+</body>
+</html>
