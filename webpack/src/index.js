@@ -18,7 +18,8 @@ const { a, b } = data;
 console.log('a: ', a);
 console.log('b: ', b);
 console.log('js: hrm');
-alert('refresh');
+// alert('refresh');
+console.log(API_BASE_URL);
 
 module.hot.accept('./hrm', () => {
     const hrsss = new hmr();
