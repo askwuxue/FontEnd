@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p :title="value | valueFilter">{{ value | valueFilter }}</p>
+    </div>
+    <div id="app2">
+        <p :title="value | valueFilter">{{ value | valueFilter }}</p>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+
+        // 1. 全局过滤器 任何vue实例都可以使用
+        // 2. 过滤器的使用方法为 data | valueFilter filter的返回值作为data的更新结果
+        // 3. 过滤器可以使用在 bind绑定的属性上以及插值表达式上
+        Vue.filter('valueFilter', value => {
+            return value.split('-').join('');
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                value: 'x-y-z',
+                
+            }
+        })
+
+        const vm2 = new Vue({
+            el: '#app2',
+            data: {
+                value: 'z-x-c'
+            }
+        })
+    </script>
+</body>
+</html>
