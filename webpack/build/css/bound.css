@@ -1,0 +1,15 @@
+/*!********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./public/test.less ***!
+  \********************************************************************/
+.h1 {
+  color: purple;
+  font-size: 100px;
+}
+.imag2 {
+  width: 800px;
+  height: 400px;
+  background: url(../11a6a4c89dd191be7083611e61b680f8.jpeg) no-repeat;
+}
+
+
+/*# sourceMappingURL=bound.css.map*/
