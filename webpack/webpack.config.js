@@ -160,24 +160,24 @@ module.exports = (env, args) => {
     };
 
     // TODO 根据webpack --env 'mode' 的模式进行匹配，但是无法成功
-    if (env === 'production') {
-        config.mode = 'production',
-            config.devtool = false,
-            config.plugins = [
-                ...config.plugins,
-                new CleanWebpackPlugin(),
-                // copy文件
-                new CopyWebpackPlugin(
-                    {
-                        patterns: [
-                            // 1. 第一种
-                            { from: 'public', to: 'css' }
-                            // 2. 第二种
-                            // 'public'
-                        ]
-                    }),
-            ]
-    }
+    // if (env === 'production') {
+    //     config.mode = 'production',
+    //         config.devtool = false,
+    //         config.plugins = [
+    //             ...config.plugins,
+    //             new CleanWebpackPlugin(),
+    //             // copy文件
+    //             new CopyWebpackPlugin(
+    //                 {
+    //                     patterns: [
+    //                         // 1. 第一种
+    //                         { from: 'public', to: 'css' }
+    //                         // 2. 第二种
+    //                         // 'public'
+    //                     ]
+    //                 }),
+    //         ]
+    // }
 
     return config;
 }
