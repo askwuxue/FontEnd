@@ -1,2 +1,1198 @@
-(()=>{"use strict";var e,r,n,t,o,i,a,c={559:(e,r,n)=>{n.r(r),n.d(r,{default:()=>f});var t=n(15),o=n.n(t),i=n(645),a=n.n(i),c=n(667),d=n.n(c),l=n(691),s=a()(o()),u=d()(l.Z);s.push([e.id,"h1 {\n  color: purple;\n  font-size: 40px;\n}\n.imag1 {\n  width: 800px;\n  height: 410px;\n  background: url("+u+") no-repeat;\n}\n.imag3 {\n  width: 800px;\n  height: 400px;\n}\n","",{version:3,sources:["webpack://./public/app.css"],names:[],mappings:"AAAA;EACE,aAAa;EACb,eAAe;AACjB;AACA;EACE,YAAY;EACZ,aAAa;EACb,6DAAqD;AACvD;AACA;EACE,YAAY;EACZ,aAAa;AACf",sourcesContent:['h1 {\n  color: purple;\n  font-size: 40px;\n}\n.imag1 {\n  width: 800px;\n  height: 410px;\n  background: url("../src/images/react.jpeg") no-repeat;\n}\n.imag3 {\n  width: 800px;\n  height: 400px;\n}\n'],sourceRoot:""}]);const f=s},645:e=>{e.exports=function(e){var r=[];return r.toString=function(){return this.map((function(r){var n=e(r);return r[2]?"@media ".concat(r[2]," {").concat(n,"}"):n})).join("")},r.i=function(e,n,t){"string"==typeof e&&(e=[[null,e,""]]);var o={};if(t)for(var i=0;i<this.length;i++){var a=this[i][0];null!=a&&(o[a]=!0)}for(var c=0;c<e.length;c++){var d=[].concat(e[c]);t&&o[d[0]]||(n&&(d[2]?d[2]="".concat(n," and ").concat(d[2]):d[2]=n),r.push(d))}},r}},15:e=>{function r(e,r){(null==r||r>e.length)&&(r=e.length);for(var n=0,t=new Array(r);n<r;n++)t[n]=e[n];return t}e.exports=function(e){var n,t,o=(t=4,function(e){if(Array.isArray(e))return e}(n=e)||function(e,r){var n=e&&("undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"]);if(null!=n){var t,o,i=[],a=!0,c=!1;try{for(n=n.call(e);!(a=(t=n.next()).done)&&(i.push(t.value),!r||i.length!==r);a=!0);}catch(e){c=!0,o=e}finally{try{a||null==n.return||n.return()}finally{if(c)throw o}}return i}}(n,t)||function(e,n){if(e){if("string"==typeof e)return r(e,n);var t=Object.prototype.toString.call(e).slice(8,-1);return"Object"===t&&e.constructor&&(t=e.constructor.name),"Map"===t||"Set"===t?Array.from(e):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?r(e,n):void 0}}(n,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()),i=o[1],a=o[3];if("function"==typeof btoa){var c=btoa(unescape(encodeURIComponent(JSON.stringify(a)))),d="sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(c),l="/*# ".concat(d," */"),s=a.sources.map((function(e){return"/*# sourceURL=".concat(a.sourceRoot||"").concat(e," */")}));return[i].concat(s).concat([l]).join("\n")}return[i].join("\n")}},667:e=>{e.exports=function(e,r){return r||(r={}),"string"!=typeof(e=e&&e.__esModule?e.default:e)?e:(/^['"].*['"]$/.test(e)&&(e=e.slice(1,-1)),r.hash&&(e+=r.hash),/["'() \t\n]/.test(e)||r.needQuotes?'"'.concat(e.replace(/"/g,'\\"').replace(/\n/g,"\\n"),'"'):e)}},783:(e,r,n)=>{var t=n(618),o=Object.create(null),i="undefined"==typeof document,a=Array.prototype.forEach;function c(){}function d(e,r){if(!r){if(!e.href)return;r=e.href.split("?")[0]}if(s(r)&&!1!==e.isLoaded&&r&&r.indexOf(".css")>-1){e.visited=!0;var n=e.cloneNode();n.isLoaded=!1,n.addEventListener("load",(function(){n.isLoaded||(n.isLoaded=!0,e.parentNode.removeChild(e))})),n.addEventListener("error",(function(){n.isLoaded||(n.isLoaded=!0,e.parentNode.removeChild(e))})),n.href="".concat(r,"?").concat(Date.now()),e.nextSibling?e.parentNode.insertBefore(n,e.nextSibling):e.parentNode.appendChild(n)}}function l(){var e=document.querySelectorAll("link");a.call(e,(function(e){!0!==e.visited&&d(e)}))}function s(e){return!!/^https?:/i.test(e)}e.exports=function(e,r){if(i)return console.log("no window.document found, will not HMR CSS"),c;var n,u,f=function(e){var r=o[e];if(!r){if(document.currentScript)r=document.currentScript.src;else{var n=document.getElementsByTagName("script"),i=n[n.length-1];i&&(r=i.src)}o[e]=r}return function(e){if(!r)return null;var n=r.split(/([^\\/]+)\.js$/),o=n&&n[1];return o&&e?e.split(",").map((function(e){var n=new RegExp("".concat(o,"\\.js$"),"g");return t(r.replace(n,"".concat(e.replace(/{fileName}/g,o),".css")))})):[r.replace(".js",".css")]}}(e);return n=function(){var e=f(r.filename),n=function(e){if(!e)return!1;var r=document.querySelectorAll("link"),n=!1;return a.call(r,(function(r){if(r.href){var o=function(e,r){var n;return e=t(e,{stripWWW:!1}),r.some((function(t){e.indexOf(r)>-1&&(n=t)})),n}(r.href,e);s(o)&&!0!==r.visited&&o&&(d(r,o),n=!0)}})),n}(e);if(r.locals)return console.log("[HMR] Detected local css modules. Reload all css"),void l();n?console.log("[HMR] css reload %s",e.join(" ")):(console.log("[HMR] Reload all css"),l())},50,u=0,function(){var e=this,r=arguments,t=function(){return n.apply(e,r)};clearTimeout(u),u=setTimeout(t,50)}}},618:e=>{e.exports=function(e){if(e=e.trim(),/^data:/i.test(e))return e;var r=-1!==e.indexOf("//")?e.split("//")[0]+"//":"",n=e.replace(new RegExp(r,"i"),"").split("/"),t=n[0].toLowerCase().replace(/\.$/,"");return n[0]="",r+t+n.reduce((function(e,r){switch(r){case"..":e.pop();break;case".":break;default:e.push(r)}return e}),[]).join("/")}},402:(e,r,n)=>{var t=n(783)(e.id,{publicPath:"../",locals:!1});e.hot.dispose(t),e.hot.accept(void 0,t)},715:(e,r,n)=>{var t=n(379),o=n.n(t),i=n(559),a=o()(i.default,{insert:"head",singleton:!1});if(!i.default.locals||e.hot.invalidate){var c=i.default.locals;e.hot.accept(559,(r=>{i=n(559),function(e,r,n){if(!e&&r||e&&!r)return!1;var t;for(t in e)if(e[t]!==r[t])return!1;for(t in r)if(!e[t])return!1;return!0}(c,i.default.locals)?(c=i.default.locals,a(i.default)):e.hot.invalidate()}))}e.hot.dispose((function(){a()})),i.default.locals},379:(e,r,n)=>{var t,o=function(){var e={};return function(r){if(void 0===e[r]){var n=document.querySelector(r);if(window.HTMLIFrameElement&&n instanceof window.HTMLIFrameElement)try{n=n.contentDocument.head}catch(e){n=null}e[r]=n}return e[r]}}(),i=[];function a(e){for(var r=-1,n=0;n<i.length;n++)if(i[n].identifier===e){r=n;break}return r}function c(e,r){for(var n={},t=[],o=0;o<e.length;o++){var c=e[o],d=r.base?c[0]+r.base:c[0],l=n[d]||0,s="".concat(d," ").concat(l);n[d]=l+1;var u=a(s),f={css:c[1],media:c[2],sourceMap:c[3]};-1!==u?(i[u].references++,i[u].updater(f)):i.push({identifier:s,updater:v(f,r),references:1}),t.push(s)}return t}function d(e){var r=document.createElement("style"),t=e.attributes||{};if(void 0===t.nonce){var i=n.nc;i&&(t.nonce=i)}if(Object.keys(t).forEach((function(e){r.setAttribute(e,t[e])})),"function"==typeof e.insert)e.insert(r);else{var a=o(e.insert||"head");if(!a)throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");a.appendChild(r)}return r}var l,s=(l=[],function(e,r){return l[e]=r,l.filter(Boolean).join("\n")});function u(e,r,n,t){var o=n?"":t.media?"@media ".concat(t.media," {").concat(t.css,"}"):t.css;if(e.styleSheet)e.styleSheet.cssText=s(r,o);else{var i=document.createTextNode(o),a=e.childNodes;a[r]&&e.removeChild(a[r]),a.length?e.insertBefore(i,a[r]):e.appendChild(i)}}function f(e,r,n){var t=n.css,o=n.media,i=n.sourceMap;if(o?e.setAttribute("media",o):e.removeAttribute("media"),i&&"undefined"!=typeof btoa&&(t+="\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(i))))," */")),e.styleSheet)e.styleSheet.cssText=t;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(t))}}var p=null,h=0;function v(e,r){var n,t,o;if(r.singleton){var i=h++;n=p||(p=d(r)),t=u.bind(null,n,i,!1),o=u.bind(null,n,i,!0)}else n=d(r),t=f.bind(null,n,r),o=function(){!function(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e)}(n)};return t(e),function(r){if(r){if(r.css===e.css&&r.media===e.media&&r.sourceMap===e.sourceMap)return;t(e=r)}else o()}}e.exports=function(e,r){(r=r||{}).singleton||"boolean"==typeof r.singleton||(r.singleton=(void 0===t&&(t=Boolean(window&&document&&document.all&&!window.atob)),t));var n=c(e=e||[],r);return function(e){if(e=e||[],"[object Array]"===Object.prototype.toString.call(e)){for(var t=0;t<n.length;t++){var o=a(n[t]);i[o].references--}for(var d=c(e,r),l=0;l<n.length;l++){var s=a(n[l]);0===i[s].references&&(i[s].updater(),i.splice(s,1))}n=d}}}},691:(e,r,n)=>{n.d(r,{Z:()=>t});const t=n.p+"544e4a4921391291d7948138795ac147.jpeg"},754:e=>{e.exports={a:1,b:2}},672:(e,r,n)=>{function t(e,r){console.log(e+r)}n.d(r,{Z:()=>t})},186:(e,r,n)=>{n.d(r,{zx:()=>t});const t=function(){return document.createElement("button")}},914:(e,r,n)=>{n.r(r),n.d(r,{default:()=>t});class t{constructor(){}fn(){console.log(absss)}}},138:(e,r,n)=>{var t=n(672),o=n(754),i=(n(715),n(402),n(914)),a=n(186);const{a:c,b:d}=o;console.log("a: ",c),console.log("b: ",d),console.log("js: hrm"),console.log(API_BASE_URL),e.hot.accept(914,(e=>{(new i.default).fn(),console.log("module 更新了，这里需要手动处理热替换逻辑")})),document.body.appendChild((0,a.zx)()),(0,t.Z)(c,d)}},d={};function l(e){var r=d[e];if(void 0!==r){if(void 0!==r.error)throw r.error;return r.exports}var n=d[e]={id:e,exports:{}};try{var t={id:e,module:n,factory:c[e],require:l};l.i.forEach((function(e){e(t)})),n=t.module,t.factory.call(n.exports,n,n.exports,t.require)}catch(e){throw n.error=e,e}return n.exports}l.m=c,l.c=d,l.i=[],l.n=e=>{var r=e&&e.__esModule?()=>e.default:()=>e;return l.d(r,{a:r}),r},l.d=(e,r)=>{for(var n in r)l.o(r,n)&&!l.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:r[n]})},l.hu=e=>e+"."+l.h()+".hot-update.js",l.miniCssF=e=>{},l.hmrF=()=>"main."+l.h()+".hot-update.json",l.h=()=>"5d79936e0693e328bab2",l.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),l.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r),e={},r="webpack-first-test:",l.l=(n,t,o,i)=>{if(e[n])e[n].push(t);else{var a,c;if(void 0!==o)for(var d=document.getElementsByTagName("script"),s=0;s<d.length;s++){var u=d[s];if(u.getAttribute("src")==n||u.getAttribute("data-webpack")==r+o){a=u;break}}a||(c=!0,(a=document.createElement("script")).charset="utf-8",a.timeout=120,l.nc&&a.setAttribute("nonce",l.nc),a.setAttribute("data-webpack",r+o),a.src=n),e[n]=[t];var f=(r,t)=>{a.onerror=a.onload=null,clearTimeout(p);var o=e[n];if(delete e[n],a.parentNode&&a.parentNode.removeChild(a),o&&o.forEach((e=>e(t))),r)return r(t)},p=setTimeout(f.bind(null,void 0,{type:"timeout",target:a}),12e4);a.onerror=f.bind(null,a.onerror),a.onload=f.bind(null,a.onload),c&&document.head.appendChild(a)}},l.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},(()=>{var e,r,n,t,o={},i=l.c,a=[],c=[],d="idle";function s(e){d=e;for(var r=0;r<c.length;r++)c[r].call(null,e)}function u(e){if(0===r.length)return e();var n=r;return r=[],Promise.all(n).then((function(){return u(e)}))}function f(e){if("idle"!==d)throw new Error("check() is only allowed in idle status");return s("check"),l.hmrM().then((function(t){if(!t)return s(v()?"ready":"idle"),null;s("prepare");var o=[];return r=[],n=[],Promise.all(Object.keys(l.hmrC).reduce((function(e,r){return l.hmrC[r](t.c,t.r,t.m,e,n,o),e}),[])).then((function(){return u((function(){return e?h(e):(s("ready"),o)}))}))}))}function p(e){return"ready"!==d?Promise.resolve().then((function(){throw new Error("apply() is only allowed in ready status")})):h(e)}function h(e){e=e||{},v();var r=n.map((function(r){return r(e)}));n=void 0;var o,i=r.map((function(e){return e.error})).filter(Boolean);if(i.length>0)return s("abort"),Promise.resolve().then((function(){throw i[0]}));s("dispose"),r.forEach((function(e){e.dispose&&e.dispose()})),s("apply");var a=function(e){o||(o=e)},c=[];return r.forEach((function(e){if(e.apply){var r=e.apply(a);if(r)for(var n=0;n<r.length;n++)c.push(r[n])}})),o?(s("fail"),Promise.resolve().then((function(){throw o}))):t?h(e).then((function(e){return c.forEach((function(r){e.indexOf(r)<0&&e.push(r)})),e})):(s("idle"),Promise.resolve(c))}function v(){if(t)return n||(n=[]),Object.keys(l.hmrI).forEach((function(e){t.forEach((function(r){l.hmrI[e](r,n)}))})),t=void 0,!0}l.hmrD=o,l.i.push((function(h){var v,m,g,y,b=h.module,A=function(n,t){var o=i[t];if(!o)return n;var c=function(r){if(o.hot.active){if(i[r]){var c=i[r].parents;-1===c.indexOf(t)&&c.push(t)}else a=[t],e=r;-1===o.children.indexOf(r)&&o.children.push(r)}else console.warn("[HMR] unexpected require("+r+") from disposed module "+t),a=[];return n(r)},l=function(e){return{configurable:!0,enumerable:!0,get:function(){return n[e]},set:function(r){n[e]=r}}};for(var f in n)Object.prototype.hasOwnProperty.call(n,f)&&"e"!==f&&Object.defineProperty(c,f,l(f));return c.e=function(e){return function(e){switch(d){case"ready":return s("prepare"),r.push(e),u((function(){s("ready")})),e;case"prepare":return r.push(e),e;default:return e}}(n.e(e))},c}(h.require,h.id);b.hot=(v=h.id,m=b,y={_acceptedDependencies:{},_acceptedErrorHandlers:{},_declinedDependencies:{},_selfAccepted:!1,_selfDeclined:!1,_selfInvalidated:!1,_disposeHandlers:[],_main:g=e!==v,_requireSelf:function(){a=m.parents.slice(),e=g?void 0:v,l(v)},active:!0,accept:function(e,r,n){if(void 0===e)y._selfAccepted=!0;else if("function"==typeof e)y._selfAccepted=e;else if("object"==typeof e&&null!==e)for(var t=0;t<e.length;t++)y._acceptedDependencies[e[t]]=r||function(){},y._acceptedErrorHandlers[e[t]]=n;else y._acceptedDependencies[e]=r||function(){},y._acceptedErrorHandlers[e]=n},decline:function(e){if(void 0===e)y._selfDeclined=!0;else if("object"==typeof e&&null!==e)for(var r=0;r<e.length;r++)y._declinedDependencies[e[r]]=!0;else y._declinedDependencies[e]=!0},dispose:function(e){y._disposeHandlers.push(e)},addDisposeHandler:function(e){y._disposeHandlers.push(e)},removeDisposeHandler:function(e){var r=y._disposeHandlers.indexOf(e);r>=0&&y._disposeHandlers.splice(r,1)},invalidate:function(){switch(this._selfInvalidated=!0,d){case"idle":n=[],Object.keys(l.hmrI).forEach((function(e){l.hmrI[e](v,n)})),s("ready");break;case"ready":Object.keys(l.hmrI).forEach((function(e){l.hmrI[e](v,n)}));break;case"prepare":case"check":case"dispose":case"apply":(t=t||[]).push(v)}},check:f,apply:p,status:function(e){if(!e)return d;c.push(e)},addStatusHandler:function(e){c.push(e)},removeStatusHandler:function(e){var r=c.indexOf(e);r>=0&&c.splice(r,1)},data:o[v]},e=void 0,y),b.parents=a,b.children=[],a=[],h.require=A})),l.hmrC={},l.hmrI={}})(),(()=>{var e;l.g.importScripts&&(e=l.g.location+"");var r=l.g.document;if(!e&&r&&(r.currentScript&&(e=r.currentScript.src),!e)){var n=r.getElementsByTagName("script");n.length&&(e=n[n.length-1].src)}if(!e)throw new Error("Automatic publicPath is not supported in this browser");e=e.replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),l.p=e})(),n=(e,r,n,t)=>{var o=document.createElement("link");return o.rel="stylesheet",o.type="text/css",o.onerror=o.onload=i=>{if(o.onerror=o.onload=null,"load"===i.type)n();else{var a=i&&("load"===i.type?"missing":i.type),c=i&&i.target&&i.target.href||r,d=new Error("Loading CSS chunk "+e+" failed.\n("+c+")");d.code="CSS_CHUNK_LOAD_FAILED",d.type=a,d.request=c,o.parentNode.removeChild(o),t(d)}},o.href=r,document.head.appendChild(o),o},t=(e,r)=>{for(var n=document.getElementsByTagName("link"),t=0;t<n.length;t++){var o=(a=n[t]).getAttribute("data-href")||a.getAttribute("href");if("stylesheet"===a.rel&&(o===e||o===r))return a}var i=document.getElementsByTagName("style");for(t=0;t<i.length;t++){var a;if((o=(a=i[t]).getAttribute("data-href"))===e||o===r)return a}},o=[],i=[],a=e=>({dispose:()=>{for(var e=0;e<o.length;e++){var r=o[e];r.parentNode&&r.parentNode.removeChild(r)}o.length=0},apply:()=>{for(var e=0;e<i.length;e++)i[e].rel="stylesheet";i.length=0}}),l.hmrC.miniCss=(e,r,c,d,s,u)=>{s.push(a),e.forEach((e=>{var r=l.miniCssF(e),a=l.p+r,c=t(r,a);c&&d.push(new Promise(((r,t)=>{var d=n(e,a,(()=>{d.as="style",d.rel="preload",r()}),t);o.push(c),i.push(d)})))}))},(()=>{var e,r,n,t,o={179:0},i={};function a(e){return new Promise(((r,n)=>{i[e]=r;var t=l.p+l.hu(e),o=new Error;l.l(t,(r=>{if(i[e]){i[e]=void 0;var t=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;o.message="Loading hot update chunk "+e+" failed.\n("+t+": "+a+")",o.name="ChunkLoadError",o.type=t,o.request=a,n(o)}}))}))}function c(i){function a(e){for(var r=[e],n={},t=r.map((function(e){return{chain:[e],id:e}}));t.length>0;){var o=t.pop(),i=o.id,a=o.chain,d=l.c[i];if(d&&(!d.hot._selfAccepted||d.hot._selfInvalidated)){if(d.hot._selfDeclined)return{type:"self-declined",chain:a,moduleId:i};if(d.hot._main)return{type:"unaccepted",chain:a,moduleId:i};for(var s=0;s<d.parents.length;s++){var u=d.parents[s],f=l.c[u];if(f){if(f.hot._declinedDependencies[i])return{type:"declined",chain:a.concat([u]),moduleId:i,parentId:u};-1===r.indexOf(u)&&(f.hot._acceptedDependencies[i]?(n[u]||(n[u]=[]),c(n[u],[i])):(delete n[u],r.push(u),t.push({chain:a.concat([u]),id:u})))}}}}return{type:"accepted",moduleId:e,outdatedModules:r,outdatedDependencies:n}}function c(e,r){for(var n=0;n<r.length;n++){var t=r[n];-1===e.indexOf(t)&&e.push(t)}}l.f&&delete l.f.jsonpHmr,e=void 0;var d={},s=[],u={},f=function(e){console.warn("[HMR] unexpected require("+e.id+") to disposed module")};for(var p in r)if(l.o(r,p)){var h,v=r[p],m=!1,g=!1,y=!1,b="";switch((h=v?a(p):{type:"disposed",moduleId:p}).chain&&(b="\nUpdate propagation: "+h.chain.join(" -> ")),h.type){case"self-declined":i.onDeclined&&i.onDeclined(h),i.ignoreDeclined||(m=new Error("Aborted because of self decline: "+h.moduleId+b));break;case"declined":i.onDeclined&&i.onDeclined(h),i.ignoreDeclined||(m=new Error("Aborted because of declined dependency: "+h.moduleId+" in "+h.parentId+b));break;case"unaccepted":i.onUnaccepted&&i.onUnaccepted(h),i.ignoreUnaccepted||(m=new Error("Aborted because "+p+" is not accepted"+b));break;case"accepted":i.onAccepted&&i.onAccepted(h),g=!0;break;case"disposed":i.onDisposed&&i.onDisposed(h),y=!0;break;default:throw new Error("Unexception type "+h.type)}if(m)return{error:m};if(g)for(p in u[p]=v,c(s,h.outdatedModules),h.outdatedDependencies)l.o(h.outdatedDependencies,p)&&(d[p]||(d[p]=[]),c(d[p],h.outdatedDependencies[p]));y&&(c(s,[h.moduleId]),u[p]=f)}r=void 0;for(var A,E=[],w=0;w<s.length;w++){var x=s[w],_=l.c[x];_&&(_.hot._selfAccepted||_.hot._main)&&u[x]!==f&&!_.hot._selfInvalidated&&E.push({module:x,require:_.hot._requireSelf,errorHandler:_.hot._selfAccepted})}return{dispose:function(){var e;n.forEach((function(e){delete o[e]})),n=void 0;for(var r,t=s.slice();t.length>0;){var i=t.pop(),a=l.c[i];if(a){var c={},u=a.hot._disposeHandlers;for(w=0;w<u.length;w++)u[w].call(null,c);for(l.hmrD[i]=c,a.hot.active=!1,delete l.c[i],delete d[i],w=0;w<a.children.length;w++){var f=l.c[a.children[w]];f&&(e=f.parents.indexOf(i))>=0&&f.parents.splice(e,1)}}}for(var p in d)if(l.o(d,p)&&(a=l.c[p]))for(A=d[p],w=0;w<A.length;w++)r=A[w],(e=a.children.indexOf(r))>=0&&a.children.splice(e,1)},apply:function(e){for(var r in u)l.o(u,r)&&(l.m[r]=u[r]);for(var n=0;n<t.length;n++)t[n](l);for(var o in d)if(l.o(d,o)){var a=l.c[o];if(a){A=d[o];for(var c=[],f=[],p=[],h=0;h<A.length;h++){var v=A[h],m=a.hot._acceptedDependencies[v],g=a.hot._acceptedErrorHandlers[v];if(m){if(-1!==c.indexOf(m))continue;c.push(m),f.push(g),p.push(v)}}for(var y=0;y<c.length;y++)try{c[y].call(null,A)}catch(r){if("function"==typeof f[y])try{f[y](r,{moduleId:o,dependencyId:p[y]})}catch(n){i.onErrored&&i.onErrored({type:"accept-error-handler-errored",moduleId:o,dependencyId:p[y],error:n,originalError:r}),i.ignoreErrored||(e(n),e(r))}else i.onErrored&&i.onErrored({type:"accept-errored",moduleId:o,dependencyId:p[y],error:r}),i.ignoreErrored||e(r)}}}for(var b=0;b<E.length;b++){var w=E[b],x=w.module;try{w.require(x)}catch(r){if("function"==typeof w.errorHandler)try{w.errorHandler(r,{moduleId:x,module:l.c[x]})}catch(n){i.onErrored&&i.onErrored({type:"self-accept-error-handler-errored",moduleId:x,error:n,originalError:r}),i.ignoreErrored||(e(n),e(r))}else i.onErrored&&i.onErrored({type:"self-accept-errored",moduleId:x,error:r}),i.ignoreErrored||e(r)}}return s}}}self.webpackHotUpdatewebpack_first_test=(e,n,o)=>{for(var a in n)l.o(n,a)&&(r[a]=n[a]);o&&t.push(o),i[e]&&(i[e](),i[e]=void 0)},l.hmrI.jsonp=function(e,o){r||(r={},t=[],n=[],o.push(c)),l.o(r,e)||(r[e]=l.m[e])},l.hmrC.jsonp=function(i,d,s,u,f,p){f.push(c),e={},n=d,r=s.reduce((function(e,r){return e[r]=!1,e}),{}),t=[],i.forEach((function(r){l.o(o,r)&&void 0!==o[r]&&(u.push(a(r)),e[r]=!0)})),l.f&&(l.f.jsonpHmr=function(r,n){e&&!l.o(e,r)&&l.o(o,r)&&void 0!==o[r]&&(n.push(a(r)),e[r]=!0)})},l.hmrM=()=>{if("undefined"==typeof fetch)throw new Error("No browser support: need fetch API");return fetch(l.p+l.hmrF()).then((e=>{if(404!==e.status){if(!e.ok)throw new Error("Failed to fetch update manifest "+e.statusText);return e.json()}}))}})(),l(138)})();
+ (() => { // webpackBootstrap
+ 	"use strict";
+ 	var __webpack_modules__ = ({
+
+ "./src/index.js":
+/*!**********************************!*\
+  !*** ./src/index.js + 1 modules ***!
+  \**********************************/
+ (() => {
+
+
+;// CONCATENATED MODULE: ./src/component/component.js
+const Button = function () {
+    return document.createElement('button');
+    console.log('button');
+}
+
+const Heading = function () {
+    return document.createElement('h1');
+}
+
+const Content = function () {
+    return document.createElement('p');
+}
+;// CONCATENATED MODULE: ./src/index.js
+// webpack的入口文件 /src/index.js
+// import test from './app'
+
+// 开发环境打包
+// webpack .\src\index.js -o .\build\build.js --mode=development
+
+// 线上环境打包 会将入口文件压缩
+// webpack .\src\index.js -o .\build\build.js --mode=production
+
+// webpack 默认只支持打包.js .json 对与.css img 等资源不支持，需要借助loader和plugins实现
+// import data from '../public/data.json';
+// import '../public/app.css';
+// import '../public/test.less';
+// import './loader.md';
+// import hmr from './hrm';
+
+// const { a, b } = data;
+// console.log('a: ', a);
+// console.log('b: ', b);
+// console.log('js: hrm');
+// alert('refresh');
+// console.log(API_BASE_URL);
+
+// module.hot.accept('./hrm', () => {
+//     const hrsss = new hmr();
+//     hrsss.fn();
+//     console.log('module 更新了，这里需要手动处理热替换逻辑')
+// })
+
+// 引入部分组件
+
+document.body.appendChild(Button());
+
+// test(a, b);
+
+ })
+
+ 	});
+
+ 	// The module cache
+ 	var __webpack_module_cache__ = {};
+ 	
+ 	// The require function
+ 	function __webpack_require__(moduleId) {
+ 		// Check if module is in cache
+ 		var cachedModule = __webpack_module_cache__[moduleId];
+ 		if (cachedModule !== undefined) {
+ 			if (cachedModule.error !== undefined) throw cachedModule.error;
+ 			return cachedModule.exports;
+ 		}
+ 		// Create a new module (and put it into the cache)
+ 		var module = __webpack_module_cache__[moduleId] = {
+ 			// no module.id needed
+ 			// no module.loaded needed
+ 			exports: {}
+ 		};
+ 	
+ 		// Execute the module function
+ 		try {
+ 			var execOptions = { id: moduleId, module: module, factory: __webpack_modules__[moduleId], require: __webpack_require__ };
+ 			__webpack_require__.i.forEach(function(handler) { handler(execOptions); });
+ 			module = execOptions.module;
+ 			execOptions.factory.call(module.exports, module, module.exports, execOptions.require);
+ 		} catch(e) {
+ 			module.error = e;
+ 			throw e;
+ 		}
+ 	
+ 		// Return the exports of the module
+ 		return module.exports;
+ 	}
+ 	
+ 	// expose the modules object (__webpack_modules__)
+ 	__webpack_require__.m = __webpack_modules__;
+ 	
+ 	// expose the module cache
+ 	__webpack_require__.c = __webpack_module_cache__;
+ 	
+ 	// expose the module execution interceptor
+ 	__webpack_require__.i = [];
+ 	
+
+ 	/* webpack/runtime/get javascript update chunk filename */
+ 	(() => {
+ 		// This function allow to reference all chunks
+ 		__webpack_require__.hu = (chunkId) => {
+ 			// return url for filenames based on template
+ 			return "" + chunkId + "." + __webpack_require__.h() + ".hot-update.js";
+ 		};
+ 	})();
+ 	
+ 	/* webpack/runtime/get mini-css chunk filename */
+ 	(() => {
+ 		// This function allow to reference all chunks
+ 		__webpack_require__.miniCssF = (chunkId) => {
+ 			// return url for filenames based on template
+ 			return undefined;
+ 		};
+ 	})();
+ 	
+ 	/* webpack/runtime/get update manifest filename */
+ 	(() => {
+ 		__webpack_require__.hmrF = () => ("main." + __webpack_require__.h() + ".hot-update.json");
+ 	})();
+ 	
+ 	/* webpack/runtime/getFullHash */
+ 	(() => {
+ 		__webpack_require__.h = () => ("c847b6f9a5547c1029a8")
+ 	})();
+ 	
+ 	/* webpack/runtime/global */
+ 	(() => {
+ 		__webpack_require__.g = (function() {
+ 			if (typeof globalThis === 'object') return globalThis;
+ 			try {
+ 				return this || new Function('return this')();
+ 			} catch (e) {
+ 				if (typeof window === 'object') return window;
+ 			}
+ 		})();
+ 	})();
+ 	
+ 	/* webpack/runtime/hasOwnProperty shorthand */
+ 	(() => {
+ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+ 	})();
+ 	
+ 	/* webpack/runtime/load script */
+ 	(() => {
+ 		var inProgress = {};
+ 		var dataWebpackPrefix = "webpack-first-test:";
+ 		// loadScript function to load a script via script tag
+ 		__webpack_require__.l = (url, done, key, chunkId) => {
+ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+ 			var script, needAttach;
+ 			if(key !== undefined) {
+ 				var scripts = document.getElementsByTagName("script");
+ 				for(var i = 0; i < scripts.length; i++) {
+ 					var s = scripts[i];
+ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+ 				}
+ 			}
+ 			if(!script) {
+ 				needAttach = true;
+ 				script = document.createElement('script');
+ 		
+ 				script.charset = 'utf-8';
+ 				script.timeout = 120;
+ 				if (__webpack_require__.nc) {
+ 					script.setAttribute("nonce", __webpack_require__.nc);
+ 				}
+ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+ 				script.src = url;
+ 			}
+ 			inProgress[url] = [done];
+ 			var onScriptComplete = (prev, event) => {
+ 				// avoid mem leaks in IE.
+ 				script.onerror = script.onload = null;
+ 				clearTimeout(timeout);
+ 				var doneFns = inProgress[url];
+ 				delete inProgress[url];
+ 				script.parentNode && script.parentNode.removeChild(script);
+ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+ 				if(prev) return prev(event);
+ 			}
+ 			;
+ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+ 			script.onload = onScriptComplete.bind(null, script.onload);
+ 			needAttach && document.head.appendChild(script);
+ 		};
+ 	})();
+ 	
+ 	/* webpack/runtime/hot module replacement */
+ 	(() => {
+ 		var currentModuleData = {};
+ 		var installedModules = __webpack_require__.c;
+ 		
+ 		// module and require creation
+ 		var currentChildModule;
+ 		var currentParents = [];
+ 		
+ 		// status
+ 		var registeredStatusHandlers = [];
+ 		var currentStatus = "idle";
+ 		
+ 		// while downloading
+ 		var blockingPromises;
+ 		
+ 		// The update info
+ 		var currentUpdateApplyHandlers;
+ 		var queuedInvalidatedModules;
+ 		
+ 		// eslint-disable-next-line no-unused-vars
+ 		__webpack_require__.hmrD = currentModuleData;
+ 		
+ 		__webpack_require__.i.push(function (options) {
+ 			var module = options.module;
+ 			var require = createRequire(options.require, options.id);
+ 			module.hot = createModuleHotObject(options.id, module);
+ 			module.parents = currentParents;
+ 			module.children = [];
+ 			currentParents = [];
+ 			options.require = require;
+ 		});
+ 		
+ 		__webpack_require__.hmrC = {};
+ 		__webpack_require__.hmrI = {};
+ 		
+ 		function createRequire(require, moduleId) {
+ 			var me = installedModules[moduleId];
+ 			if (!me) return require;
+ 			var fn = function (request) {
+ 				if (me.hot.active) {
+ 					if (installedModules[request]) {
+ 						var parents = installedModules[request].parents;
+ 						if (parents.indexOf(moduleId) === -1) {
+ 							parents.push(moduleId);
+ 						}
+ 					} else {
+ 						currentParents = [moduleId];
+ 						currentChildModule = request;
+ 					}
+ 					if (me.children.indexOf(request) === -1) {
+ 						me.children.push(request);
+ 					}
+ 				} else {
+ 					console.warn(
+ 						"[HMR] unexpected require(" +
+ 							request +
+ 							") from disposed module " +
+ 							moduleId
+ 					);
+ 					currentParents = [];
+ 				}
+ 				return require(request);
+ 			};
+ 			var createPropertyDescriptor = function (name) {
+ 				return {
+ 					configurable: true,
+ 					enumerable: true,
+ 					get: function () {
+ 						return require[name];
+ 					},
+ 					set: function (value) {
+ 						require[name] = value;
+ 					}
+ 				};
+ 			};
+ 			for (var name in require) {
+ 				if (Object.prototype.hasOwnProperty.call(require, name) && name !== "e") {
+ 					Object.defineProperty(fn, name, createPropertyDescriptor(name));
+ 				}
+ 			}
+ 			fn.e = function (chunkId) {
+ 				return trackBlockingPromise(require.e(chunkId));
+ 			};
+ 			return fn;
+ 		}
+ 		
+ 		function createModuleHotObject(moduleId, me) {
+ 			var _main = currentChildModule !== moduleId;
+ 			var hot = {
+ 				// private stuff
+ 				_acceptedDependencies: {},
+ 				_acceptedErrorHandlers: {},
+ 				_declinedDependencies: {},
+ 				_selfAccepted: false,
+ 				_selfDeclined: false,
+ 				_selfInvalidated: false,
+ 				_disposeHandlers: [],
+ 				_main: _main,
+ 				_requireSelf: function () {
+ 					currentParents = me.parents.slice();
+ 					currentChildModule = _main ? undefined : moduleId;
+ 					__webpack_require__(moduleId);
+ 				},
+ 		
+ 				// Module API
+ 				active: true,
+ 				accept: function (dep, callback, errorHandler) {
+ 					if (dep === undefined) hot._selfAccepted = true;
+ 					else if (typeof dep === "function") hot._selfAccepted = dep;
+ 					else if (typeof dep === "object" && dep !== null) {
+ 						for (var i = 0; i < dep.length; i++) {
+ 							hot._acceptedDependencies[dep[i]] = callback || function () {};
+ 							hot._acceptedErrorHandlers[dep[i]] = errorHandler;
+ 						}
+ 					} else {
+ 						hot._acceptedDependencies[dep] = callback || function () {};
+ 						hot._acceptedErrorHandlers[dep] = errorHandler;
+ 					}
+ 				},
+ 				decline: function (dep) {
+ 					if (dep === undefined) hot._selfDeclined = true;
+ 					else if (typeof dep === "object" && dep !== null)
+ 						for (var i = 0; i < dep.length; i++)
+ 							hot._declinedDependencies[dep[i]] = true;
+ 					else hot._declinedDependencies[dep] = true;
+ 				},
+ 				dispose: function (callback) {
+ 					hot._disposeHandlers.push(callback);
+ 				},
+ 				addDisposeHandler: function (callback) {
+ 					hot._disposeHandlers.push(callback);
+ 				},
+ 				removeDisposeHandler: function (callback) {
+ 					var idx = hot._disposeHandlers.indexOf(callback);
+ 					if (idx >= 0) hot._disposeHandlers.splice(idx, 1);
+ 				},
+ 				invalidate: function () {
+ 					this._selfInvalidated = true;
+ 					switch (currentStatus) {
+ 						case "idle":
+ 							currentUpdateApplyHandlers = [];
+ 							Object.keys(__webpack_require__.hmrI).forEach(function (key) {
+ 								__webpack_require__.hmrI[key](
+ 									moduleId,
+ 									currentUpdateApplyHandlers
+ 								);
+ 							});
+ 							setStatus("ready");
+ 							break;
+ 						case "ready":
+ 							Object.keys(__webpack_require__.hmrI).forEach(function (key) {
+ 								__webpack_require__.hmrI[key](
+ 									moduleId,
+ 									currentUpdateApplyHandlers
+ 								);
+ 							});
+ 							break;
+ 						case "prepare":
+ 						case "check":
+ 						case "dispose":
+ 						case "apply":
+ 							(queuedInvalidatedModules = queuedInvalidatedModules || []).push(
+ 								moduleId
+ 							);
+ 							break;
+ 						default:
+ 							// ignore requests in error states
+ 							break;
+ 					}
+ 				},
+ 		
+ 				// Management API
+ 				check: hotCheck,
+ 				apply: hotApply,
+ 				status: function (l) {
+ 					if (!l) return currentStatus;
+ 					registeredStatusHandlers.push(l);
+ 				},
+ 				addStatusHandler: function (l) {
+ 					registeredStatusHandlers.push(l);
+ 				},
+ 				removeStatusHandler: function (l) {
+ 					var idx = registeredStatusHandlers.indexOf(l);
+ 					if (idx >= 0) registeredStatusHandlers.splice(idx, 1);
+ 				},
+ 		
+ 				//inherit from previous dispose call
+ 				data: currentModuleData[moduleId]
+ 			};
+ 			currentChildModule = undefined;
+ 			return hot;
+ 		}
+ 		
+ 		function setStatus(newStatus) {
+ 			currentStatus = newStatus;
+ 			for (var i = 0; i < registeredStatusHandlers.length; i++)
+ 				registeredStatusHandlers[i].call(null, newStatus);
+ 		}
+ 		
+ 		function trackBlockingPromise(promise) {
+ 			switch (currentStatus) {
+ 				case "ready":
+ 					setStatus("prepare");
+ 					blockingPromises.push(promise);
+ 					waitForBlockingPromises(function () {
+ 						setStatus("ready");
+ 					});
+ 					return promise;
+ 				case "prepare":
+ 					blockingPromises.push(promise);
+ 					return promise;
+ 				default:
+ 					return promise;
+ 			}
+ 		}
+ 		
+ 		function waitForBlockingPromises(fn) {
+ 			if (blockingPromises.length === 0) return fn();
+ 			var blocker = blockingPromises;
+ 			blockingPromises = [];
+ 			return Promise.all(blocker).then(function () {
+ 				return waitForBlockingPromises(fn);
+ 			});
+ 		}
+ 		
+ 		function hotCheck(applyOnUpdate) {
+ 			if (currentStatus !== "idle") {
+ 				throw new Error("check() is only allowed in idle status");
+ 			}
+ 			setStatus("check");
+ 			return __webpack_require__.hmrM().then(function (update) {
+ 				if (!update) {
+ 					setStatus(applyInvalidatedModules() ? "ready" : "idle");
+ 					return null;
+ 				}
+ 		
+ 				setStatus("prepare");
+ 		
+ 				var updatedModules = [];
+ 				blockingPromises = [];
+ 				currentUpdateApplyHandlers = [];
+ 		
+ 				return Promise.all(
+ 					Object.keys(__webpack_require__.hmrC).reduce(function (
+ 						promises,
+ 						key
+ 					) {
+ 						__webpack_require__.hmrC[key](
+ 							update.c,
+ 							update.r,
+ 							update.m,
+ 							promises,
+ 							currentUpdateApplyHandlers,
+ 							updatedModules
+ 						);
+ 						return promises;
+ 					},
+ 					[])
+ 				).then(function () {
+ 					return waitForBlockingPromises(function () {
+ 						if (applyOnUpdate) {
+ 							return internalApply(applyOnUpdate);
+ 						} else {
+ 							setStatus("ready");
+ 		
+ 							return updatedModules;
+ 						}
+ 					});
+ 				});
+ 			});
+ 		}
+ 		
+ 		function hotApply(options) {
+ 			if (currentStatus !== "ready") {
+ 				return Promise.resolve().then(function () {
+ 					throw new Error("apply() is only allowed in ready status");
+ 				});
+ 			}
+ 			return internalApply(options);
+ 		}
+ 		
+ 		function internalApply(options) {
+ 			options = options || {};
+ 		
+ 			applyInvalidatedModules();
+ 		
+ 			var results = currentUpdateApplyHandlers.map(function (handler) {
+ 				return handler(options);
+ 			});
+ 			currentUpdateApplyHandlers = undefined;
+ 		
+ 			var errors = results
+ 				.map(function (r) {
+ 					return r.error;
+ 				})
+ 				.filter(Boolean);
+ 		
+ 			if (errors.length > 0) {
+ 				setStatus("abort");
+ 				return Promise.resolve().then(function () {
+ 					throw errors[0];
+ 				});
+ 			}
+ 		
+ 			// Now in "dispose" phase
+ 			setStatus("dispose");
+ 		
+ 			results.forEach(function (result) {
+ 				if (result.dispose) result.dispose();
+ 			});
+ 		
+ 			// Now in "apply" phase
+ 			setStatus("apply");
+ 		
+ 			var error;
+ 			var reportError = function (err) {
+ 				if (!error) error = err;
+ 			};
+ 		
+ 			var outdatedModules = [];
+ 			results.forEach(function (result) {
+ 				if (result.apply) {
+ 					var modules = result.apply(reportError);
+ 					if (modules) {
+ 						for (var i = 0; i < modules.length; i++) {
+ 							outdatedModules.push(modules[i]);
+ 						}
+ 					}
+ 				}
+ 			});
+ 		
+ 			// handle errors in accept handlers and self accepted module load
+ 			if (error) {
+ 				setStatus("fail");
+ 				return Promise.resolve().then(function () {
+ 					throw error;
+ 				});
+ 			}
+ 		
+ 			if (queuedInvalidatedModules) {
+ 				return internalApply(options).then(function (list) {
+ 					outdatedModules.forEach(function (moduleId) {
+ 						if (list.indexOf(moduleId) < 0) list.push(moduleId);
+ 					});
+ 					return list;
+ 				});
+ 			}
+ 		
+ 			setStatus("idle");
+ 			return Promise.resolve(outdatedModules);
+ 		}
+ 		
+ 		function applyInvalidatedModules() {
+ 			if (queuedInvalidatedModules) {
+ 				if (!currentUpdateApplyHandlers) currentUpdateApplyHandlers = [];
+ 				Object.keys(__webpack_require__.hmrI).forEach(function (key) {
+ 					queuedInvalidatedModules.forEach(function (moduleId) {
+ 						__webpack_require__.hmrI[key](
+ 							moduleId,
+ 							currentUpdateApplyHandlers
+ 						);
+ 					});
+ 				});
+ 				queuedInvalidatedModules = undefined;
+ 				return true;
+ 			}
+ 		}
+ 	})();
+ 	
+ 	/* webpack/runtime/publicPath */
+ 	(() => {
+ 		var scriptUrl;
+ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+ 		var document = __webpack_require__.g.document;
+ 		if (!scriptUrl && document) {
+ 			if (document.currentScript)
+ 				scriptUrl = document.currentScript.src
+ 			if (!scriptUrl) {
+ 				var scripts = document.getElementsByTagName("script");
+ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+ 			}
+ 		}
+ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+ 		__webpack_require__.p = scriptUrl;
+ 	})();
+ 	
+ 	/* webpack/runtime/css loading */
+ 	(() => {
+ 		var createStylesheet = (chunkId, fullhref, resolve, reject) => {
+ 			var linkTag = document.createElement("link");
+ 		
+ 			linkTag.rel = "stylesheet";
+ 			linkTag.type = "text/css";
+ 			var onLinkComplete = (event) => {
+ 				// avoid mem leaks.
+ 				linkTag.onerror = linkTag.onload = null;
+ 				if (event.type === 'load') {
+ 					resolve();
+ 				} else {
+ 					var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+ 					var realHref = event && event.target && event.target.href || fullhref;
+ 					var err = new Error("Loading CSS chunk " + chunkId + " failed.\n(" + realHref + ")");
+ 					err.code = "CSS_CHUNK_LOAD_FAILED";
+ 					err.type = errorType;
+ 					err.request = realHref;
+ 					linkTag.parentNode.removeChild(linkTag)
+ 					reject(err);
+ 				}
+ 			}
+ 			linkTag.onerror = linkTag.onload = onLinkComplete;
+ 			linkTag.href = fullhref;
+ 		
+ 			document.head.appendChild(linkTag);
+ 			return linkTag;
+ 		};
+ 		var findStylesheet = (href, fullhref) => {
+ 			var existingLinkTags = document.getElementsByTagName("link");
+ 			for(var i = 0; i < existingLinkTags.length; i++) {
+ 				var tag = existingLinkTags[i];
+ 				var dataHref = tag.getAttribute("data-href") || tag.getAttribute("href");
+ 				if(tag.rel === "stylesheet" && (dataHref === href || dataHref === fullhref)) return tag;
+ 			}
+ 			var existingStyleTags = document.getElementsByTagName("style");
+ 			for(var i = 0; i < existingStyleTags.length; i++) {
+ 				var tag = existingStyleTags[i];
+ 				var dataHref = tag.getAttribute("data-href");
+ 				if(dataHref === href || dataHref === fullhref) return tag;
+ 			}
+ 		};
+ 		var loadStylesheet = (chunkId) => {
+ 			return new Promise((resolve, reject) => {
+ 				var href = __webpack_require__.miniCssF(chunkId);
+ 				var fullhref = __webpack_require__.p + href;
+ 				if(findStylesheet(href, fullhref)) return resolve();
+ 				createStylesheet(chunkId, fullhref, resolve, reject);
+ 			});
+ 		}
+ 		// no chunk loading
+ 		
+ 		var oldTags = [];
+ 		var newTags = [];
+ 		var applyHandler = (options) => {
+ 			return { dispose: () => {
+ 				for(var i = 0; i < oldTags.length; i++) {
+ 					var oldTag = oldTags[i];
+ 					if(oldTag.parentNode) oldTag.parentNode.removeChild(oldTag);
+ 				}
+ 				oldTags.length = 0;
+ 			}, apply: () => {
+ 				for(var i = 0; i < newTags.length; i++) newTags[i].rel = "stylesheet";
+ 				newTags.length = 0;
+ 			} };
+ 		}
+ 		__webpack_require__.hmrC.miniCss = (chunkIds, removedChunks, removedModules, promises, applyHandlers, updatedModulesList) => {
+ 			applyHandlers.push(applyHandler);
+ 			chunkIds.forEach((chunkId) => {
+ 				var href = __webpack_require__.miniCssF(chunkId);
+ 				var fullhref = __webpack_require__.p + href;
+ 				var oldTag = findStylesheet(href, fullhref);
+ 				if(!oldTag) return;
+ 				promises.push(new Promise((resolve, reject) => {
+ 					var tag = createStylesheet(chunkId, fullhref, () => {
+ 						tag.as = "style";
+ 						tag.rel = "preload";
+ 						resolve();
+ 					}, reject);
+ 					oldTags.push(oldTag);
+ 					newTags.push(tag);
+ 				}));
+ 			});
+ 		}
+ 	})();
+ 	
+ 	/* webpack/runtime/jsonp chunk loading */
+ 	(() => {
+ 		// no baseURI
+ 		
+ 		// object to store loaded and loading chunks
+ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+ 		var installedChunks = {
+ 			"main": 0
+ 		};
+ 		
+ 		// no chunk on demand loading
+ 		
+ 		// no prefetching
+ 		
+ 		// no preloaded
+ 		
+ 		var currentUpdatedModulesList;
+ 		var waitingUpdateResolves = {};
+ 		function loadUpdateChunk(chunkId) {
+ 			return new Promise((resolve, reject) => {
+ 				waitingUpdateResolves[chunkId] = resolve;
+ 				// start update chunk loading
+ 				var url = __webpack_require__.p + __webpack_require__.hu(chunkId);
+ 				// create error before stack unwound to get useful stacktrace later
+ 				var error = new Error();
+ 				var loadingEnded = (event) => {
+ 					if(waitingUpdateResolves[chunkId]) {
+ 						waitingUpdateResolves[chunkId] = undefined
+ 						var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+ 						var realSrc = event && event.target && event.target.src;
+ 						error.message = 'Loading hot update chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+ 						error.name = 'ChunkLoadError';
+ 						error.type = errorType;
+ 						error.request = realSrc;
+ 						reject(error);
+ 					}
+ 				};
+ 				__webpack_require__.l(url, loadingEnded);
+ 			});
+ 		}
+ 		
+ 		self["webpackHotUpdatewebpack_first_test"] = (chunkId, moreModules, runtime) => {
+ 			for(var moduleId in moreModules) {
+ 				if(__webpack_require__.o(moreModules, moduleId)) {
+ 					currentUpdate[moduleId] = moreModules[moduleId];
+ 					if(currentUpdatedModulesList) currentUpdatedModulesList.push(moduleId);
+ 				}
+ 			}
+ 			if(runtime) currentUpdateRuntime.push(runtime);
+ 			if(waitingUpdateResolves[chunkId]) {
+ 				waitingUpdateResolves[chunkId]();
+ 				waitingUpdateResolves[chunkId] = undefined;
+ 			}
+ 		};
+ 		
+ 		var currentUpdateChunks;
+ 		var currentUpdate;
+ 		var currentUpdateRemovedChunks;
+ 		var currentUpdateRuntime;
+ 		function applyHandler(options) {
+ 			if (__webpack_require__.f) delete __webpack_require__.f.jsonpHmr;
+ 			currentUpdateChunks = undefined;
+ 			function getAffectedModuleEffects(updateModuleId) {
+ 				var outdatedModules = [updateModuleId];
+ 				var outdatedDependencies = {};
+ 		
+ 				var queue = outdatedModules.map(function (id) {
+ 					return {
+ 						chain: [id],
+ 						id: id
+ 					};
+ 				});
+ 				while (queue.length > 0) {
+ 					var queueItem = queue.pop();
+ 					var moduleId = queueItem.id;
+ 					var chain = queueItem.chain;
+ 					var module = __webpack_require__.c[moduleId];
+ 					if (
+ 						!module ||
+ 						(module.hot._selfAccepted && !module.hot._selfInvalidated)
+ 					)
+ 						continue;
+ 					if (module.hot._selfDeclined) {
+ 						return {
+ 							type: "self-declined",
+ 							chain: chain,
+ 							moduleId: moduleId
+ 						};
+ 					}
+ 					if (module.hot._main) {
+ 						return {
+ 							type: "unaccepted",
+ 							chain: chain,
+ 							moduleId: moduleId
+ 						};
+ 					}
+ 					for (var i = 0; i < module.parents.length; i++) {
+ 						var parentId = module.parents[i];
+ 						var parent = __webpack_require__.c[parentId];
+ 						if (!parent) continue;
+ 						if (parent.hot._declinedDependencies[moduleId]) {
+ 							return {
+ 								type: "declined",
+ 								chain: chain.concat([parentId]),
+ 								moduleId: moduleId,
+ 								parentId: parentId
+ 							};
+ 						}
+ 						if (outdatedModules.indexOf(parentId) !== -1) continue;
+ 						if (parent.hot._acceptedDependencies[moduleId]) {
+ 							if (!outdatedDependencies[parentId])
+ 								outdatedDependencies[parentId] = [];
+ 							addAllToSet(outdatedDependencies[parentId], [moduleId]);
+ 							continue;
+ 						}
+ 						delete outdatedDependencies[parentId];
+ 						outdatedModules.push(parentId);
+ 						queue.push({
+ 							chain: chain.concat([parentId]),
+ 							id: parentId
+ 						});
+ 					}
+ 				}
+ 		
+ 				return {
+ 					type: "accepted",
+ 					moduleId: updateModuleId,
+ 					outdatedModules: outdatedModules,
+ 					outdatedDependencies: outdatedDependencies
+ 				};
+ 			}
+ 		
+ 			function addAllToSet(a, b) {
+ 				for (var i = 0; i < b.length; i++) {
+ 					var item = b[i];
+ 					if (a.indexOf(item) === -1) a.push(item);
+ 				}
+ 			}
+ 		
+ 			// at begin all updates modules are outdated
+ 			// the "outdated" status can propagate to parents if they don't accept the children
+ 			var outdatedDependencies = {};
+ 			var outdatedModules = [];
+ 			var appliedUpdate = {};
+ 		
+ 			var warnUnexpectedRequire = function warnUnexpectedRequire(module) {
+ 				console.warn(
+ 					"[HMR] unexpected require(" + module.id + ") to disposed module"
+ 				);
+ 			};
+ 		
+ 			for (var moduleId in currentUpdate) {
+ 				if (__webpack_require__.o(currentUpdate, moduleId)) {
+ 					var newModuleFactory = currentUpdate[moduleId];
+ 					/** @type {TODO} */
+ 					var result;
+ 					if (newModuleFactory) {
+ 						result = getAffectedModuleEffects(moduleId);
+ 					} else {
+ 						result = {
+ 							type: "disposed",
+ 							moduleId: moduleId
+ 						};
+ 					}
+ 					/** @type {Error|false} */
+ 					var abortError = false;
+ 					var doApply = false;
+ 					var doDispose = false;
+ 					var chainInfo = "";
+ 					if (result.chain) {
+ 						chainInfo = "\nUpdate propagation: " + result.chain.join(" -> ");
+ 					}
+ 					switch (result.type) {
+ 						case "self-declined":
+ 							if (options.onDeclined) options.onDeclined(result);
+ 							if (!options.ignoreDeclined)
+ 								abortError = new Error(
+ 									"Aborted because of self decline: " +
+ 										result.moduleId +
+ 										chainInfo
+ 								);
+ 							break;
+ 						case "declined":
+ 							if (options.onDeclined) options.onDeclined(result);
+ 							if (!options.ignoreDeclined)
+ 								abortError = new Error(
+ 									"Aborted because of declined dependency: " +
+ 										result.moduleId +
+ 										" in " +
+ 										result.parentId +
+ 										chainInfo
+ 								);
+ 							break;
+ 						case "unaccepted":
+ 							if (options.onUnaccepted) options.onUnaccepted(result);
+ 							if (!options.ignoreUnaccepted)
+ 								abortError = new Error(
+ 									"Aborted because " + moduleId + " is not accepted" + chainInfo
+ 								);
+ 							break;
+ 						case "accepted":
+ 							if (options.onAccepted) options.onAccepted(result);
+ 							doApply = true;
+ 							break;
+ 						case "disposed":
+ 							if (options.onDisposed) options.onDisposed(result);
+ 							doDispose = true;
+ 							break;
+ 						default:
+ 							throw new Error("Unexception type " + result.type);
+ 					}
+ 					if (abortError) {
+ 						return {
+ 							error: abortError
+ 						};
+ 					}
+ 					if (doApply) {
+ 						appliedUpdate[moduleId] = newModuleFactory;
+ 						addAllToSet(outdatedModules, result.outdatedModules);
+ 						for (moduleId in result.outdatedDependencies) {
+ 							if (__webpack_require__.o(result.outdatedDependencies, moduleId)) {
+ 								if (!outdatedDependencies[moduleId])
+ 									outdatedDependencies[moduleId] = [];
+ 								addAllToSet(
+ 									outdatedDependencies[moduleId],
+ 									result.outdatedDependencies[moduleId]
+ 								);
+ 							}
+ 						}
+ 					}
+ 					if (doDispose) {
+ 						addAllToSet(outdatedModules, [result.moduleId]);
+ 						appliedUpdate[moduleId] = warnUnexpectedRequire;
+ 					}
+ 				}
+ 			}
+ 			currentUpdate = undefined;
+ 		
+ 			// Store self accepted outdated modules to require them later by the module system
+ 			var outdatedSelfAcceptedModules = [];
+ 			for (var j = 0; j < outdatedModules.length; j++) {
+ 				var outdatedModuleId = outdatedModules[j];
+ 				var module = __webpack_require__.c[outdatedModuleId];
+ 				if (
+ 					module &&
+ 					(module.hot._selfAccepted || module.hot._main) &&
+ 					// removed self-accepted modules should not be required
+ 					appliedUpdate[outdatedModuleId] !== warnUnexpectedRequire &&
+ 					// when called invalidate self-accepting is not possible
+ 					!module.hot._selfInvalidated
+ 				) {
+ 					outdatedSelfAcceptedModules.push({
+ 						module: outdatedModuleId,
+ 						require: module.hot._requireSelf,
+ 						errorHandler: module.hot._selfAccepted
+ 					});
+ 				}
+ 			}
+ 		
+ 			var moduleOutdatedDependencies;
+ 		
+ 			return {
+ 				dispose: function () {
+ 					currentUpdateRemovedChunks.forEach(function (chunkId) {
+ 						delete installedChunks[chunkId];
+ 					});
+ 					currentUpdateRemovedChunks = undefined;
+ 		
+ 					var idx;
+ 					var queue = outdatedModules.slice();
+ 					while (queue.length > 0) {
+ 						var moduleId = queue.pop();
+ 						var module = __webpack_require__.c[moduleId];
+ 						if (!module) continue;
+ 		
+ 						var data = {};
+ 		
+ 						// Call dispose handlers
+ 						var disposeHandlers = module.hot._disposeHandlers;
+ 						for (j = 0; j < disposeHandlers.length; j++) {
+ 							disposeHandlers[j].call(null, data);
+ 						}
+ 						__webpack_require__.hmrD[moduleId] = data;
+ 		
+ 						// disable module (this disables requires from this module)
+ 						module.hot.active = false;
+ 		
+ 						// remove module from cache
+ 						delete __webpack_require__.c[moduleId];
+ 		
+ 						// when disposing there is no need to call dispose handler
+ 						delete outdatedDependencies[moduleId];
+ 		
+ 						// remove "parents" references from all children
+ 						for (j = 0; j < module.children.length; j++) {
+ 							var child = __webpack_require__.c[module.children[j]];
+ 							if (!child) continue;
+ 							idx = child.parents.indexOf(moduleId);
+ 							if (idx >= 0) {
+ 								child.parents.splice(idx, 1);
+ 							}
+ 						}
+ 					}
+ 		
+ 					// remove outdated dependency from module children
+ 					var dependency;
+ 					for (var outdatedModuleId in outdatedDependencies) {
+ 						if (__webpack_require__.o(outdatedDependencies, outdatedModuleId)) {
+ 							module = __webpack_require__.c[outdatedModuleId];
+ 							if (module) {
+ 								moduleOutdatedDependencies =
+ 									outdatedDependencies[outdatedModuleId];
+ 								for (j = 0; j < moduleOutdatedDependencies.length; j++) {
+ 									dependency = moduleOutdatedDependencies[j];
+ 									idx = module.children.indexOf(dependency);
+ 									if (idx >= 0) module.children.splice(idx, 1);
+ 								}
+ 							}
+ 						}
+ 					}
+ 				},
+ 				apply: function (reportError) {
+ 					// insert new code
+ 					for (var updateModuleId in appliedUpdate) {
+ 						if (__webpack_require__.o(appliedUpdate, updateModuleId)) {
+ 							__webpack_require__.m[updateModuleId] = appliedUpdate[updateModuleId];
+ 						}
+ 					}
+ 		
+ 					// run new runtime modules
+ 					for (var i = 0; i < currentUpdateRuntime.length; i++) {
+ 						currentUpdateRuntime[i](__webpack_require__);
+ 					}
+ 		
+ 					// call accept handlers
+ 					for (var outdatedModuleId in outdatedDependencies) {
+ 						if (__webpack_require__.o(outdatedDependencies, outdatedModuleId)) {
+ 							var module = __webpack_require__.c[outdatedModuleId];
+ 							if (module) {
+ 								moduleOutdatedDependencies =
+ 									outdatedDependencies[outdatedModuleId];
+ 								var callbacks = [];
+ 								var errorHandlers = [];
+ 								var dependenciesForCallbacks = [];
+ 								for (var j = 0; j < moduleOutdatedDependencies.length; j++) {
+ 									var dependency = moduleOutdatedDependencies[j];
+ 									var acceptCallback =
+ 										module.hot._acceptedDependencies[dependency];
+ 									var errorHandler =
+ 										module.hot._acceptedErrorHandlers[dependency];
+ 									if (acceptCallback) {
+ 										if (callbacks.indexOf(acceptCallback) !== -1) continue;
+ 										callbacks.push(acceptCallback);
+ 										errorHandlers.push(errorHandler);
+ 										dependenciesForCallbacks.push(dependency);
+ 									}
+ 								}
+ 								for (var k = 0; k < callbacks.length; k++) {
+ 									try {
+ 										callbacks[k].call(null, moduleOutdatedDependencies);
+ 									} catch (err) {
+ 										if (typeof errorHandlers[k] === "function") {
+ 											try {
+ 												errorHandlers[k](err, {
+ 													moduleId: outdatedModuleId,
+ 													dependencyId: dependenciesForCallbacks[k]
+ 												});
+ 											} catch (err2) {
+ 												if (options.onErrored) {
+ 													options.onErrored({
+ 														type: "accept-error-handler-errored",
+ 														moduleId: outdatedModuleId,
+ 														dependencyId: dependenciesForCallbacks[k],
+ 														error: err2,
+ 														originalError: err
+ 													});
+ 												}
+ 												if (!options.ignoreErrored) {
+ 													reportError(err2);
+ 													reportError(err);
+ 												}
+ 											}
+ 										} else {
+ 											if (options.onErrored) {
+ 												options.onErrored({
+ 													type: "accept-errored",
+ 													moduleId: outdatedModuleId,
+ 													dependencyId: dependenciesForCallbacks[k],
+ 													error: err
+ 												});
+ 											}
+ 											if (!options.ignoreErrored) {
+ 												reportError(err);
+ 											}
+ 										}
+ 									}
+ 								}
+ 							}
+ 						}
+ 					}
+ 		
+ 					// Load self accepted modules
+ 					for (var o = 0; o < outdatedSelfAcceptedModules.length; o++) {
+ 						var item = outdatedSelfAcceptedModules[o];
+ 						var moduleId = item.module;
+ 						try {
+ 							item.require(moduleId);
+ 						} catch (err) {
+ 							if (typeof item.errorHandler === "function") {
+ 								try {
+ 									item.errorHandler(err, {
+ 										moduleId: moduleId,
+ 										module: __webpack_require__.c[moduleId]
+ 									});
+ 								} catch (err2) {
+ 									if (options.onErrored) {
+ 										options.onErrored({
+ 											type: "self-accept-error-handler-errored",
+ 											moduleId: moduleId,
+ 											error: err2,
+ 											originalError: err
+ 										});
+ 									}
+ 									if (!options.ignoreErrored) {
+ 										reportError(err2);
+ 										reportError(err);
+ 									}
+ 								}
+ 							} else {
+ 								if (options.onErrored) {
+ 									options.onErrored({
+ 										type: "self-accept-errored",
+ 										moduleId: moduleId,
+ 										error: err
+ 									});
+ 								}
+ 								if (!options.ignoreErrored) {
+ 									reportError(err);
+ 								}
+ 							}
+ 						}
+ 					}
+ 		
+ 					return outdatedModules;
+ 				}
+ 			};
+ 		}
+ 		__webpack_require__.hmrI.jsonp = function (moduleId, applyHandlers) {
+ 			if (!currentUpdate) {
+ 				currentUpdate = {};
+ 				currentUpdateRuntime = [];
+ 				currentUpdateRemovedChunks = [];
+ 				applyHandlers.push(applyHandler);
+ 			}
+ 			if (!__webpack_require__.o(currentUpdate, moduleId)) {
+ 				currentUpdate[moduleId] = __webpack_require__.m[moduleId];
+ 			}
+ 		};
+ 		__webpack_require__.hmrC.jsonp = function (
+ 			chunkIds,
+ 			removedChunks,
+ 			removedModules,
+ 			promises,
+ 			applyHandlers,
+ 			updatedModulesList
+ 		) {
+ 			applyHandlers.push(applyHandler);
+ 			currentUpdateChunks = {};
+ 			currentUpdateRemovedChunks = removedChunks;
+ 			currentUpdate = removedModules.reduce(function (obj, key) {
+ 				obj[key] = false;
+ 				return obj;
+ 			}, {});
+ 			currentUpdateRuntime = [];
+ 			chunkIds.forEach(function (chunkId) {
+ 				if (
+ 					__webpack_require__.o(installedChunks, chunkId) &&
+ 					installedChunks[chunkId] !== undefined
+ 				) {
+ 					promises.push(loadUpdateChunk(chunkId, updatedModulesList));
+ 					currentUpdateChunks[chunkId] = true;
+ 				}
+ 			});
+ 			if (__webpack_require__.f) {
+ 				__webpack_require__.f.jsonpHmr = function (chunkId, promises) {
+ 					if (
+ 						currentUpdateChunks &&
+ 						!__webpack_require__.o(currentUpdateChunks, chunkId) &&
+ 						__webpack_require__.o(installedChunks, chunkId) &&
+ 						installedChunks[chunkId] !== undefined
+ 					) {
+ 						promises.push(loadUpdateChunk(chunkId));
+ 						currentUpdateChunks[chunkId] = true;
+ 					}
+ 				};
+ 			}
+ 		};
+ 		
+ 		__webpack_require__.hmrM = () => {
+ 			if (typeof fetch === "undefined") throw new Error("No browser support: need fetch API");
+ 			return fetch(__webpack_require__.p + __webpack_require__.hmrF()).then((response) => {
+ 				if(response.status === 404) return; // no update available
+ 				if(!response.ok) throw new Error("Failed to fetch update manifest " + response.statusText);
+ 				return response.json();
+ 			});
+ 		};
+ 		
+ 		// no on chunks loaded
+ 		
+ 		// no jsonp function
+ 	})();
+ 	
+
+ 	
+ 	// module cache are used so entry inlining is disabled
+ 	// startup
+ 	// Load entry module and return exports
+ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+ 	
+ })()
+;
 //# sourceMappingURL=build.js.map
