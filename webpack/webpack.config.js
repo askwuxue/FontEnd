@@ -162,6 +162,15 @@ module.exports = (env, args) => {
             // hotOnly 出现错误，仍然使用HMR。不会刷新，可以捕捉错误
             hotOnly: true
         },
+
+        // 优化 tree shaking 摇树，对于没有使用的内容，打包时不引用
+        // 在production模式，自动使用tree shaking
+        optimization: {
+            // TODO 只有使用到的模块才会导出，没有使用的模块不会导出会变成灰色
+            usedExports: true,
+            // 开启压缩，对于没有使用到的模块，全部摇树
+            minimize: true
+        }
     };
 
     // TODO 根据webpack --env 'mode' 的模式进行匹配，但是无法成功

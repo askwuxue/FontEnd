@@ -27,4 +27,8 @@ module.hot.accept('./hrm', () => {
     console.log('module 更新了，这里需要手动处理热替换逻辑')
 })
 
+// 引入部分组件
+import { Button } from './component/component';
+document.body.appendChild(Button());
+
 test(a, b);
