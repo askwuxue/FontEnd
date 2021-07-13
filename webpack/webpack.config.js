@@ -168,7 +168,7 @@ module.exports = (env, args) => {
         optimization: {
             // TODO 只有使用到的模块才会导出，没有使用的模块不会导出会变成灰色
             usedExports: true,
-            // 尽可以的将模块输入到一个函数中，提升运行速率，减小体积
+            // 尽可以的将模块输入到一个函数中，提升运行速率，减小体积 scope hoisting 变量提升
             concatenateModules: true
             // 开启压缩，对于没有使用到的模块，全部摇树
             // minimize: true
