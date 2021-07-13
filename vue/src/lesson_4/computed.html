@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ result }}</p>
+        <p>{{ result }}</p>
+        <p>{{ result }}</p>
+        <p>{{ result }}</p>
+
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>    
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                arr: [1, 2, 3, 4, 5]
+            },
+            // TODO 1. computed 具有缓存属性，不像methods，每一次都需要函数调用。浪费性能
+            // 2. 当数据发生变化导致computed发生变化，只会执行一次，后续都使用缓存
+            // 3. computed只用于计算属性，对于click等事件，使用methods更好
+            // 4. computed使用时只写函数的名，不需要手动调用
+            computed: {
+                result() {
+                    console.log('computed');
+                    return this.arr.reduce((accumulator, currentValue) => accumulator + currentValue)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
