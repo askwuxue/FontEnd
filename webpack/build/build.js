@@ -2,27 +2,32 @@
  	"use strict";
  	var __webpack_modules__ = ({
 
- "./src/index.js":
-/*!**********************************!*\
-  !*** ./src/index.js + 1 modules ***!
-  \**********************************/
- (() => {
+ "./src/component/Button.js":
+/*!*********************************!*\
+  !*** ./src/component/Button.js ***!
+  \*********************************/
+ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-;// CONCATENATED MODULE: ./src/component/component.js
-const Button = function () {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Button = function () {
     return document.createElement('button');
     console.log('button');
-}
+});
 
-const Heading = function () {
-    return document.createElement('h1');
-}
+ }),
 
-const Content = function () {
-    return document.createElement('p');
-}
-;// CONCATENATED MODULE: ./src/index.js
+ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component */ "./src/component/Button.js");
+/* harmony import */ var _sideEffects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sideEffects */ "./src/sideEffects.js");
 // webpack的入口文件 /src/index.js
 // import test from './app'
 
@@ -54,9 +59,30 @@ const Content = function () {
 
 // 引入部分组件
 
-document.body.appendChild(Button());
+document.body.appendChild((0,_component__WEBPACK_IMPORTED_MODULE_0__.default)());
 
+// 引入有副作用的模块
+
+
+document.body.appendChild((0,_sideEffects__WEBPACK_IMPORTED_MODULE_1__.sideEffects)());
 // test(a, b);
+
+ }),
+
+ "./src/sideEffects.js":
+/*!****************************!*\
+  !*** ./src/sideEffects.js ***!
+  \****************************/
+ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "sideEffects": () => (/* binding */ sideEffects)
+/* harmony export */ });
+const sideEffects = function () {
+    console.log('这是一个有副作用的模块');
+    return document.createElement('div');
+}
 
  })
 
@@ -105,6 +131,18 @@ document.body.appendChild(Button());
  	__webpack_require__.i = [];
  	
 
+ 	/* webpack/runtime/define property getters */
+ 	(() => {
+ 		// define getter functions for harmony exports
+ 		__webpack_require__.d = (exports, definition) => {
+ 			for(var key in definition) {
+ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+ 				}
+ 			}
+ 		};
+ 	})();
+ 	
  	/* webpack/runtime/get javascript update chunk filename */
  	(() => {
  		// This function allow to reference all chunks
@@ -130,7 +168,7 @@ document.body.appendChild(Button());
  	
  	/* webpack/runtime/getFullHash */
  	(() => {
- 		__webpack_require__.h = () => ("c847b6f9a5547c1029a8")
+ 		__webpack_require__.h = () => ("7df552c9a34635d872d3")
  	})();
  	
  	/* webpack/runtime/global */
@@ -193,6 +231,17 @@ document.body.appendChild(Button());
  			script.onerror = onScriptComplete.bind(null, script.onerror);
  			script.onload = onScriptComplete.bind(null, script.onload);
  			needAttach && document.head.appendChild(script);
+ 		};
+ 	})();
+ 	
+ 	/* webpack/runtime/make namespace object */
+ 	(() => {
+ 		// define __esModule on exports
+ 		__webpack_require__.r = (exports) => {
+ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+ 			}
+ 			Object.defineProperty(exports, '__esModule', { value: true });
  		};
  	})();
  	
