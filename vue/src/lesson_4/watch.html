@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                value: 10,
+                obj: {
+                    content1: '内容1',
+                    content2: '内容2'
+                },
+                arr: [1, 2, 3, 4, 5]
+            },
+            // 侦听器对数据进行监听，当数据发生变化时触发
+            watch: {
+                value(val, newValue) {
+                    console.log('value')
+                    console.log('val, newValue: ', val, newValue);
+                },
+                
+                // TODO对象数据的侦听,需要使用下面的特殊结构，deep为true， handler() 处理数据
+                // 对象侦听，handler方法中，当前数据和修改前数据相同，因为他们使用了同一个引用地址
+                obj: {
+                    deep: true,
+                    handler(val, newValue) {
+                        console.log('obj')
+                        console.log('val, newValue: ', val, newValue);
+                        console.log(val === newValue);
+                    }
+                },
+
+                // 数据数据的侦听, 对数据的侦听方式和普通数据一致，但是数据的特性和对象一致，修改前和修改后相同
+                // TODO 对于数组数据，如果使用索引或者length对该数据进行操作，不会触发该数组发生变化。
+                arr(val, newValue) {
+                    console.log('arr');
+                    console.log('val, newValue: ', val, newValue);
+                    console.log(val === newValue);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
