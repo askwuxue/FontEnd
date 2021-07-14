@@ -28,7 +28,11 @@
 // })
 
 // 引入部分组件
-import { Button } from './component/component';
+import { Button } from './component';
 document.body.appendChild(Button());
 
+// 引入有副作用的模块
+import { sideEffects } from './sideEffects';
+
+document.body.appendChild(sideEffects());
 // test(a, b);
