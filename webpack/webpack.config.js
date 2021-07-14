@@ -166,10 +166,20 @@ module.exports = (env, args) => {
         // 优化 tree shaking 摇树，对于没有使用的内容，打包时不引用
         // 在production模式，自动使用tree shaking
         optimization: {
+            // 代码是否有副作用，模块除了导出成员是否还做了其他事。在production模式下自动开启
+            // TODO webpack 只是配置，需要在package.json 添加sideEffects: false属性，说明当前项目模块没有副作用
+            // webpack打包时，先去package.json中搜索是否有sideEffects标识
+            // 要确保模块真的没有副作用，如果有副作用，但是设置为没有吗，模块中的副作用代码不会被打包
+            // 解决方案: 在package.json中sideEffects设置为数组，将有副作用的模块罗列。
+            // TODO 所有的css代码都是有副作用的
+            sideEffects: true
+
             // TODO 只有使用到的模块才会导出，没有使用的模块不会导出会变成灰色
-            usedExports: true,
+            // usedExports: true,
+
             // 尽可以的将模块输入到一个函数中，提升运行速率，减小体积 scope hoisting 变量提升
-            concatenateModules: true
+            // concatenateModules: true
+
             // 开启压缩，对于没有使用到的模块，全部摇树
             // minimize: true
         }
