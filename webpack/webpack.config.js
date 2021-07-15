@@ -26,7 +26,9 @@ module.exports = (env, args) => {
                     test: /\.css$/,
                     use: [
                         // 创建style标签，并且将css资源插入
-                        'style-loader',
+                        // TODO 使用MiniCssExtractPlugin.loader时会使用link的方式导入css，不使用style.loader
+                        // 'style-loader',
+                        MiniCssExtractPlugin.loader,
                         // 将css资源整合成字符串的形式
                         'css-loader'
                     ]
@@ -93,9 +95,9 @@ module.exports = (env, args) => {
                 filename: 'about.html',
                 title: 'create multi page'
             }),
-            // TODO 使用插件，生成单独的css文件。存在bug，没有生成所有的css
+            // // 用于将css文件单独打包成css文件并且使用其对应loader通过link的方式导入HTML
             new MiniCssExtractPlugin({
-                filename: './css/bound.css',
+                filename: 'css/bundle.css'
             }),
             // 清空打包目录然后存放本次打包结果
             new CleanWebpackPlugin(),
