@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanComment = require('./src/plugins/cleanComment');
 const webpack = require('webpack');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = (env, args) => {
     const config = {
@@ -174,7 +175,7 @@ module.exports = (env, args) => {
             // 要确保模块真的没有副作用，如果有副作用，但是设置为没有吗，模块中的副作用代码不会被打包
             // 解决方案: 在package.json中sideEffects设置为数组，将有副作用的模块罗列。
             // TODO 所有的css代码都是有副作用的
-            sideEffects: true
+            sideEffects: true,
 
             // TODO 只有使用到的模块才会导出，没有使用的模块不会导出会变成灰色
             // usedExports: true,
@@ -183,7 +184,15 @@ module.exports = (env, args) => {
             // concatenateModules: true
 
             // 开启压缩，对于没有使用到的模块，全部摇树
-            // minimize: true
+            // minimize: true,
+
+            // TODO配置压缩项，当使用该配置项时，webpack配置默认我们自定义minimizer。所以需要配置压缩JavaScript
+            // 在production模式下回开启minimizer功能
+            minimizer: [
+                // 压缩css
+                new OptimizeCssAssetsWebpackPlugin(),
+
+            ]
         }
     };
 
