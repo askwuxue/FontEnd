@@ -7,6 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanComment = require('./src/plugins/cleanComment');
 const webpack = require('webpack');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = (env, args) => {
     const config = {
@@ -188,10 +189,13 @@ module.exports = (env, args) => {
 
             // TODO配置压缩项，当使用该配置项时，webpack配置默认我们自定义minimizer。所以需要配置压缩JavaScript
             // 在production模式下回开启minimizer功能
+            // TODO OptimizeCssAssetsWebpackPlugin 没有配置在plugins中是因为会在任何时候都生效，配置在minimizer中，
+            // 只有开启了minimizer的功能，也就是prod时才生效。更便于控制操作
             minimizer: [
                 // 压缩css
                 new OptimizeCssAssetsWebpackPlugin(),
-
+                // 压缩js
+                new TerserWebpackPlugin()
             ]
         }
     };
