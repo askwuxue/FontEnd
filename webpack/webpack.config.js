@@ -16,7 +16,13 @@ module.exports = (env, args) => {
         // 输出路径
         output: {
             // TODO 固定名，不是驼峰
-            filename: 'build.js',
+            // 利用hash控制文件名，当文件变化时，缓存重新取
+            // 1. 当文件发生变化重新hash
+            // filename: '[name]-[hash:8].js',
+            // 2. 当文件属于一个check时，当一个文件变化，同一个chunk都会发生变化。控制较为精确。比如css和js文件
+            // filename: '[name]-[chunkhash:8].js',
+            // 3. contenthash
+            filename: '[name]-[contenthash:8].js',
             path: resolve(__dirname, 'build'),
             // publicPath: resolve(__dirname, 'build')
         },
