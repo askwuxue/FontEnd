@@ -9,7 +9,7 @@
 
 // webpack 默认只支持打包.js .json 对与.css img 等资源不支持，需要借助loader和plugins实现
 // import data from '../public/data.json';
-// import '../public/app.css';
+import '../public/app.css';
 // import '../public/test.less';
 // import './loader.md';
 // import hmr from './hrm';
