@@ -11,7 +11,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = (env, args) => {
     const config = {
-        // 打包入口
+        // 打包入口 使用对象属性可以设置多个打包入口，即有多个打包后的文件
         entry: './src/index.js',
         // 输出路径
         output: {
