@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 组件定义时，名称书写方法有两种，但是使用组件时，只能通过横线连接的方式使用 -->
+        <my-component></my-component>
+        <my-component-sub></my-component-sub>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        // 组件的命名方式
+        // 1.短横线
+        Vue.component('my-component', {
+             template: `<div>这是my-component-a</div>`
+        })
+        // 组件的命名方式
+        // 2.驼峰
+        Vue.component('myComponentSub', {
+             template: `<div>这是my-component-a</div>`
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+</html>
