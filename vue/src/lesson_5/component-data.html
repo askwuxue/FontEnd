@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <my-component-a></my-component-a>
+        <my-component-a></my-component-a>
+        <my-component-a></my-component-a>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+
+        Vue.component('myComponentA', {
+            template: `<div>
+                            <p>{{ title }}</p>
+                            <p>{{ contents }}</p>
+                        </div>`,
+            // 组件的数据是通过data函数，返回一个对象，在该对象中设置
+            // TODO 每个函数具有独立的作用域，可以保证函数的对象是新创建的对象而不是对象的拷贝，互相之间没有影响
+            data() {
+                return {
+                    title: '这是title',
+                    contents: '这是contents'
+                }
+            }
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+</html>
