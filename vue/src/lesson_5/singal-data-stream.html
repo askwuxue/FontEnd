@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 组件的事件处理函数是在组件定义时设置的，而不是在组件调用时设置 -->
+        <my-component-a :initial-title="title" :obj="obj"></my-component-a>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('my-component-a', {
+            props: ['initialTitle', 'obj'],
+            template: `
+                <div>
+                    <h1>{{ title }}</h1>
+                    <button @click="fn">按钮</button>
+                </div>
+            `,
+            // TODO 单项数据流，子组件不要直接操作接收到的props中的数据，如果要操作，在本实例的data，或者method中对数据处理返回.避免对父组件数据的影响.如果props接受的值为引用类型，当对该引用类型修改会影响到props源数据
+            data () {
+                return {
+                    title: this.initialTitle + '1'
+                }
+            },
+            methods: {
+                fn () {
+                    console.log(this)
+                    this.obj.name = 'lisi'
+                }
+            }
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                title: '这是Root的title',
+                obj: {
+                    name: 'wuxue'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
