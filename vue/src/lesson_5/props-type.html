@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <my-component-a :num="num" :str="str" :boolean="boolean" :arr="arr" :obj="obj" :para-data="false"></my-component-a>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        
+        // 对props的类型进行预期限制，如果接受到的props不满足类型，vue会提示warn
+        Vue.component('my-component-a', {
+            props: {
+                num: Number,
+                str: String,
+                boolean: Boolean,
+                arr: Array,
+                obj: Object,
+                // TODO 对数据类型进行多个设置，满足其中之一即可
+                paraData: [String, Number]
+            },
+            template: `
+                <div>
+                    <p>{{ num }}</p>
+                    <p>{{ str }}</p>
+                    <p>{{ boolean }}</p>
+                    <p>{{ JSON.stringify(arr) }}</p>
+                    <p>{{ JSON.stringify(obj) }}</p>
+                    <p>{{ JSON.stringify(paraData) }}</p>
+                </div>
+            `
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                num: 100,
+                str: 'string',
+                boolean: true,
+                arr: [1, 2],
+                obj: {
+                    a: 'this is a'
+                },
+                // paraData: [1]
+            }
+        })
+    </script>
+</body>
+</html>
