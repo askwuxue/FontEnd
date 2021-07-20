@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <my-component-a :num1="num1" ></my-component-a>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('my-component-a', {
+            props: {
+                // 对props的类型限制，并且设置为必须传递的参数
+                'num1': {
+                    type: Number,
+                    required: true
+                },
+                // 对默认值进行设置，没有传递时使用默认值
+                'num2': {
+                    type: Number,
+                    default: 400
+                },
+                // 对于引用类型的默认值必须使用工厂函数的方式进行设置，否则会修改到props源数据的内容
+                'obj': {
+                    type: Object,
+                    default() {
+                        return {
+                            a: 'default'
+                        }
+                    }
+                },
+                // validator 函数用于check props的具体内容，如果该函数返回值为true，表明验证成功
+                // 返回false 表明验证失败，vue会展示warn内容
+                'paraStr': {
+                    type: String,
+                    default: 'Hello World',
+                    validator(value) {
+                        return value.startsWith('Xello');
+                    }
+                }
+            },
+            template: `
+                <div>
+                    <p>{{ num1 }}</p>
+                    <p>{{ num2 }}</p>
+                    <p>{{ JSON.stringify(obj) }}</p>
+                    <p>{{ paraStr }}</p>
+                </div>
+            `
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                num1: 200,
+                num2: 300,
+                obj: {
+                    a: 'obj'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
