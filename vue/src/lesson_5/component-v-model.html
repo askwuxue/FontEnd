@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>输出框的内容为: {{ inputValue }}</p>
+        <!-- 组件v-model 实现数据双向绑定必须借助props进行接收,接收的值为props -->
+        <com-input v-model="inputValue"></com-input>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('com-input', {
+            props: ['value'],
+            template: `
+                <input
+                    type="text"
+                    :value="value"
+                    @input="onInput"
+                >
+                </input>
+            `,
+            methods: {
+                onInput(event) {
+                    this.$emit('input', event.target.value);
+                }
+            }
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                inputValue: ''
+            }
+        })
+    </script>
+</body>
+</html>
