@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <com-a @on-changed="value = $event"></com-a>
+        <com-b :comb="value"></com-b>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        // TODO 非父子组件（兄弟组件）间传值，借助公共的父组件接受然后传递。
+        Vue.component('comA', {
+            template: `
+                <div>
+                    <p>这是组件A的数据: {{ com1 }}</p>    
+                    <button @click="$emit('on-changed', com1)">发送</button>
+                </div>
+            `,
+            data() {
+                return {
+                    com1: '内容A'
+                }
+            }
+        })
+
+        Vue.component('comB', {
+            props: [
+                'comb'
+            ],
+            template: `
+                <div>这是comB接收到的数据: {{comb}}</div>
+            `
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                value: ''
+            }
+        })
+    </script>
+</body>
+</html>
