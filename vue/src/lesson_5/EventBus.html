@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <product-item 
+            v-for="product in products"
+            :key="product.id"
+            :title="product.title"
+            @changed-count="++totalCount"
+        >
+        </product-item>
+        <product-total></product-total>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        // 通过注册事件中心，在不同的组件分别emit和on事件函数，完成数据传递
+        const bus = new Vue();
+
+        // 单个数据展示组件
+        Vue.component('productItem', {
+            props: ['title'],
+            template: `
+                <div>
+                    <span>商品名称: {{ title }}, 商品个数: {{ count }}</span>
+                    <button @click="insCount">添加</button>
+                </div>
+            `,
+            data () {
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                insCount() {
+                    // TODO 子组件通过触发自定义事件调用，告诉父组件数据发生变化
+                    bus.$emit('changed-count', 1);
+                    ++this.count;
+                }
+            }
+        })
+
+        // 数量总数计算组件
+        Vue.component('productTotal', {
+            template: `
+                <div>{{ countTotal }}</div>
+            `,
+            data() {
+                return {
+                    countTotal: 0
+                }
+            },
+            // 实例创建完毕
+            created() {
+                bus.$on('changed-count', (productCount) => {
+                    this.countTotal += productCount
+                })
+            }
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                products: [
+                    {
+                        id: 1,
+                        title: '苹果一斤'
+                    },
+                    {
+                        id: 2,
+                        title: '香蕉三斤'
+                    },
+                    {
+                        id: 3,
+                        title: '橘子两斤'
+                    },
+                    {
+                        id: 4,
+                        title: '柿子一斤'
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
