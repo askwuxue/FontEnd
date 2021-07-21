@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <my-component-a :title="'这是父组件传递的title'" class="a" style="height: 200px;"></my-component-a>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('my-component-a', {
+            // 为子组件设置inheritAttrs 为false，避免对子组件原有值的覆盖，但是该属性不会影响class和style属性值
+            inheritAttrs: false,
+            // TODO 当父组件传递值，但是子组件没用使用props接受，父组件传递的值会覆盖子组件的值，对于class和style会合并而非覆盖
+            template: `
+                <div title="这是title" data-attr="x" style="width: 200px; background: purple" class="b">这是一个div标签</div>
+            `
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                
+            }
+        })
+    </script>
+</body>
+</html>
