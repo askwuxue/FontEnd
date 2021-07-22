@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button
+            v-for="title in titles"
+            :key="title"
+            @click="currentTitle = title"
+        >{{ title }}</button>
+        <!-- TODO keep-alive 用户缓存组件.组件内的数据会被缓存 -->
+        <!-- <keep-alive>
+            <component :is="currentTitle"></component>            
+        </keep-alive> -->
+
+        <!-- include 属性决定哪些组件可以被缓存 -->
+        <!-- TODO 使用字符串形式时，不要在字符串内使用空格，无法正确解析 -->
+        <!-- <keep-alive include="comA,comB,comC">
+            <component :is="currentTitle"></component>            
+        </keep-alive> -->
+
+        <!-- include 可以使用动态绑定的形式 -->
+        <!-- 1. 使用数组 -->
+        <!-- <keep-alive :include="['comA', 'comB']">
+            <component :is="currentTitle"></component>            
+        </keep-alive> -->
+
+        <!-- 2. 使用正则表达式 -->
+        <!-- TODO 敏感数据不进行缓存 -->
+        <keep-alive :include="/com[AB]/">
+            <component :is="currentTitle"></component>            
+        </keep-alive>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const comA = {
+            template: `
+            <div>
+                <p>请选择主食: </p>
+                <label for="stapleFoot">米饭</label>
+                <input type="radio" id="stapleFoot" name="stapleFoot">
+                <label for="stapleFoot">面条</label>
+                <input type="radio" id="stapleFoot" name="stapleFoot">
+                <label for="stapleFoot">馒头</label>
+                <input type="radio" id="stapleFoot" name="stapleFoot">
+            </div>
+            `
+        }
+        const comB = {
+            template: `
+            <div>
+                <p>请选择蔬菜: </p>
+                <label for="greens">西红柿炒鸡蛋</label>
+                <input type="checkbox" id="greens" name="greens">
+                <label for="greens">番茄牛腩</label>
+                <input type="checkbox" id="greens" name="greens">
+                <label for="greens">洋葱炒羊肉</label>
+                <input type="checkbox" id="greens" name="greens">
+            </div>
+            `
+        }
+        const comC = {
+            template: `
+            <div>
+                <p>输入账户密码: </p>
+                <label for="username">用户名</label>
+                <input type="input" id="username" name="username">
+                <br>
+                <label for="password">密码</label>
+                <input type="password" id="password" name="password">
+            </div>
+            `
+        }
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                titles: [
+                    'comA', 'comB', 'comC'
+                ],
+                currentTitle: 'comA'
+            },
+            components: {
+                comA, comB, comC
+            }
+        })
+    </script>
+</body>
+</html>
