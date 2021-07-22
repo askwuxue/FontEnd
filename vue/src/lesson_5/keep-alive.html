@@ -32,9 +32,19 @@
 
         <!-- 2. 使用正则表达式 -->
         <!-- TODO 敏感数据不进行缓存 -->
-        <keep-alive :include="/com[AB]/">
+        <!-- <keep-alive :include="/com[AB]/">
             <component :is="currentTitle"></component>            
-        </keep-alive>
+        </keep-alive> -->
+
+        <!--TODO  exclude 设置哪些组件不缓存 使用方式同include -->
+        <!-- <keep-alive :exclude="/com[D]/">
+            <component :is="currentTitle"></component>            
+        </keep-alive>         -->
+
+        <!-- TODO max 属性只会缓存最近操作的几个实例，距离当前最近的 -->
+        <keep-alive :exclude="/com[D]/" max="4">
+            <component :is="currentTitle"></component>            
+        </keep-alive>       
     </div>
     <script src="../../node_modules/vue/dist/vue.js"></script>
     <script>
@@ -64,7 +74,7 @@
             </div>
             `
         }
-        const comC = {
+        const comD = {
             template: `
             <div>
                 <p>输入账户密码: </p>
@@ -76,16 +86,29 @@
             </div>
             `
         }
+        const comC = {
+            template: `
+            <div>
+                <p>请选择汤: </p>
+                <label for="soup">紫菜蛋汤</label>
+                <input type="radio" id="soup" name="soup">
+                <label for="soup">录豆汤</label>
+                <input type="radio" id="soup" name="soup">
+                <label for="soup">羊肉粉丝汤</label>
+                <input type="radio" id="soup" name="soup">
+            </div>
+            `
+        }
         const vm = new Vue({
             el: '#app',
             data: {
                 titles: [
-                    'comA', 'comB', 'comC'
+                    'comA', 'comB', 'comC', 'comD'
                 ],
                 currentTitle: 'comA'
             },
             components: {
-                comA, comB, comC
+                comA, comB, comC, comD
             }
         })
     </script>
