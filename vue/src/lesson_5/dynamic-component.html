@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button
+            v-for="title in titles"
+            :key="title"
+            @click="currentTitle = title"
+        >{{ title }}</button>
+        <!-- TODO component的 :is 属性可以进行组件的动态绑定 -->
+        <!-- TODO :is 每次绑定组件都是创建一个新的实例，销毁之前的实例，所以不会保存组件的信息 -->
+        <component :is="currentTitle"></component>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const comA = {
+            template: `
+                <p>这是组件A的内容: <input type="text"></p>
+            `
+        }
+        const comB = {
+            template: `
+                <p>这是组件B的内容: <input type="text"></p>
+            `
+        }
+        const comC = {
+            template: `
+                <p>这是组件C的内容: <input type="text"></p>
+            `
+        }
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                titles: [
+                    'comA', 'comB', 'comC'
+                ],
+                currentTitle: 'comA'
+            },
+            components: {
+                comA, comB, comC
+            }
+        })
+    </script>
+</body>
+</html>
