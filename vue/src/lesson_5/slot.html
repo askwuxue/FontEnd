@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 插槽只能使用父组件的值，不能使用组件com-a 的值 -->
+        <com-a>{{ preValue }}</com-a>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        // 插槽可以设置默认内容
+        Vue.component('comA', {
+            template: `
+                <div>
+                    <p> this is p </p>
+                    <slot>这插槽的默认内容</slot>    
+                </div>
+            `
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                preValue: '这是传递的插槽的内容'
+            }
+        })
+    </script>
+</body>
+</html>
