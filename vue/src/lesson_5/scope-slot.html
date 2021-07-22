@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 1. 当插槽只有默认插槽的情况.v-slot可以写到组件上 -->
+        <!-- 插槽接受到的数据是一个对象，该对象中存放了组件传递给插槽的值 -->
+        <!-- 当只存在默认插槽时，可以进行简写 -->
+        <!-- 正常写法 -->
+        <!-- <com-a>
+            <template v-slot:default="dataObj">
+                <p>{{ dataObj.value }}</p>
+            </template>
+        </com-a> -->
+        <!-- 简写方式1 -->
+        <com-a v-slot="dataObj">
+                <p>{{ dataObj.value }}</p>
+        </com-a>
+        <!-- 简写方式2 -->
+        <com-a #default="dataObj">
+            <p>{{ dataObj.value }}</p>
+        </com-a>
+        <hr>
+
+        <!-- 2. 当有多个插槽时 -->
+        <com-b>
+            <template v-slot:header="dataObj">
+                <p>{{ dataObj.value }}</p>
+            </template>
+        </com-b>
+
+        <!-- 3. ES6结构赋值的应用 -->
+        <com-b>
+            <template v-slot:header="{value, num}">
+                <p>{{ value }}</p>
+                <p>{{ num }}</p>
+            </template>
+        </com-b>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('comA', {
+            template: `
+            <div>
+                <slot :value="value" :num="num"></slot>
+            </div>
+            `,
+            data() {
+                return {
+                    value: '这是组件A插槽的内容',
+                    num: 100
+                }
+            }
+        })
+
+        Vue.component('comB', {
+            template: `
+            <div>
+                <slot name="header" :value="value" :num="num"></slot>
+            </div>
+            `,
+            data() {
+                return {
+                    value: '这是组件B插槽的内容',
+                    num: 100
+                }
+            }
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+</html>
