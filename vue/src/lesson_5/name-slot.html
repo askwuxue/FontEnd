@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <com-a>
+            <!-- TODO v-slot 只能在template标签中使用。注意v-slot的使用方式 -->
+            <!-- v-slot属性值与组件中slot的name属性值相对应，如果v-slot没有设置，默认为default -->
+            <template v-slot:header>
+                <p>通过具名插槽传递的header</p>
+            </template>
+
+            <template v-slot:default>
+                <p>通过具名插槽传递的main</p>
+                <p>通过具名插槽传递的main</p>
+                <p>通过具名插槽传递的main</p>
+                <p>通过具名插槽传递的main</p>
+            </template>
+            <!-- TODO 如果有多个v-slot值相同的template标签，上面的会被下面的覆盖 -->
+            <template v-slot:footer>
+                <p>通过具名插槽传递的footer</p>
+            </template>
+        </com-a>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('comA', {
+            template: `
+                <div>
+                    <header>
+                        <slot name="header">默认的头部</slot>
+                    </header>
+                    <main>
+                        <slot>
+                            <p>默认内容1</p>
+                            <p>默认内容2</p>
+                        </slot>
+                    </main>
+                    <footer>
+                        <slot name="footer">
+                            默认的底部
+                        </slot>
+                    </footer>
+                </div>
+            `
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+</html>
