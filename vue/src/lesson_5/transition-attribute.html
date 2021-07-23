@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* TODO 默认情况下使用,v-enter 等方式进行类设置。当时如果需要设置不同的动画效果，需要给过渡效果命名 */
+        .v-enter, .v-leave-to {
+            opacity: 0;
+        }
+
+        .v-enter-active, .v-leave-active {
+            transition: opacity 2s;
+        }
+
+        .demo-enter, .demo-leave-to {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        .demo-enter-active, .demo-leave-active {
+            transition: all 2s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="show = !show">切换1</button>
+        <transition>
+            <p v-if="show">这是要切换的内容1</p>
+        </transition>
+        
+        <hr>
+
+        <!-- TODO 为transition组件制定name属性 当使用对应的类时 将类名.v- 的形式替换为 .name- 的形式-->
+        <button @click="show2 = !show2">切换2</button>
+        <!-- TODO appear为transition组件包裹的内容在初次渲染时设置过渡效果 该效果为进入enter的效果 -->
+        <transition name="demo" appear>
+            <p v-if="show2">这是要切换的内容2</p>
+        </transition>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                show: true,
+                show2: true
+            }
+        })
+    </script>
+</body>
+</html>
