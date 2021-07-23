@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <title>Document</title>
+    <style>
+        /* .v-enter, .v-leave-to {
+            opacity: 0;
+        }
+
+        .v-enter-active, .v-leave-active {
+            transition: opacity 2s;
+        } */
+        .test {
+            opacity: 0;
+        }
+        .test2 {
+            transition: all 5s;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="show = !show">切换1</button>
+        <transition>
+            <p v-if="show">这是要切换的内容1</p>
+        </transition>
+        
+        <hr>
+
+        <button @click="show2 = !show2">切换2</button>
+        <!-- 自定义类名，写法如下 -->
+        <transition  
+        enter-active-class="animate__bounce"
+        leave-to-class="animate__bounce"
+        leave-active-class="test2">
+            <!-- 使用animate.css必须为要使用动画的元素设置初始类 -->
+            <p v-if="show2" class="animate__animated ">这是要切换的内容2</p>
+        </transition>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                show: true,
+                show2: true
+            }
+        })
+    </script>
+</body>
+</html>
