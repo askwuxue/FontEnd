@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 离开后的样式 */
+        .v-leave-to {
+            opacity: 0;
+        }
+
+        /* 离开动画展示 */
+        .v-leave-active {
+            transition: opacity 1s;
+        }
+
+        /* 进入前的样式 */
+        .v-enter {
+            opacity: 0;
+        }
+
+        /* 进入后的样式 */
+        .v-enter-to {
+            opacity: 1;
+        }
+
+        /* 进入动画展示 */
+        .v-enter-active {
+            transition: opacity 10s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="show = !show">切换</button>
+        <!-- TODO transition标签结合对应的类进行使用 -->
+        <transition>
+            <p v-if="show">Hello World</p>
+        </transition>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                show: true
+            }
+        })
+    </script>
+</body>
+</html>
