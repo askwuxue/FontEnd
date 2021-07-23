@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            position: relative;
+        }
+        .v-enter, .v-leave-to {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        .v-enter-active, .v-leave-active {
+            transition: all .5s;
+        }
+
+        /* 因为li在动画的过程中一直没有脱离标准流，所以当动画运行时，使li脱离文档流 */
+        .v-leave-active {
+            position: absolute;
+        }
+
+        /* TODO .v-move 是专门为了列表动画而定义的类，部署以transition */
+        .v-move {
+            transition: all .5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text"
+            v-model="newTitle"
+            @keyup.enter="addItem"
+        >
+        <!-- TODO transition-group 可以对该组件内包括的元素设置动画效果 默认会被转换成span标签，可以使用tag属性对 
+            transition-group 标签进行改变
+        -->
+        <transition-group tag="ul">
+            <li v-for="item in items"
+                :key="item.id"
+                @click="removeItem(item)">{{ item.title }}</li>
+        </transition-group>
+    </div>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                items: [
+                    {
+                        id: 1,
+                        title: '内容1'
+                    },
+                    {
+                        id: 2,
+                        title: '内容1'
+                    },
+                    {
+                        id: 3,
+                        title: '内容1'
+                    },
+                    {
+                        id: 4,
+                        title: '内容1'
+                    }
+                ],
+                currentId: 4,
+                newTitle: ''
+            },
+            methods: {
+                addItem() {
+                    this.items.push({id: ++this.currentId, title: this.newTitle});
+                    this.newTitle = '';
+                    // ++this.currentId;
+                },
+                removeItem(item) {
+                    let i = this.items.indexOf(item);
+                    this.items.splice(i, 1);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
