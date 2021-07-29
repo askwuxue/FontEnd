@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/user/1">用户1</router-link>
+        <router-link to="/user/2">用户2</router-link>
+        <router-link to="/user/3">用户3</router-link>
+
+        <router-view></router-view>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        const User = {
+            template: `<div>
+                <div>这是用户 {{ $route.params.id }} 的功能</div>
+                <input type="text">
+            </div>
+            `,
+
+            // TODO 由于组件没有重新创建所以导致生命周期函数指执行了一次。input也被复用了
+            created() {
+                console.log('组件被创建了');
+            },
+
+            // 检测路由信息，当路由信息发生变化时，可以进行一系列的动作
+            watch: {
+                $route(route) {
+                    console.log('route: ', route);
+                }
+            }
+        }
+
+        const routes = [
+            {
+                // 匹配动态路由
+                path: '/user/:id', component: User
+            }
+        ]
+
+        const router = new VueRouter({
+            routes
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            router
+        })
+    </script>
+</body>
+</html>
