@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/user/1">用户1</router-link>
+        <router-link to="/user/2">用户2</router-link>
+        <router-link to="/category/001">分类</router-link>
+
+        <router-view></router-view>
+        <router-view name="sidebar"></router-view>
+        <router-view name="sidebar2"></router-view>
+
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        const User = {
+            // TODO 这种动态路由参数的接受高耦合
+            template: `<div>这是用户 {{ $route.params.id }} 的功能</div>`
+        }
+
+        const Category = {
+            props: ['id'],
+            template: `<div>分类ID: {{ id }} </div>`
+        }
+
+        const SideBar = {
+            template: `<div>这是侧边栏区域</div>`
+        }
+
+        const SideBar2 = {
+            props: ['a', 'b'], 
+            template: `<div>这是侧边栏区域2, {{a, b}}</div>`
+        }
+        
+        const routes = [
+            {
+                // 匹配动态路由
+                path: '/user/:id', component: User
+            },
+            {
+                // TODO 当一个router路径对应多个组件时，props传递参数失效。无法正确接收到，需要使用下面对象的形式
+                path: '/category/:id', components: {
+                    sidebar: SideBar,
+                    default: Category,
+                    sidebar2: SideBar2
+                },
+                // props: true
+                props: {
+                    sidebar: false,
+                    default: true,
+                    // TODO 当props的属性值为对象时，可以传递静态参数，组件接受静态参数
+                    sidebar2: {
+                        a: '状态1', b: '状态2'
+                    }
+                }
+            }
+        ]
+
+        const router = new VueRouter({
+            routes
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            router
+        })
+    </script>
+</body>
+</html>
