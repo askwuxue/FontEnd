@@ -17,12 +17,20 @@ class MyPromise {
     // reject失败的原因
     reason = undefined;
 
+    // 存储成功的回调函数
+    successCallBack = undefined;
+
+    // 存储失败的回调函数
+    failCallBack = undefined;
+
     // resolve接受成功的值
     resolve = value => {
         // 如果当前状态不是pending 则状态已经确定
         if (this.status !== PENDING) return
         this.status = FULFILLED;
         this.value = value;
+        // 成功回调函数的执行。此时resolve函数已经执行
+        this.successCallBack && this.successCallBack(value);
     }
 
     // reject接受失败的原因
@@ -31,12 +39,23 @@ class MyPromise {
         if (this.status !== PENDING) return
         this.status = REJECTED
         this.reason = reason;
+        // 失败回调函数的执行。此时reject函数已经执行
+        this.failCallBack && this.failCallBack(reason);
     }
 
     // 执行Promise对象的then方法
     then = (successCallBack, failCallBack) => {
-        successCallBack(this.value);
-        failCallBack(this.reason);
+        // 当前状态是fulfilled，执行成功回调
+        if (this.status === FULFILLED) {
+            successCallBack(this.value);
+            // 当前状态是rejected，执行失败回调
+        } else if (this.status === REJECTED) {
+            failCallBack(this.reason);
+            // 当前状态是padding, 如异步函数调用。此时resolve和reject都没有调用。暂时将成功和失败的回调存储。
+        } else {
+            this.successCallBack = successCallBack;
+            this.failCallBack = failCallBack;
+        }
     }
 }
 
