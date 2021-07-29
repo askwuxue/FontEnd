@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/">首页</router-link>
+        <router-link to="/user">用户</router-link>
+        <router-link to="category">分类</router-link>
+
+        <router-view></router-view>
+        <!-- TODO 通过router-view的名字通过一个router-link展示多个组件，注：最多有一个未命名的router-view -->
+        <router-view name="sidebar"></router-view>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        // 组件对象
+        const Index = {
+            template: `<h1>This is Index</h1>`
+        }
+        const User = {
+            template: `<h1>This is User</h1>`
+        }
+        const Category = {
+            template: `<h1>This is Category</h1>`
+        }
+        const SideBar = {
+            template: `<div>This is sideBar</div>`
+        }
+
+        // 路由规则
+        const routes = [
+            {
+        // TODO 通过router-view的名字通过一个router-link展示多个组件，配置规则时使用components对象中的属性名与属性值
+                path: '/', components: {
+                    sidebar: SideBar,
+                    default: Index
+                }
+            },
+            {
+                path: '/user', component: User
+            },
+            {
+                path: '/category', component: Category
+            }
+        ]
+        
+        // 注册路由规则
+        const router = new VueRouter({
+            routes
+        })
+
+        // 注册路由到Vue实例上
+        const vm = new Vue({
+            el: '#app',
+            router
+        })
+    </script>
+</body>
+</html>
