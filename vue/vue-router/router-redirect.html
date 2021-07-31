@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <!-- 通过动态绑定的方式实现路由切换 -->
+        <router-link :to="{name:'school',params:{id: '100'}}">通过动态绑定的方式实现路由切换</router-link>
+        <router-link to="/school">路由重定向</router-link>
+        <router-link to="/redirect">重定向后</router-link>
+        <router-view></router-view>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+
+        const Index = {
+            template: `<h1>首页</h1>`
+        }
+
+        const School = {
+            template: `
+                <h1>School 组件的功能， {{ $route.params }}</h1>
+            `
+        }
+
+        const Redirect = {
+            template: `<h1>重定向后</h1>`
+        }
+        
+        const routes = [
+            {
+                path: '/',
+                component: Index
+            },
+            {
+                path: '/school/:id/info/user',
+                name: 'school',
+                component: School
+            },
+            {
+                path: '/redirect',
+                component: Redirect
+            },
+            {
+                path: '/school',
+                // TODO 当访问path时，重定向其他path
+                redirect: '/redirect'
+            }
+
+        ]
+
+        const router = new VueRouter({
+            routes
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            router,
+        })
+
+    </script>
+</body>
+</html>
