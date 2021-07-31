@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       
+        <router-link to="/">首页</router-link>
+        <router-link to="/user">用户</router-link>
+        <router-link to="/category">分类</router-link>
+        <router-view></router-view>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        const Index = {
+            template: `
+                <h1>首页</h1>
+            `
+        }
+        const User = {
+            template: `
+                <h1>用户</h1>
+            `
+        }
+        const Category = {
+            template: `
+                <h1>分类</h1>
+            `
+        }
+        const Login = {
+            template: `<h1>登录</h1>`
+        }
+        const routes = [
+            { path: '/',component: Index },
+            { path: '/user',component: User },
+            { path: '/category',component: Category },
+            { path: '/login',component: Login },
+        ]
+        const router = new VueRouter({
+            // 设置history，地址栏的显示发生变化
+            mode: 'history',
+            routes
+        })
+
+        // 设置路由守卫
+        // TODO to from 的具体信息为$route的内容
+        router.beforeEach((to, from, next) => {
+            // console.log(to)
+            if (to.path === '/user') {
+                next('/login');
+            } else {
+                next();
+            }
+            // console.log(from)
+            // TODO 不设置next或者设置next参数值为false，路由访问失败
+            // next();
+        })
+        const vm = new Vue({
+            el: '#app',
+            router
+        })
+
+    </script>
+</body>
+</html>
