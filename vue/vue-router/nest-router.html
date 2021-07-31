@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/user">用户功能</router-link>
+        <router-view></router-view>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        const User = {
+            template: `
+                <div>
+                    <h1>这是User组件的功能</h1>
+                    <router-link to="/user/hobby">User 爱好功能</router-link>
+                    <router-link to="/user/info">User 信息功能</router-link>
+                    <router-view></router-view>
+                </div>
+            `
+        }
+
+        const UserHobby = {
+            template: `
+                <div>
+                    <h1>爱好功能</h1>    
+                </div>
+            `
+        }
+
+        const UserInfo = {
+            template: `
+                <div>
+                    <h1>信息功能</h1>    
+                </div>
+            `
+        }
+
+        const routes = [
+            {
+                path: '/user',
+                component: User,
+                children: [
+                    {
+                        path: '/user/hobby',
+                        component: UserHobby
+                    },
+                    {
+                        path: '/user/info',
+                        component: UserInfo
+                    }
+                ]
+            }
+        ]
+
+        const router = new VueRouter({
+            routes
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            router
+        })
+    </script>
+</body>
+</html>
