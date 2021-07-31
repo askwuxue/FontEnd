@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <!-- TODO 通过函数时编程实现路由功能 -->
+        <button @click="showCom">通过函数时编程实现路由功能</button>
+        <!-- 通过动态绑定的方式实现路由切换 -->
+        <router-link :to="{name:'school',params:{id: '100', date: '20210731'}}">通过动态绑定的方式实现路由切换</router-link>
+        <router-link to="/100/20210731">使用别名的方式切换路由</router-link>
+        <router-view></router-view>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        const School = {
+            template: `
+                <h1>School 组件的功能， {{ $route.params }}</h1>
+            `
+        }
+        
+        const routes = [
+            {
+                path: '/school/:id/info/user/:date',
+                // TODO 当routes的path信息比较长时，可以通过name属性作为标识，使用编程式路由的方式来实现跳转
+                // TODO name属性只是我们操作路由时的一种映射关系，实际用户访问时，地址栏中的地址还是path的内容
+                // 为了解决这个问题，使用alias属性进行处理，重命名地址栏的path内容
+                name: 'school',
+                component: School,
+                // TODO alias 设置以后，必须在router-link中使用同样的格式
+                alias: '/:id/:date'
+            }
+        ]
+
+        const router = new VueRouter({
+            routes
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            router,
+            methods: {
+                showCom() {
+                    // TODO 当routes的path信息比较长时，可以通过name属性作为标识，使用编程式路由的方式来实现跳转
+                    this.$router.push({ name: 'school', params: {id: '100', date: '2021/07/31'} })
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
