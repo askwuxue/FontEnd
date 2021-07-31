@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <!-- TODO 通过函数时编程实现路由功能 -->
+        <button @click="showCom">通过函数时编程实现路由功能</button>
+        <router-view></router-view>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        const School = {
+            template: `
+                <h1>School 组件的功能， {{ $route.params }}</h1>
+            `
+        }
+        
+        const routes = [
+            {
+                path: '/school/:id',
+                component: School
+            }
+        ]
+
+        const router = new VueRouter({
+            routes
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            router,
+            methods: {
+                showCom() {
+                    // TODO 通过编程的方式，实现路由跳转，并且传递参数
+                    this.$router.push({path: '/school/100'})
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
