@@ -3,7 +3,9 @@ const FULFILLED = 'fulfilled'
 const REJECTED = 'rejected'
 
 // 判断Promise对象then方法返回值并进行处理
-const resolvePromise = (nextValue, resolve, reject) => {
+const resolvePromise = (promise, nextValue, resolve, reject) => {
+    // 如果在then方法中返回了当前Promise对象，则进行了循环引用，需要错误处理
+    if (promise === nextValue) return reject(`Chaining cycle detected for promise #<Promise>`)
     if (nextValue instanceof MyPromise) {
         // 返回值是Promise对象，调用该Promise对象的then方法
         nextValue.then(resolve, reject)
@@ -57,14 +59,17 @@ class MyPromise {
     // 执行Promise对象的then方法
     then = (successCallBack, failCallBack) => {
         // then方法返回一个Promise对象
-        return new MyPromise((resolve, reject) => {
+        let promise = new MyPromise((resolve, reject) => {
             // 当前状态是fulfilled，执行成功回调
             if (this.status === FULFILLED) {
-                // 传递给下一个Promise对象的值是then方法的返回值，成功时即successCallBack的值
-                let nextValue = successCallBack(this.value);
-                // 判断上一个Promise对象的then方法返回的值的类型，如果是普通值，直接调用resolve方法
-                // 如果是Promise对象，先判断Promise对象的状态，成功调用resolve方法，失败调用reject
-                resolvePromise(nextValue, resolve, reject);
+                // 为了能拿到Mypromise实例对象，需要异步执行函数
+                setTimeout(() => {
+                    // 传递给下一个Promise对象的值是then方法的返回值，成功时即successCallBack的值
+                    let nextValue = successCallBack(this.value);
+                    // 判断上一个Promise对象的then方法返回的值的类型，如果是普通值，直接调用resolve方法
+                    // 如果是Promise对象，先判断Promise对象的状态，成功调用resolve方法，失败调用reject
+                    resolvePromise(promise, nextValue, resolve, reject);
+                }, 0)
                 // 当前状态是rejected，执行失败回调
             } else if (this.status === REJECTED) {
                 failCallBack(this.reason);
@@ -74,6 +79,7 @@ class MyPromise {
                 this.failCallBack.push(failCallBack)
             }
         })
+        return promise;
     }
 }
 

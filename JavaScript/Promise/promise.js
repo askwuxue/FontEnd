@@ -12,17 +12,24 @@ const others = new MyPromise((resolve, reject) => {
     resolve('others Promise')
 })
 
-promise.then(value => {
+let p1 = promise.then(value => {
     console.log(value)
     // console.log(value)
-    return 100;
-}).then(value => {
-    console.log(value)
-    return others;
-    // console.log(value)
-}).then(value => {
-    console.log(value);
+    // return 100;
+    return p1
 })
+p1.then((value) => {
+    console.log(value)
+}, reason => {
+    console.log(reason)
+})
+// p1.then(value => {
+//      console.log(value)
+//      return others;
+//      // console.log(value)
+//  }).then(value => {
+//      console.log(value);
+//  })
 // promise.then(value => {
 //     console.log(value)
 //     // console.log(value);
