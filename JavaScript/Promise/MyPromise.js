@@ -129,6 +129,34 @@ class MyPromise {
         })
         return promise;
     }
+
+    // Promise.all 静态方法
+    static all(array) {
+        let result = [];
+        let index = 0;
+        // Promise.all 返回一个Promise对象
+        return new MyPromise((resolve, reject) => {
+            let add = (key, value) => {
+                result[key] = value;
+                ++index;
+                // 当all参数数组中所有项执行结束后执行resolve方法
+                if (index === array.length) {
+                    resolve(result);
+                }
+            }
+            for (let i = 0; i < array.length; ++i) {
+                // 如果是Promise对象
+                if (array[i] instanceof MyPromise) {
+                    array[i].then((value) => {
+                        add(i, value);
+                    }, reason => reject(reason))
+                    // 普通值
+                } else {
+                    add(i, array[i]);
+                }
+            }
+        })
+    }
 }
 
 module.exports = MyPromise;
