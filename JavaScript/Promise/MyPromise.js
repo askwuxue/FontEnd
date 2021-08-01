@@ -5,7 +5,7 @@ const REJECTED = 'rejected'
 // 判断Promise对象then方法返回值并进行处理
 const resolvePromise = (promise, nextValue, resolve, reject) => {
     // 如果在then方法中返回了当前Promise对象，则进行了循环引用，需要错误处理
-    if (promise === nextValue) return reject(`Chaining cycle detected for promise #<Promise>`)
+    if (promise === nextValue) return reject(new TypeError(`Chaining cycle detected for promise #<Promise>`))
     if (nextValue instanceof MyPromise) {
         // 返回值是Promise对象，调用该Promise对象的then方法
         nextValue.then(resolve, reject)

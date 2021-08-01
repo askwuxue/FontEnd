@@ -21,7 +21,7 @@ let p1 = promise.then(value => {
 p1.then((value) => {
     console.log(value)
 }, reason => {
-    console.log(reason)
+    console.log(reason.message)
 })
 // p1.then(value => {
 //      console.log(value)
