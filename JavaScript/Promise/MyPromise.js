@@ -2,6 +2,15 @@ const PENDING = 'pending'
 const FULFILLED = 'fulfilled'
 const REJECTED = 'rejected'
 
+// 判断Promise对象then方法返回值并进行处理
+const resolvePromise = (nextValue, resolve, reject) => {
+    if (nextValue instanceof MyPromise) {
+        // 返回值是Promise对象，调用该Promise对象的then方法
+        nextValue.then(resolve, reject)
+    } else {
+        resolve(nextValue);
+    }
+}
 class MyPromise {
     // Promise 对象接受一个执行器，会立即执行
     constructor(executor) {
@@ -47,17 +56,24 @@ class MyPromise {
 
     // 执行Promise对象的then方法
     then = (successCallBack, failCallBack) => {
-        // 当前状态是fulfilled，执行成功回调
-        if (this.status === FULFILLED) {
-            successCallBack(this.value);
-            // 当前状态是rejected，执行失败回调
-        } else if (this.status === REJECTED) {
-            failCallBack(this.reason);
-            // 当前状态是padding, 如异步函数调用。此时resolve和reject都没有调用。暂时将成功和失败的回调存储。
-        } else {
-            this.successCallBack.push(successCallBack)
-            this.failCallBack.push(failCallBack)
-        }
+        // then方法返回一个Promise对象
+        return new MyPromise((resolve, reject) => {
+            // 当前状态是fulfilled，执行成功回调
+            if (this.status === FULFILLED) {
+                // 传递给下一个Promise对象的值是then方法的返回值，成功时即successCallBack的值
+                let nextValue = successCallBack(this.value);
+                // 判断上一个Promise对象的then方法返回的值的类型，如果是普通值，直接调用resolve方法
+                // 如果是Promise对象，先判断Promise对象的状态，成功调用resolve方法，失败调用reject
+                resolvePromise(nextValue, resolve, reject);
+                // 当前状态是rejected，执行失败回调
+            } else if (this.status === REJECTED) {
+                failCallBack(this.reason);
+                // 当前状态是padding, 如异步函数调用。此时resolve和reject都没有调用。暂时将成功和失败的回调存储。
+            } else {
+                this.successCallBack.push(successCallBack)
+                this.failCallBack.push(failCallBack)
+            }
+        })
     }
 }
 
