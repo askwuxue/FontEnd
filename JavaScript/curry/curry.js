@@ -1,5 +1,5 @@
 const getSum = function (a, b, c) {
-    return a + b + c;
+    return a + b + c
 }
 
 const curry = function (fun) {
