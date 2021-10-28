@@ -1,0 +1,12 @@
+{
+    "include": ["./src/*", "src/examples/property_modifier.ts"],
+    "exclude": ["node_modules/**/*"],
+    "compilerOptions": {
+        "outDir": "./dist",
+        // TODO 编译有错误不输出编译结果
+        "noEmitOnError": true,
+        "target": "ES5",
+        "module": "amd",
+        "strict": true
+    }
+}
